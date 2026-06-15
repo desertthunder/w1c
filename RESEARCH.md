@@ -115,6 +115,47 @@ Useful patterns for W1C:
 - Optional utilities should be packaged separately.
 - Framework wrappers can wait; prove the custom elements first.
 
+## Icon Source References
+
+W1C should draw from a small set of recognizable, documented icon sources instead of
+inventing a large icon language from scratch.
+
+References:
+
+- [OpenMoji](https://icon-sets.iconify.design/openmoji/)
+- [Twemoji](https://icon-sets.iconify.design/twemoji/)
+- [FxEmoji](https://icon-sets.iconify.design/fxemoji/)
+- [Bootstrap Icons](https://icons.getbootstrap.com/)
+- [Ubuntu Humanity icon theme](https://github.com/mk-pmb/ubuntu-icon-theme-humanity)
+
+Useful patterns for W1C:
+
+- Use OpenMoji, Twemoji, and FxEmoji as colorful early-web-friendly icon/sticker sources.
+- Use Bootstrap Icons for plain UI actions where emoji-style artwork is too loud.
+- Use Humanity as the primary Ubuntu/GNOME reference family.
+- Preserve source family metadata so docs, Storybook, and package exports can explain
+  where each icon came from.
+- Verify license and redistribution requirements before copying or bundling any source
+  assets.
+
+## Color System References
+
+W1C color tokens should be practical CSS variables informed by existing color systems,
+not a generated token pipeline at the start.
+
+References:
+
+- [Reasonable Colors](https://github.com/matthewhowell/reasonable-colors)
+- [Uchu](https://code.webb.page/nevercease/uchu.git/about/)
+
+Useful patterns for W1C:
+
+- Use Reasonable Colors as a source for predictable, named CSS color scales.
+- Use Uchu as a reference for wide-gamut, perceptual color thinking where it helps theme
+  quality.
+- Keep final W1C theme tokens hand-authored and readable until a build pipeline is truly
+  needed.
+
 ## Web 1.0 And Geocities Aesthetic
 
 References:
