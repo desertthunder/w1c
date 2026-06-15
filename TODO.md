@@ -4,15 +4,6 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md) and
 [RESEARCH.md](./RESEARCH.md). Prefer the smallest useful implementation before adding
 new layers.
 
-## Workspace
-
-- Confirm package names and publish paths before any public release.
-- Decide whether `packages/docs` and `packages/storybook` should share preview data or keep
-  separate fixtures; document the rule before building larger examples.
-- Add shared preview fixtures only if both docs and Storybook need the same stable examples.
-- Keep generated output out of planning decisions; source work should live under each
-  package's `src/` or config directories.
-
 ## Library Package
 
 - Replace `my-element` with real W1C custom elements using the `w1c-` prefix.
@@ -25,10 +16,12 @@ new layers.
 - Use Reasonable Colors and Uchu as references for practical theme color scales.
 - Add `styles/native.css` and `styles/utilities.css` as optional imports separate from
   required component/theme styles.
-- Add `icons/` packaging for OpenMoji, Twemoji, FxEmoji, Bootstrap Icons, and Ubuntu
-  Humanity.
-- Add icon metadata for name, family, category, source/reference project, license, and
-  intended size.
+- Add one W1C icon set. Do not expose separate icon styles or family-specific public
+  packages.
+- Add `IconData` as a primitive type/export for single-icon data, with a shape compatible
+  with Iconify-style icon data.
+- Add icon metadata for name, category, source/reference project, source icon name,
+  source URL, license, attribution text, and intended size.
 - Add and document an asset base-path story for icons, sprite sheets, and images.
 - Verify icon licensing and redistribution assumptions before copying reference assets.
 - Expose CSS parts for chrome, titlebars, toolbars, controls, content, and statusbars.
@@ -56,8 +49,8 @@ new layers.
   server-rendered HTML.
 - Add component catalog pages with status, category, description, examples, API,
   accessibility notes, and theming notes.
-- Add icon catalog pages for OpenMoji, Twemoji, FxEmoji, Bootstrap Icons, and Ubuntu
-  Humanity icons.
+- Add an icon catalog page for the W1C icon set, with source and license attribution per
+  icon.
 - Add theme catalog pages for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, Web 1.0,
   and Geocities.
 - Add recipes for static HTML, npm/bundler usage, server-rendered HTML, SvelteKit, and
@@ -78,8 +71,7 @@ new layers.
 - Replace the starter `my-element` story with one page per public component.
 - Add global theme switching for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, Web 1.0,
   and Geocities.
-- Add icon gallery stories for OpenMoji, Twemoji, FxEmoji, Bootstrap Icons, and Ubuntu
-  Humanity icons.
+- Add icon gallery stories for the W1C icon set, including `IconData` rendering examples.
 - Add reference examples for GNOME 2/Ubuntu and Windows 95 screens without depending on
   the local reference apps.
 - Add Geocities examples for badges, counters, guestbooks, webrings, tiled backgrounds,

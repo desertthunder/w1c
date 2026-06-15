@@ -10,9 +10,9 @@ Storybook workshop, and a small scaffolding CLI.
 ```text
 packages/
   cli/          @w1c/cli scaffolding/bootstrap CLI
-  docs/         public SvelteKit documentation app
-  lib/          @w1c/lib Lit + Vite web component library
-  storybook/    Web Components Storybook app
+  docs/         @w1c/docs public SvelteKit documentation app
+  lib/          @w1c/components Lit + Vite web component library
+  storybook/    @w1c/storybook Web Components Storybook app
 ```
 
 ## Requirements
@@ -95,25 +95,25 @@ pnpm format
 Docs:
 
 ```sh
-pnpm --filter docs dev
-pnpm --filter docs check
-pnpm --filter docs build
+pnpm --filter @w1c/docs dev
+pnpm --filter @w1c/docs check
+pnpm --filter @w1c/docs build
 ```
 
 Storybook:
 
 ```sh
-pnpm --filter storybook dev
-pnpm --filter storybook check
-pnpm --filter storybook build
+pnpm --filter @w1c/storybook dev
+pnpm --filter @w1c/storybook check
+pnpm --filter @w1c/storybook build
 ```
 
 Library:
 
 ```sh
-pnpm --filter @w1c/lib dev
-pnpm --filter @w1c/lib check
-pnpm --filter @w1c/lib build
+pnpm --filter @w1c/components dev
+pnpm --filter @w1c/components check
+pnpm --filter @w1c/components build
 ```
 
 CLI:
@@ -142,6 +142,8 @@ node packages/cli/dist/index.mjs --help
 - [FxEmoji icon set](https://icon-sets.iconify.design/fxemoji/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
 - [Ubuntu Humanity icon theme](https://github.com/mk-pmb/ubuntu-icon-theme-humanity)
+- [Iconify icon data](https://iconify.design/docs/icons/icon-data.html)
+- [icondata](https://github.com/carloskiki/icondata)
 - [Reasonable Colors](https://github.com/matthewhowell/reasonable-colors)
 - [Uchu color system](https://code.webb.page/nevercease/uchu.git/about/)
 - [GeoCities](https://en.wikipedia.org/wiki/GeoCities)

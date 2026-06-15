@@ -47,7 +47,7 @@ importers:
 
   packages/docs:
     dependencies:
-      '@w1c/lib':
+      '@w1c/components':
         specifier: workspace:*
         version: link:../lib
     devDependencies:
@@ -136,7 +136,7 @@ importers:
 
   packages/storybook:
     dependencies:
-      '@w1c/lib':
+      '@w1c/components':
         specifier: workspace:*
         version: link:../lib
       lit:

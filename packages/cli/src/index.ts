@@ -9,7 +9,7 @@ const { ensureDir, pathExists, writeFile } = fsExtra
 const cli = cac('w1c')
 
 cli
-  .command('create [dir]', 'Create a small app that consumes @w1c/lib')
+  .command('create [dir]', 'Create a small app that consumes @w1c/components')
   .option('--install', 'Install dependencies after writing files')
   .action(async (dir: string | undefined, options: { install?: boolean }) => {
     intro('W1C scaffold')
@@ -47,7 +47,7 @@ cli
             preview: 'vite preview'
           },
           dependencies: {
-            '@w1c/lib': 'workspace:*'
+            '@w1c/components': 'workspace:*'
           },
           devDependencies: {
             vite: '^8.0.16',
@@ -62,7 +62,7 @@ cli
       `${targetDir}/index.html`,
       '<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>W1C App</title><script type="module" src="/src/main.ts"></script></head><body><my-element><h1>W1C</h1></my-element></body></html>\n'
     )
-    await writeFile(`${targetDir}/src/main.ts`, "import '@w1c/lib'\n")
+    await writeFile(`${targetDir}/src/main.ts`, "import '@w1c/components'\n")
 
     if (options.install) {
       await execa('pnpm', ['install'], { cwd: targetDir, stdio: 'inherit' })

@@ -1,6 +1,6 @@
 import { html } from 'lit'
 import type { Meta, StoryObj } from '@storybook/web-components-vite'
-import '@w1c/lib'
+import '@w1c/components'
 
 const meta = {
   title: 'Components/My Element',

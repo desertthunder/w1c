@@ -118,7 +118,8 @@ Useful patterns for W1C:
 ## Icon Source References
 
 W1C should draw from a small set of recognizable, documented icon sources instead of
-inventing a large icon language from scratch.
+inventing a large icon language from scratch. The public product should still be one W1C
+icon set, not a set of exposed family styles.
 
 References:
 
@@ -127,14 +128,25 @@ References:
 - [FxEmoji](https://icon-sets.iconify.design/fxemoji/)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
 - [Ubuntu Humanity icon theme](https://github.com/mk-pmb/ubuntu-icon-theme-humanity)
+- [Iconify icon data](https://iconify.design/docs/icons/icon-data.html)
+- [icondata](https://github.com/carloskiki/icondata)
 
 Useful patterns for W1C:
 
-- Use OpenMoji, Twemoji, and FxEmoji as colorful early-web-friendly icon/sticker sources.
-- Use Bootstrap Icons for plain UI actions where emoji-style artwork is too loud.
-- Use Humanity as the primary Ubuntu/GNOME reference family.
-- Preserve source family metadata so docs, Storybook, and package exports can explain
-  where each icon came from.
+- Use OpenMoji, Twemoji, and FxEmoji as sources for colorful early-web-friendly
+  icon/sticker artwork.
+- Use Bootstrap Icons as a source for plain UI actions where emoji-style artwork is too
+  loud.
+- Use Humanity as a source for Ubuntu/GNOME-style app, place, device, and status icons.
+- Normalize selected icons into one W1C icon set with W1C names.
+- Export an `IconData` primitive for single-icon data. Keep it compatible with
+  Iconify-style icon data, which treats icon sets as data and exposes single-icon data for
+  rendering.
+- Preserve source project, source icon name, source URL, license, and attribution text so
+  docs, Storybook, package exports, and generated code can explain where each icon came
+  from.
+- Treat icondata's source/license table as a useful precedent for attribution metadata,
+  not as final legal proof.
 - Verify license and redistribution requirements before copying or bundling any source
   assets.
 

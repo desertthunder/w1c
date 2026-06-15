@@ -1,5 +1,5 @@
 {
-	"name": "docs",
+	"name": "@w1c/docs",
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
@@ -16,7 +16,7 @@
 		"test": "pnpm run test:unit -- --run"
 	},
 	"dependencies": {
-		"@w1c/lib": "workspace:*"
+		"@w1c/components": "workspace:*"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

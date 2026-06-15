@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "@w1c/storybook",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@w1c/lib": "workspace:*",
+    "@w1c/components": "workspace:*",
     "lit": "^3.3.2"
   },
   "devDependencies": {

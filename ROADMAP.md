@@ -14,10 +14,10 @@ W1C should stand on its own and stay small.
 
 W1C ships five public surfaces:
 
-- `@w1c/lib`: Lit web components with stable custom element names.
-- `@w1c/lib/themes/*`: CSS theme files and design tokens.
-- `@w1c/lib/icons/*`: icon assets and icon metadata.
-- `@w1c/lib/styles/*`: optional native element styles and CSS utilities.
+- `@w1c/components`: Lit web components with stable custom element names.
+- `@w1c/components/themes/*`: CSS theme files and design tokens.
+- `@w1c/components/icons/*`: the W1C icon set, icon data, assets, and source metadata.
+- `@w1c/components/styles/*`: optional native element styles and CSS utilities.
 - `@w1c/cli`: scaffolding helpers for adding W1C to HTML pages and projects that can load
   custom elements, ESM, CSS, and static assets.
 
@@ -46,8 +46,8 @@ Reference notes:
   as a "system of systems."
 - Reasonable Colors and Uchu inform practical, readable color token scales without
   requiring a token build pipeline at the start.
-- OpenMoji, Twemoji, FxEmoji, Bootstrap Icons, and Ubuntu Humanity provide the initial
-  icon source vocabulary, subject to license and redistribution checks.
+- OpenMoji, Twemoji, FxEmoji, Bootstrap Icons, and Ubuntu Humanity provide source material
+  for one W1C icon set, subject to license and redistribution checks.
 
 ## Web 1.0 And Geocities Contract
 
@@ -125,15 +125,15 @@ Useful primitives:
 - Status/tray indicators.
 - JSON/document viewer shell primitives for gedit-style surfaces.
 
-Useful icon families:
+Useful W1C icon set coverage:
 
-- Humanity-style apps: browser, mail, terminal, file manager, text editor, feed reader.
-- Humanity-style places/devices/status: home, folder, trash, computer, volume, wireless.
+- App icons: browser, mail, terminal, file manager, text editor, feed reader.
+- Places/devices/status: home, folder, trash, computer, volume, wireless.
 - Mime icons: text document and PDF.
-- Emoji/sticker icons from OpenMoji, Twemoji, and FxEmoji where colorful Web 1.0 or
-  Geocities examples need expressive small artwork.
-- Plain action icons from Bootstrap Icons where component controls need restrained,
-  readable symbols.
+- Colorful Web 1.0 or Geocities artwork, sourced from OpenMoji, Twemoji, or FxEmoji when
+  licenses permit.
+- Restrained UI action symbols, sourced from Bootstrap Icons when no better W1C-specific
+  source exists.
 
 Design checks:
 
@@ -162,14 +162,14 @@ Useful primitives:
 - Word processor shell with toolbar, ruler, page, article typography, source/details area,
   and statusbar.
 
-Useful icons:
+Useful W1C icon set coverage:
 
 - Window controls: minimize, maximize, close.
 - Actions: back, forward, refresh, search, print, stop.
 - Formatting: bold, italic, underline, align-left, highlight, list.
 - Objects/status: computer, browser, page, doc, database, home, warning, danger, info,
   GitHub, AT symbol.
-- Bootstrap Icons can cover neutral action, formatting, and object symbols when no
+- Bootstrap Icons can source neutral action, formatting, and object symbols when no
   Windows 95-specific source is available.
 
 Design checks:
@@ -183,26 +183,25 @@ Design checks:
 
 ### `packages/lib`
 
-Keep this as the only runtime component package.
+Keep this as the source path for the only runtime component package. Publish it as
+`@w1c/components`.
 
 Target entrypoints:
 
-- `@w1c/lib`: register all stable components.
-- `@w1c/lib/components/window.js`
-- `@w1c/lib/components/button.js`
-- `@w1c/lib/components/icon.js`
-- `@w1c/lib/themes/gnome2.css`
-- `@w1c/lib/themes/ubuntu-810.css`
-- `@w1c/lib/themes/windows-95.css`
-- `@w1c/lib/themes/classic-mac.css`
-- `@w1c/lib/themes/geocities.css`
-- `@w1c/lib/styles/native.css`
-- `@w1c/lib/styles/utilities.css`
-- `@w1c/lib/icons/humanity.css`
-- `@w1c/lib/icons/openmoji.css`
-- `@w1c/lib/icons/twemoji.css`
-- `@w1c/lib/icons/fxemoji.css`
-- `@w1c/lib/icons/bootstrap.css`
+- `@w1c/components`: register all stable components.
+- `@w1c/components/components/window.js`
+- `@w1c/components/components/button.js`
+- `@w1c/components/components/icon.js`
+- `@w1c/components/themes/gnome2.css`
+- `@w1c/components/themes/ubuntu-810.css`
+- `@w1c/components/themes/windows-95.css`
+- `@w1c/components/themes/classic-mac.css`
+- `@w1c/components/themes/geocities.css`
+- `@w1c/components/styles/native.css`
+- `@w1c/components/styles/utilities.css`
+- `@w1c/components/icons`: W1C icon set exports.
+- `@w1c/components/icons/data`: `IconData` type and individual icon data exports.
+- `@w1c/components/icons/w1c.css`: optional CSS helpers for the W1C icon set.
 
 Implementation rules:
 
@@ -210,7 +209,12 @@ Implementation rules:
 - Use Shadow DOM for component internals only when it does not prevent theming.
 - Expose CSS parts for chrome, titlebars, toolbars, controls, content, and statusbars.
 - Prefer slots over adapter-specific render APIs.
-- Keep icon source families explicit in metadata and package paths.
+- Keep icons in a single W1C icon set. Do not expose separate public icon styles for each
+  source family.
+- Export `IconData` as the single-icon data primitive. Keep the shape compatible with
+  Iconify-style icon data so icons can be rendered without a web component.
+- Keep each icon's source project, source icon name, source URL, license, and attribution
+  text explicit in metadata and generated code comments where bundled data needs it.
 - Base hand-authored theme tokens on the reference apps, Reasonable Colors, and Uchu.
 - Keep behavior conservative: buttons, dialogs, menus, tabs, disclosure, drag/resize
   only where needed.
@@ -226,7 +230,7 @@ Required sections:
 - Installation for CDN/no-build usage, npm package usage, bundlers, static HTML, and
   server-rendered HTML.
 - Component catalog.
-- Icon catalog.
+- Icon catalog for the W1C icon set, with per-icon source and license attribution.
 - Theme catalog.
 - Recipes for static HTML, npm/bundler usage, and server-rendered HTML.
 - Accessibility notes.
@@ -241,8 +245,7 @@ Required stories:
 
 - One page per component.
 - Theme switcher for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, and Geocities.
-- Icon galleries for OpenMoji, Twemoji, FxEmoji, Bootstrap Icons, and Ubuntu Humanity
-  icons.
+- Icon galleries for the W1C icon set, including direct `IconData` rendering examples.
 - Reference examples that show GNOME 2/Ubuntu and Windows 95 screens without depending
   on local apps.
 - Keyboard/focus states, disabled states, long labels, narrow viewports, and high-density
@@ -272,10 +275,19 @@ Status: mostly done.
 
 - Establish the pnpm workspace with `packages/docs`, `packages/storybook`,
   `packages/lib`, and `packages/cli`.
-- Keep `packages/lib` as the Lit/Vite component package.
-- Keep `packages/docs` as the public documentation app.
-- Keep `packages/storybook` as the isolated component demo and regression surface.
-- Keep `packages/cli` as the bootstrap/scaffolding entrypoint.
+- Keep `packages/lib` as the Lit/Vite component package source. Publish it as
+  `@w1c/components`.
+- Keep `packages/docs` as the public documentation app. Keep it private and use
+  `@w1c/docs` as its internal package name when the manifest is renamed.
+- Keep `packages/storybook` as the isolated component demo and regression surface. Keep it
+  private and use `@w1c/storybook` as its internal package name when the manifest is
+  renamed.
+- Keep `packages/cli` as the bootstrap/scaffolding entrypoint. Publish it as `@w1c/cli`.
+- Share preview fixtures through `packages/lib/src/fixtures/preview.ts` only when docs and
+  Storybook need the same stable public component or theme example.
+- Keep one-off docs and Storybook examples local to their package.
+- Treat generated output as debug evidence only. Source decisions belong in package `src/`
+  directories or config files, not generated artifacts.
 - Replace the starter `my-element` with real W1C component names.
 
 ## Phase 1: Tokens, Themes, Icons
@@ -288,11 +300,14 @@ Goal: make existing local app styling portable before adding many components.
 - Add Ubuntu 8.10 / GNOME 2 tokens informed by Intrepid Ibex.
 - Add Windows 95 tokens informed by Tempest.
 - Add first-pass classic Mac, Web 1.0, and Geocities tokens.
-- Add icon asset packaging and a base-path helper.
-- Add icon sources for OpenMoji, Twemoji, FxEmoji, Bootstrap Icons, and Ubuntu Humanity.
-- Add icon metadata for name, family, category, source/reference project, license, and
-  intended size.
-- Document icon licensing/source assumptions before publishing.
+- Add one W1C icon set, icon asset packaging, and a base-path helper.
+- Add `IconData` as a primitive type/export for single-icon data, compatible with
+  Iconify-style icon data.
+- Source initial W1C icons from OpenMoji, Twemoji, FxEmoji, Bootstrap Icons, and Ubuntu
+  Humanity only where license and redistribution checks pass.
+- Add icon metadata for name, category, source/reference project, source icon name, source
+  URL, license, attribution text, and intended size.
+- Document icon licensing/source assumptions and attribution rules before publishing.
 
 Deliverable:
 

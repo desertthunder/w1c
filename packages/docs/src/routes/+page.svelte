@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '@w1c/lib';
+	import '@w1c/components';
 </script>
 
 <svelte:head>
