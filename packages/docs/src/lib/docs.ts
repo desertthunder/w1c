@@ -27,7 +27,12 @@ export const DOC_MANIFEST: DocLink[] = [
 	{
 		title: 'Components',
 		href: '/docs/components/',
-		description: 'Browse the Priority 1 component catalog, examples, slots, parts, and theme notes.'
+		description: 'Browse the component catalog, examples, theming, and usage.'
+	},
+	{
+		title: 'Typography',
+		href: '/docs/typography/',
+		description: 'See the heading, UI, and code fonts used by each theme.'
 	},
 	{ title: 'Icons', href: '/docs/icons/', description: 'Use W1C icon data, metadata, asset paths, and icon parts.' },
 	{
@@ -53,6 +58,9 @@ export const FEATURED_DOCS: DocLink[] = docs('/docs/getting-started/', '/docs/co
 
 export const DOC_GROUPS: DocGroup[] = [
 	{ title: 'Overview', links: docs('/docs/getting-started/') },
-	{ title: 'Manual', links: docs('/docs/installation/', '/docs/usage/', '/docs/components/', '/docs/icons/') },
+	{
+		title: 'Manual',
+		links: docs('/docs/installation/', '/docs/usage/', '/docs/components/', '/docs/typography/', '/docs/icons/')
+	},
 	{ title: 'Meta', links: docs('/docs/inspiration/') }
 ];

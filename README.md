@@ -12,6 +12,7 @@ packages/
   cli/          @w1c/cli scaffolding/bootstrap CLI
   dnd/          @w1c/dnd drag, resize, and geometry primitives
   docs/         @w1c/docs public SvelteKit documentation app
+  fonts/        @w1c/fonts theme font CSS and vendored font assets
   lib/          @w1c/components Lit + Vite web component library
   storybook/    @w1c/storybook Web Components Storybook app
 ```
@@ -70,24 +71,39 @@ pnpm --filter @w1c/cli dev -- --help
 Register every stable component:
 
 ```ts
-import '@w1c/components'
+import '@w1c/components';
 ```
 
 Register one component:
 
 ```ts
-import '@w1c/components/window'
-// or
-import '@w1c/components/window/index.js'
+import '@w1c/components/window';
 ```
 
-Theme CSS and optional page styles are separate imports:
+Theme CSS and optional page styles are separate imports. Theme CSS loads the matching font package automatically:
 
 ```ts
-import '@w1c/components/themes/windows-95.css'
-import '@w1c/components/styles/native.css'
-import '@w1c/components/styles/utilities.css'
+import '@w1c/components/themes/windows-95.css';
+import '@w1c/components/styles/native.css';
+import '@w1c/components/styles/utilities.css';
 ```
+
+Load every bundled theme font directly when a docs or preview app needs to switch typography without switching component themes:
+
+```ts
+import '@w1c/fonts/all.css';
+```
+
+## Theme Typography
+
+| Theme       | Headings        | UI            | Code          | Source                                                                                   |
+| ----------- | --------------- | ------------- | ------------- | ---------------------------------------------------------------------------------------- |
+| Windows 95  | IBM Plex Serif  | IBM Plex Sans | IBM Plex Mono | Fontsource                                                                               |
+| GNOME 2     | Ubuntu          | Ubuntu        | Ubuntu Mono   | Fontsource                                                                               |
+| Ubuntu 8.10 | Ubuntu          | Ubuntu        | Ubuntu Mono   | Fontsource                                                                               |
+| Classic Mac | ChiKareGo2      | ChicagoFLF    | Anonymous Pro | [system.css fonts](https://github.com/sakofchit/system.css/tree/main/fonts) + Fontsource |
+| Web 1.0     | Times New Roman | Arial         | Courier New   | System fonts                                                                             |
+| Geocities   | Comic Relief    | Comic Neue    | Comic Neue    | Fontsource                                                                               |
 
 ## Checks
 
@@ -139,6 +155,12 @@ Library:
 pnpm --filter @w1c/components dev
 pnpm --filter @w1c/components check
 pnpm --filter @w1c/components build
+```
+
+Fonts:
+
+```sh
+pnpm --filter @w1c/fonts format
 ```
 
 DnD:

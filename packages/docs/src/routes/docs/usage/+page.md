@@ -23,8 +23,6 @@ Direct imports register one component and its local dependencies:
 import '@w1c/components/window';
 import '@w1c/components/dialog';
 import '@w1c/components/desktop-icon';
-// or
-import '@w1c/components/window/index.js';
 ```
 
 ## Use icons

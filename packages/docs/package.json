@@ -18,10 +18,8 @@
 		"test": "pnpm run test:unit -- --run"
 	},
 	"dependencies": {
-		"@fontsource-variable/ibm-plex-sans": "^5.2.8",
-		"@fontsource/ibm-plex-mono": "^5.2.7",
-		"@fontsource/ibm-plex-serif": "^5.2.7",
-		"@w1c/components": "workspace:*"
+		"@w1c/components": "workspace:*",
+		"@w1c/fonts": "workspace:*"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

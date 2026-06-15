@@ -1,0 +1,30 @@
+{
+	"name": "@w1c/fonts",
+	"private": true,
+	"version": "0.0.0",
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		"./all.css": "./src/all.css",
+		"./classic-mac.css": "./src/classic-mac.css",
+		"./geocities.css": "./src/geocities.css",
+		"./ubuntu.css": "./src/ubuntu.css",
+		"./windows.css": "./src/windows.css"
+	},
+	"scripts": {
+		"format": "prettier --write . --ignore-path ../../.prettierignore"
+	},
+	"dependencies": {
+		"@fontsource-variable/ibm-plex-sans": "^5.2.8",
+		"@fontsource/anonymous-pro": "^5.2.8",
+		"@fontsource/comic-neue": "^5.2.7",
+		"@fontsource/comic-relief": "^5.2.2",
+		"@fontsource/ibm-plex-mono": "^5.2.7",
+		"@fontsource/ibm-plex-serif": "^5.2.7",
+		"@fontsource/ubuntu": "^5.2.8",
+		"@fontsource/ubuntu-mono": "^5.2.8"
+	},
+	"devDependencies": {
+		"prettier": "^3.8.3"
+	}
+}

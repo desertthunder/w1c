@@ -1,12 +1,27 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { DocLink } from '../lib/docs';
+	import type { DocsTheme } from '../lib/themes';
 
-	let { links, sidebarOpen, onToggleSidebar }: { links: DocLink[]; sidebarOpen: boolean; onToggleSidebar: () => void } =
-		$props();
+	let {
+		links,
+		themeOptions,
+		selectedTheme,
+		sidebarOpen,
+		onToggleSidebar,
+		onThemeChange
+	}: {
+		links: DocLink[];
+		themeOptions: DocsTheme[];
+		selectedTheme: string;
+		sidebarOpen: boolean;
+		onToggleSidebar: () => void;
+		onThemeChange: (theme: string) => void;
+	} = $props();
 </script>
 
 <header class="site-header">
-	<a class="brand" href="/" aria-label="W1C docs home">
+	<a class="brand" href={resolve('/')} aria-label="W1C docs home">
 		<span class="brand-mark" aria-hidden="true">W1C</span>
 		<span class="brand-text">Web 1 Components</span>
 	</a>
@@ -19,13 +34,28 @@
 		<span aria-hidden="true"></span>
 		<span class="menu-label">Menu</span>
 	</button>
-	<nav aria-label="Primary docs">
-		{#each links as item (`${item.href}:${item.title}`)}
-			<a href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noreferrer' : undefined}>
-				{item.title}
-			</a>
-		{/each}
-	</nav>
+	<div class="site-header__left">
+		<nav aria-label="Primary docs">
+			{#each links as item (`${item.href}:${item.title}`)}
+				<!-- eslint-disable svelte/no-navigation-without-resolve -->
+				<a
+					href={item.href}
+					target={item.external ? '_blank' : undefined}
+					rel={item.external ? 'noreferrer' : undefined}>
+					{item.title}
+				</a>
+				<!-- eslint-enable svelte/no-navigation-without-resolve -->
+			{/each}
+		</nav>
+		<label class="theme-picker">
+			<span>Theme</span>
+			<select value={selectedTheme} onchange={(event) => onThemeChange(event.currentTarget.value)}>
+				{#each themeOptions as option (option.id)}
+					<option value={option.id}>{option.label}</option>
+				{/each}
+			</select>
+		</label>
+	</div>
 </header>
 
 <style>
@@ -37,6 +67,10 @@
 		min-height: 64px;
 		border-bottom: 4px double var(--color-rule);
 		background: #ffffff;
+	}
+
+	.site-header__left {
+		display: flex;
 	}
 
 	.brand {
@@ -66,7 +100,7 @@
 
 	.brand-text {
 		font-family: var(--font-serif);
-		font-size: 1.25rem;
+		font-size: var(--font-size-brand);
 		font-weight: 700;
 	}
 
@@ -81,6 +115,29 @@
 		justify-content: flex-end;
 	}
 
+	.theme-picker {
+		display: grid;
+		align-content: center;
+		gap: 2px;
+		min-width: 150px;
+		padding: var(--space-2) var(--space-4);
+		border-left: 2px solid var(--color-rule);
+		background: var(--color-sidebar);
+		font-family: var(--font-mono);
+		font-size: var(--font-size-theme-label);
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	.theme-picker select {
+		width: 100%;
+		min-height: 28px;
+		color: var(--color-ink);
+		background: #ffffff;
+		border: 2px inset #ffffff;
+		font: 600 var(--font-size-theme-select) / 1.1 var(--font-sans);
+	}
+
 	nav a {
 		display: inline-flex;
 		align-items: center;
@@ -88,7 +145,7 @@
 		padding: var(--space-3) var(--space-4);
 		border-left: 2px solid var(--color-rule);
 		font-family: var(--font-mono);
-		font-size: 0.9rem;
+		font-size: var(--font-size-nav);
 		font-weight: 600;
 		background: var(--color-paper-dark);
 	}
@@ -100,15 +157,26 @@
 			gap: 0;
 		}
 
-		nav {
+		.site-header__left {
 			grid-column: 1 / -1;
+			display: grid;
+			grid-template-columns: minmax(0, 1fr);
+			width: 100%;
+		}
+
+		nav {
 			display: grid;
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 
+		.theme-picker {
+			min-width: 0;
+			border-top: 2px solid var(--color-rule);
+			border-left: 0;
+		}
+
 		nav a {
 			justify-content: center;
-			min-height: 42px;
 			padding: var(--space-2);
 			border-top: 2px solid var(--color-rule);
 			border-left: 0;

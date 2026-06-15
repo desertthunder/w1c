@@ -1,9 +1,12 @@
+@import '@w1c/fonts/windows.css';
 @import '../styles/tokens.css';
 
 @layer w1c.theme {
 	:root {
 		--w1c-theme-name: 'Windows 95';
-		--w1c-font-ui: 'MS Sans Serif', Tahoma, Geneva, sans-serif;
+		--w1c-font-heading: 'IBM Plex Serif', Georgia, serif;
+		--w1c-font-ui: 'IBM Plex Sans Variable', 'IBM Plex Sans', Tahoma, Geneva, sans-serif;
+		--w1c-font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 		--w1c-surface: #c0c0c0;
 		--w1c-surface-raised: #dfdfdf;
 		--w1c-desktop-background: #0b7f7f;

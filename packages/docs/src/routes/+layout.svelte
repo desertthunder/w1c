@@ -1,10 +1,5 @@
 <script lang="ts">
-	import '@fontsource-variable/ibm-plex-sans/wght.css';
-	import '@fontsource/ibm-plex-serif/400.css';
-	import '@fontsource/ibm-plex-serif/600.css';
-	import '@fontsource/ibm-plex-serif/700.css';
-	import '@fontsource/ibm-plex-mono/400.css';
-	import '@fontsource/ibm-plex-mono/600.css';
+	import '@w1c/fonts/all.css';
 	import '../styles/main.css';
 	import AppShell from '../components/AppShell.svelte';
 	import favicon from '$lib/assets/favicon.svg';

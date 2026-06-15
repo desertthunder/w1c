@@ -1,9 +1,12 @@
+@import '@w1c/fonts/geocities.css';
 @import '../styles/tokens.css';
 
 @layer w1c.theme {
 	:root {
 		--w1c-theme-name: 'Geocities';
-		--w1c-font-ui: Arial, Helvetica, sans-serif;
+		--w1c-font-heading: 'Comic Relief', 'Comic Neue', Comic Sans MS, cursive;
+		--w1c-font-ui: 'Comic Neue', Comic Sans MS, cursive;
+		--w1c-font-mono: 'Comic Neue', 'Courier New', monospace;
 		--w1c-surface: #ffffcc;
 		--w1c-surface-raised: #ffffff;
 		--w1c-window-content-background: #ffffff;
@@ -27,7 +30,7 @@
 		--w1c-panel-shadow: 5px 5px 0 #00ffff;
 		--w1c-panel-chrome-background: repeating-linear-gradient(45deg, #ffff00 0 8px, #ff66cc 8px 16px);
 		--w1c-panel-header-border: 3px groove #660066;
-		--w1c-panel-header-font: 700 15px/1.1 Arial, Helvetica, sans-serif;
+		--w1c-panel-header-font: 700 15px/1.1 var(--w1c-font-heading);
 		--w1c-taskbar-background: repeating-linear-gradient(90deg, #660099 0 18px, #0000ee 18px 36px, #ff66cc 36px 54px);
 		--w1c-taskbar-text: #ffffff;
 		--w1c-taskbar-border-block-start: 3px outset #ffff00;

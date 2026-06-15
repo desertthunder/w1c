@@ -1,9 +1,12 @@
+@import '@w1c/fonts/ubuntu.css';
 @import '../styles/tokens.css';
 
 @layer w1c.theme {
 	:root {
 		--w1c-theme-name: 'GNOME 2';
-		--w1c-font-ui: 'Bitstream Vera Sans', 'DejaVu Sans', Arial, sans-serif;
+		--w1c-font-heading: Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Arial, sans-serif;
+		--w1c-font-ui: Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Arial, sans-serif;
+		--w1c-font-mono: 'Ubuntu Mono', 'DejaVu Sans Mono', 'Courier New', monospace;
 		--w1c-surface: #d8d2c3;
 		--w1c-surface-raised: #eee9dd;
 		--w1c-window-content-background: #ffffff;

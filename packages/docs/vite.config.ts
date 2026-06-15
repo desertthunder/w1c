@@ -1,9 +1,13 @@
 import { defineConfig } from 'vitest/config';
 import { playwright } from '@vitest/browser-playwright';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { fileURLToPath } from 'node:url';
+
+const workspaceRoot = fileURLToPath(new URL('../..', import.meta.url));
 
 export default defineConfig({
 	plugins: [sveltekit()],
+	server: { fs: { allow: [workspaceRoot] } },
 	test: {
 		expect: { requireAssertions: true },
 		projects: [

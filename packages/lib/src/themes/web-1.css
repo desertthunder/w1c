@@ -3,6 +3,7 @@
 @layer w1c.theme {
 	:root {
 		--w1c-theme-name: 'Web 1.0';
+		--w1c-font-heading: 'Times New Roman', Times, serif;
 		--w1c-font-ui: Arial, Helvetica, sans-serif;
 		--w1c-font-mono: 'Courier New', monospace;
 		--w1c-surface: #d7e6ff;

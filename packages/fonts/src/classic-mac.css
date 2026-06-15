@@ -1,0 +1,37 @@
+@import '@fontsource/anonymous-pro/latin-400.css';
+@import '@fontsource/anonymous-pro/latin-700.css';
+
+@font-face {
+	font-family: 'ChiKareGo2';
+	font-weight: 400;
+	src: url('./classic-mac/ChiKareGo2.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ChiKareGo2';
+	font-weight: 700;
+	src: url('./classic-mac/ChiKareGo2.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ChicagoFLF';
+	font-weight: 400;
+	src: url('./classic-mac/ChicagoFLF.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ChicagoFLF';
+	font-weight: 500;
+	src: url('./classic-mac/ChicagoFLF.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'ChicagoFLF';
+	font-weight: 700;
+	src: url('./classic-mac/ChicagoFLF.woff2') format('woff2');
+	font-display: swap;
+}

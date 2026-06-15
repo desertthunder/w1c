@@ -1,9 +1,12 @@
+@import '@w1c/fonts/ubuntu.css';
 @import '../styles/tokens.css';
 
 @layer w1c.theme {
 	:root {
 		--w1c-theme-name: 'Ubuntu 8.10';
+		--w1c-font-heading: Ubuntu, 'DejaVu Sans', Arial, sans-serif;
 		--w1c-font-ui: Ubuntu, 'DejaVu Sans', Arial, sans-serif;
+		--w1c-font-mono: 'Ubuntu Mono', 'DejaVu Sans Mono', 'Courier New', monospace;
 		--w1c-surface: #d6d0c8;
 		--w1c-surface-raised: #f0ebe4;
 		--w1c-desktop-background: #5b2b18;

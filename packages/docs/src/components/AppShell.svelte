@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
 	import type { Snippet } from 'svelte';
 	import type { DocGroup, DocLink } from '../lib/docs';
+	import { DEFAULT_DOCS_THEME, DOCS_THEMES } from '../lib/themes';
 	import DocsSidebar from './DocsSidebar.svelte';
 	import SiteHeader from './SiteHeader.svelte';
 
@@ -11,6 +14,7 @@
 	}: { children: Snippet; primaryDocGroups: DocGroup[]; topNavLinks: DocLink[] } = $props();
 
 	let sidebarOpen = $state(false);
+	let selectedTheme = $state(DEFAULT_DOCS_THEME);
 
 	function closeSidebar() {
 		sidebarOpen = false;
@@ -19,11 +23,29 @@
 	function toggleSidebar() {
 		sidebarOpen = !sidebarOpen;
 	}
+
+	function setTheme(theme: string) {
+		selectedTheme = DOCS_THEMES.some((option) => option.id === theme) ? theme : DEFAULT_DOCS_THEME;
+
+		if (browser) {
+			localStorage.setItem('w1c-docs-theme', selectedTheme);
+		}
+	}
+
+	onMount(() => {
+		setTheme(localStorage.getItem('w1c-docs-theme') ?? DEFAULT_DOCS_THEME);
+	});
 </script>
 
-<div class="site-shell">
+<div class="site-shell" data-docs-theme={selectedTheme}>
 	<a class="skip-link" href="#content">Skip to content</a>
-	<SiteHeader links={topNavLinks} {sidebarOpen} onToggleSidebar={toggleSidebar} />
+	<SiteHeader
+		links={topNavLinks}
+		themeOptions={DOCS_THEMES}
+		{selectedTheme}
+		{sidebarOpen}
+		onToggleSidebar={toggleSidebar}
+		onThemeChange={setTheme} />
 
 	<div class="page-grid">
 		{#if sidebarOpen}
@@ -44,6 +66,8 @@
 		grid-template-rows: auto minmax(0, 1fr);
 		overflow: hidden;
 		overscroll-behavior: none;
+		font-family: var(--font-sans);
+		font-size: var(--font-size-body);
 	}
 
 	.skip-link {

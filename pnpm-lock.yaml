@@ -63,18 +63,12 @@ importers:
 
   packages/docs:
     dependencies:
-      '@fontsource-variable/ibm-plex-sans':
-        specifier: ^5.2.8
-        version: 5.2.8
-      '@fontsource/ibm-plex-mono':
-        specifier: ^5.2.7
-        version: 5.2.7
-      '@fontsource/ibm-plex-serif':
-        specifier: ^5.2.7
-        version: 5.2.7
       '@w1c/components':
         specifier: workspace:*
         version: link:../lib
+      '@w1c/fonts':
+        specifier: workspace:*
+        version: link:../fonts
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -143,8 +137,42 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1(svelte@5.56.3(@typescript-eslint/types@8.61.0))(vitest@4.1.8)
 
+  packages/fonts:
+    dependencies:
+      '@fontsource-variable/ibm-plex-sans':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/anonymous-pro':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/comic-neue':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@fontsource/comic-relief':
+        specifier: ^5.2.2
+        version: 5.2.2
+      '@fontsource/ibm-plex-mono':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@fontsource/ibm-plex-serif':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@fontsource/ubuntu':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/ubuntu-mono':
+        specifier: ^5.2.8
+        version: 5.2.8
+    devDependencies:
+      prettier:
+        specifier: ^3.8.3
+        version: 3.8.4
+
   packages/lib:
     dependencies:
+      '@w1c/fonts':
+        specifier: workspace:*
+        version: link:../fonts
       lit:
         specifier: ^3.3.2
         version: 3.3.3
@@ -617,11 +645,26 @@ packages:
   '@fontsource-variable/ibm-plex-sans@5.2.8':
     resolution: {integrity: sha512-n5PF2iFa0CZT0QYTPzxvZ39opC9LnU0zdoRccoADbs+Dtsd+lbXOZF7RNuIPHcQX1dKjF63sxnRImQIB5eD0Ag==}
 
+  '@fontsource/anonymous-pro@5.2.8':
+    resolution: {integrity: sha512-nCK3XLqSyTjWw94vtgaI5n8j+jsxz7Eds5S38il0DSZ+lBqs/O08m41iXqmm+i/pXqQb/KBxA6hck3hbozZQiA==}
+
+  '@fontsource/comic-neue@5.2.7':
+    resolution: {integrity: sha512-tNi0Nxbz0QMwHvZWJSP5G0SXq8CeX5b+K3l3q/afPmJ/WlQ+i3/NfOYWBzsojCZko1lNplfmjbsOGMuBs4WmcA==}
+
+  '@fontsource/comic-relief@5.2.2':
+    resolution: {integrity: sha512-cTE1AQh4FI/IcfAc/8SB9ZIWuW6B0M9B33V58Qoz4X6TBnpO+gyv+JKeNQJm39Xna3JT2fJvAOttnDFV7IIu/w==}
+
   '@fontsource/ibm-plex-mono@5.2.7':
     resolution: {integrity: sha512-MKAb8qV+CaiMQn2B0dIi1OV3565NYzp3WN5b4oT6LTkk+F0jR6j0ZN+5BKJiIhffDC3rtBULsYZE65+0018z9w==}
 
   '@fontsource/ibm-plex-serif@5.2.7':
     resolution: {integrity: sha512-04owmc2OQQ/DAMjXjEMJc+7V4dBVmR01aIFOg4cuqS8pQ4HbvtlYs/u6+O0vCt21EMx5M/azIbgx43iKyisEOA==}
+
+  '@fontsource/ubuntu-mono@5.2.8':
+    resolution: {integrity: sha512-N4nT8+GYWWcDODVSBLU4f3PycZQH9YIF6SypDI0rti3HrLqcXFS9u6wMvAd9vx1FmjAQkYv7Ld9CZ8XYTEOD0A==}
+
+  '@fontsource/ubuntu@5.2.8':
+    resolution: {integrity: sha512-esSJCpgigwWOm4Ug9f7AMozUyBq5Iobea5C9QYsl2OlCb62wZABBUbXahHLdFv5Ru4lJCD9tUX6xEAeLwUTNBg==}
 
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
@@ -2943,9 +2986,19 @@ snapshots:
 
   '@fontsource-variable/ibm-plex-sans@5.2.8': {}
 
+  '@fontsource/anonymous-pro@5.2.8': {}
+
+  '@fontsource/comic-neue@5.2.7': {}
+
+  '@fontsource/comic-relief@5.2.2': {}
+
   '@fontsource/ibm-plex-mono@5.2.7': {}
 
   '@fontsource/ibm-plex-serif@5.2.7': {}
+
+  '@fontsource/ubuntu-mono@5.2.8': {}
+
+  '@fontsource/ubuntu@5.2.8': {}
 
   '@humanfs/core@0.19.2':
     dependencies:
