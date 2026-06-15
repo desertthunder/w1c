@@ -6,7 +6,11 @@
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./my-element": "./src/my-element.ts"
+    "./components/button.js": "./src/components/button.ts",
+    "./components/statusbar.js": "./src/components/statusbar.ts",
+    "./components/titlebar.js": "./src/components/titlebar.ts",
+    "./components/toolbar.js": "./src/components/toolbar.ts",
+    "./components/window.js": "./src/components/window.ts"
   },
   "scripts": {
     "dev": "vite",

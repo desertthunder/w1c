@@ -60,7 +60,7 @@ cli
     )
     await writeFile(
       `${targetDir}/index.html`,
-      '<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>W1C App</title><script type="module" src="/src/main.ts"></script></head><body><my-element><h1>W1C</h1></my-element></body></html>\n'
+      '<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>W1C App</title><script type="module" src="/src/main.ts"></script></head><body><w1c-window title="W1C App"><h1>W1C</h1><p>Retro web components are ready.</p><w1c-statusbar slot="statusbar">@w1c/components</w1c-statusbar></w1c-window></body></html>\n'
     )
     await writeFile(`${targetDir}/src/main.ts`, "import '@w1c/components'\n")
 

@@ -6,8 +6,8 @@ new layers.
 
 ## Library Package
 
-- [ ] Replace `my-element` with real W1C custom elements using the `w1c-` prefix.
-- [ ] Define public entrypoints for all-components registration and cherry-picked component
+- [x] Replace `my-element` with real W1C custom elements using the `w1c-` prefix.
+- [x] Define public entrypoints for all-components registration and cherry-picked component
       imports.
 - [ ] Add `themes/` CSS files for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, Web 1.0,
       and Geocities.

@@ -21,9 +21,25 @@
 	</section>
 
 	<section class="preview" aria-label="Component preview">
-		<my-element>
-			<h2>Library Preview</h2>
-		</my-element>
+		<w1c-window title="Library Preview">
+			<span slot="icon" aria-hidden="true">W</span>
+			<div slot="controls" class="window-controls">
+				<w1c-button aria-label="Minimize">_</w1c-button>
+				<w1c-button aria-label="Maximize">□</w1c-button>
+				<w1c-button aria-label="Close">x</w1c-button>
+			</div>
+			<w1c-toolbar slot="toolbar">
+				<w1c-button>Install</w1c-button>
+				<w1c-button>Components</w1c-button>
+				<w1c-button>Themes</w1c-button>
+			</w1c-toolbar>
+			<h2>Real custom elements</h2>
+			<p>
+				The package now registers W1C-prefixed components and exposes direct
+				imports for each component.
+			</p>
+			<w1c-statusbar slot="statusbar">@w1c/components</w1c-statusbar>
+		</w1c-window>
 	</section>
 </main>
 
@@ -35,6 +51,18 @@
 		font-family:
 			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
 			"Segoe UI", sans-serif;
+	}
+
+	:global(:root) {
+		--w1c-surface: #c0c0c0;
+		--w1c-control-background: #c0c0c0;
+		--w1c-control-text: #111111;
+		--w1c-control-highlight: #ffffff;
+		--w1c-control-shadow: #808080;
+		--w1c-control-dark-shadow: #404040;
+		--w1c-active-titlebar: #000080;
+		--w1c-active-titlebar-text: #ffffff;
+		--w1c-window-content-background: #ffffff;
 	}
 
 	main {
@@ -75,5 +103,20 @@
 
 	.preview {
 		background: #ffffff;
+		padding: clamp(24px, 6vw, 72px);
+	}
+
+	.preview w1c-window {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+
+	.window-controls {
+		display: inline-flex;
+		gap: 2px;
+	}
+
+	.window-controls w1c-button {
+		--w1c-button-padding: 1px 6px;
 	}
 </style>
