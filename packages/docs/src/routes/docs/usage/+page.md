@@ -20,7 +20,9 @@ import '@w1c/components';
 Direct imports register one component and its local dependencies:
 
 ```ts
-import '@w1c/components/components/window.js';
+import '@w1c/components/window';
+// or
+import '@w1c/components/window/index.js';
 ```
 
 ## Compose with slots
@@ -42,6 +44,8 @@ import '@w1c/components/components/window.js';
 ```
 
 ## Style with tokens and parts
+
+Theme files set W1C tokens for color, type, spacing, border, radius, shadow, z-index, and motion. The first themes are hand-authored against the retro references, with practical color scales informed by Reasonable Colors and Uchu.
 
 ```css
 :root {

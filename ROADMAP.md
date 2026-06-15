@@ -225,13 +225,14 @@ Keep this as the source path for the only runtime component package. Publish it 
 Target entrypoints:
 
 - `@w1c/components`: register all stable components.
-- `@w1c/components/components/window.js`
-- `@w1c/components/components/button.js`
-- `@w1c/components/components/icon.js`
+- `@w1c/components/window` and `@w1c/components/window/index.js`
+- `@w1c/components/button` and `@w1c/components/button/index.js`
+- `@w1c/components/icon` and `@w1c/components/icon/index.js`
 - `@w1c/components/themes/gnome2.css`
 - `@w1c/components/themes/ubuntu-810.css`
 - `@w1c/components/themes/windows-95.css`
 - `@w1c/components/themes/classic-mac.css`
+- `@w1c/components/themes/web-1.css`
 - `@w1c/components/themes/geocities.css`
 - `@w1c/components/styles/native.css`
 - `@w1c/components/styles/utilities.css`

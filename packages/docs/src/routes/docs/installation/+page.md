@@ -24,8 +24,8 @@ import '@w1c/components';
 Cherry-pick one component when a page only needs a narrow surface:
 
 ```ts
-import '@w1c/components/components/window.js';
-import '@w1c/components/components/button.js';
+import '@w1c/components/window';
+import '@w1c/components/button';
 ```
 
 ## Static HTML
@@ -63,9 +63,16 @@ Import W1C in a browser entry, route layout, or page component:
 import '@w1c/components';
 ```
 
-When theme CSS files land, import one theme beside the component registration:
+Import one theme beside the component registration:
 
 ```ts
 import '@w1c/components';
 import '@w1c/components/themes/windows-95.css';
+```
+
+Optional native element styles and utilities are separate imports:
+
+```ts
+import '@w1c/components/styles/native.css';
+import '@w1c/components/styles/utilities.css';
 ```

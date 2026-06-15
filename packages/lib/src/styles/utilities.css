@@ -1,0 +1,35 @@
+@import "./tokens.css";
+
+@layer w1c.utilities {
+  .w1c-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .w1c-stack {
+    display: grid;
+    gap: var(--w1c-space-3);
+  }
+
+  .w1c-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--w1c-space-2);
+  }
+
+  .w1c-frame {
+    border: var(--w1c-border-width-1) solid var(--w1c-control-dark-shadow);
+    border-block-start-color: var(--w1c-control-highlight);
+    border-inline-start-color: var(--w1c-control-highlight);
+    background: var(--w1c-surface);
+    box-shadow: var(--w1c-shadow-raised);
+  }
+}

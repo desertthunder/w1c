@@ -1,0 +1,23 @@
+@import "../styles/tokens.css";
+
+@layer w1c.theme {
+  :root {
+    --w1c-theme-name: "GNOME 2";
+    --w1c-font-ui: "Bitstream Vera Sans", "DejaVu Sans", Arial, sans-serif;
+    --w1c-surface: #d8d2c3;
+    --w1c-surface-raised: #eee9dd;
+    --w1c-window-content-background: #ffffff;
+    --w1c-control-background: #d8d2c3;
+    --w1c-control-text: #1f1f1f;
+    --w1c-control-highlight: #ffffff;
+    --w1c-control-shadow: #8f8878;
+    --w1c-control-dark-shadow: #5d584e;
+    --w1c-active-titlebar: #355c9a;
+    --w1c-active-titlebar-text: #ffffff;
+    --w1c-inactive-titlebar: #8c928c;
+    --w1c-inactive-titlebar-text: #f5f5f5;
+    --w1c-focus-ring: #204a87;
+    --w1c-radius-1: 2px;
+    --w1c-radius-2: 5px;
+  }
+}

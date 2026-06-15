@@ -65,6 +65,30 @@ Run the CLI in development:
 pnpm --filter @w1c/cli dev -- --help
 ```
 
+## Package Usage
+
+Register every stable component:
+
+```ts
+import '@w1c/components'
+```
+
+Register one component:
+
+```ts
+import '@w1c/components/window'
+// or
+import '@w1c/components/window/index.js'
+```
+
+Theme CSS and optional page styles are separate imports:
+
+```ts
+import '@w1c/components/themes/windows-95.css'
+import '@w1c/components/styles/native.css'
+import '@w1c/components/styles/utilities.css'
+```
+
 ## Checks
 
 Type-check all packages:

@@ -22,5 +22,10 @@ export const DOC_MANIFEST: DocLink[] = [
 		title: 'Usage',
 		href: '/docs/usage/',
 		description: 'Register components, cherry-pick imports, and apply theme CSS.'
+	},
+	{
+		title: 'Inspiration',
+		href: '/docs/inspiration/',
+		description: 'Credit the sources behind W1C themes, icons, and early-web patterns.'
 	}
 ];

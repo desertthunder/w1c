@@ -150,6 +150,36 @@ Useful patterns for W1C:
 - Verify license and redistribution requirements before copying or bundling any source
   assets.
 
+## Classic Mac References
+
+W1C's classic Mac theme should use original Macintosh patterns where they are practical,
+then adapt them to accessible web components. These references are inspiration and
+comparison points; W1C should not copy source code or bundled assets unless licensing and
+attribution are checked for the specific file.
+
+References:
+
+- [System.css documentation](https://sakofchit.github.io/system.css/)
+- [System.css repository](https://github.com/sakofchit/system.css/)
+- [Recreating Classic Macintosh System 7 in CSS](https://bbenchoff.github.io/pages/system7.html)
+
+Useful patterns for W1C:
+
+- Use System.css as a reference for System 1-6 monochrome controls: buttons, radio
+  buttons, checkboxes, menu bars, selects, text boxes, windows, title bars, dialogs, and
+  alert boxes.
+- Treat System.css's no-JavaScript, framework-neutral approach as a good fit for W1C's
+  CSS and web component boundaries.
+- Use the System.css repository as a licensing and attribution checkpoint. It is MIT
+  licensed, but copied fonts, icons, or assets still need file-level review.
+- Use Benchoff's System 7 writeup as a reference for color-era Mac details: active and
+  inactive windows, desktop state, focus and z-index behavior, striped scrollbars, and
+  32x32 icon handling.
+- Keep the W1C classic Mac theme portable. It should define tokens and component styling,
+  not become a desktop simulator with persistence or app state.
+- Prefer semantic controls and accessible slots over pixel-perfect markup when the two
+  conflict.
+
 ## Color System References
 
 W1C color tokens should be practical CSS variables informed by existing color systems,

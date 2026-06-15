@@ -1,0 +1,23 @@
+@import "../styles/tokens.css";
+
+@layer w1c.theme {
+  :root {
+    --w1c-theme-name: "Geocities";
+    --w1c-font-ui: Arial, Helvetica, sans-serif;
+    --w1c-surface: #ffffcc;
+    --w1c-surface-raised: #ffffff;
+    --w1c-window-content-background: #ffffff;
+    --w1c-control-background: #ffeb66;
+    --w1c-control-text: #000000;
+    --w1c-control-highlight: #ffffff;
+    --w1c-control-shadow: #cc6600;
+    --w1c-control-dark-shadow: #660066;
+    --w1c-active-titlebar: #660099;
+    --w1c-active-titlebar-text: #ffffff;
+    --w1c-inactive-titlebar: #ff66cc;
+    --w1c-inactive-titlebar-text: #000000;
+    --w1c-focus-ring: #0000ee;
+    --w1c-radius-1: 0;
+    --w1c-radius-2: 0;
+  }
+}

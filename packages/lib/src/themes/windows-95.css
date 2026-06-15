@@ -1,0 +1,24 @@
+@import "../styles/tokens.css";
+
+@layer w1c.theme {
+  :root {
+    --w1c-theme-name: "Windows 95";
+    --w1c-font-ui: "MS Sans Serif", Tahoma, Geneva, sans-serif;
+    --w1c-surface: #c0c0c0;
+    --w1c-surface-raised: #dfdfdf;
+    --w1c-window-content-background: #ffffff;
+    --w1c-control-background: #c0c0c0;
+    --w1c-control-text: #000000;
+    --w1c-control-highlight: #ffffff;
+    --w1c-control-shadow: #808080;
+    --w1c-control-dark-shadow: #404040;
+    --w1c-active-titlebar: #000080;
+    --w1c-active-titlebar-text: #ffffff;
+    --w1c-inactive-titlebar: #808080;
+    --w1c-inactive-titlebar-text: #c0c0c0;
+    --w1c-disabled-text: #808080;
+    --w1c-focus-ring: #000000;
+    --w1c-radius-1: 0;
+    --w1c-radius-2: 0;
+  }
+}

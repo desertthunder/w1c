@@ -9,12 +9,12 @@ new layers.
 - [x] Replace `my-element` with real W1C custom elements using the `w1c-` prefix.
 - [x] Define public entrypoints for all-components registration and cherry-picked component
       imports.
-- [ ] Add `themes/` CSS files for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, Web 1.0,
+- [x] Add `themes/` CSS files for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, Web 1.0,
       and Geocities.
-- [ ] Define token layers for color, typography, spacing, border, radius, shadow, z-index,
+- [x] Define token layers for color, typography, spacing, border, radius, shadow, z-index,
       and motion.
-- [ ] Use Reasonable Colors and Uchu as references for practical theme color scales.
-- [ ] Add `styles/native.css` and `styles/utilities.css` as optional imports separate from
+- [x] Use Reasonable Colors and Uchu as references for practical theme color scales.
+- [x] Add `styles/native.css` and `styles/utilities.css` as optional imports separate from
       required component/theme styles.
 - [ ] Add one W1C icon set. Do not expose separate icon styles or family-specific public
       packages.

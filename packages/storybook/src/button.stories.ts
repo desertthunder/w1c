@@ -1,6 +1,6 @@
 import { html } from 'lit'
 import type { Meta, StoryObj } from '@storybook/web-components-vite'
-import '@w1c/components/components/button.js'
+import '@w1c/components/button'
 
 const meta = {
   title: 'Components/Button',

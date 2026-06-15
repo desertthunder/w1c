@@ -49,4 +49,17 @@
 		font-family: var(--font-mono);
 		font-weight: 600;
 	}
+
+	.doc-page :global(.resource-list ul) {
+		display: grid;
+		gap: var(--space-3);
+		padding-inline-start: 1.25rem;
+	}
+
+	.doc-page :global(.resource-list li) {
+		padding: var(--space-3);
+		background: #ffffff;
+		border: 2px solid var(--color-rule);
+		box-shadow: 3px 3px 0 var(--color-shadow);
+	}
 </style>
