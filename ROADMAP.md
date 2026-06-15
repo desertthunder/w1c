@@ -12,9 +12,11 @@ W1C should stand on its own and stay small.
 
 ## Design System Contract
 
-W1C ships five public surfaces:
+W1C ships six public surfaces:
 
 - `@w1c/components`: Lit web components with stable custom element names.
+- `@w1c/dnd`: framework-neutral drag, resize, and geometry primitives for retro windows
+  and desktop surfaces.
 - `@w1c/components/themes/*`: CSS theme files and design tokens.
 - `@w1c/components/icons/*`: the W1C icon set, icon data, assets, and source metadata.
 - `@w1c/components/styles/*`: optional native element styles and CSS utilities.
@@ -32,6 +34,8 @@ The public API should follow the useful patterns from Web Awesome, Nord, Crayons
 - Docs include installation, usage, theming, accessibility notes, component examples,
   and migration notes.
 - Storybook is the component workshop and visual regression surface.
+- Drag and resize behavior lives in `@w1c/dnd`; components consume it instead of
+  reimplementing pointer math.
 
 Reference notes:
 
@@ -119,6 +123,8 @@ Useful primitives:
 - Desktop icon.
 - Application window with titlebar, icon, controls, menubar slot, toolbar slot, content
   slot, resize affordance, and native/GTK variant.
+- Pointer-captured titlebar dragging and bottom-right resize behavior from
+  `src/lib/components/AppWindow.svelte`.
 - Menu bar, menu item, separator, submenu, and disabled item.
 - Toolbar and address/location field.
 - Dialog and setup dialog.
@@ -180,6 +186,36 @@ Design checks:
 - Static markup examples work without inline scripts or app-specific data.
 
 ## Package Architecture
+
+### `packages/dnd`
+
+Keep this as the dependency-free interaction package. Publish it as `@w1c/dnd`.
+
+Target entrypoints:
+
+- `@w1c/dnd`: drag, resize, geometry, pointer-session, and constraint helpers.
+
+Initial behavior to port from Intrepid Ibex:
+
+- Start drag only on primary-button pointer input.
+- Track one active pointer session by `pointerId`.
+- Use pointer capture on the handle element and release it on pointer up or cancel.
+- Compute drag position from start pointer coordinates plus origin geometry.
+- Compute resize dimensions from start pointer coordinates plus origin size.
+- Support minimum and maximum size constraints.
+- Expose active drag/resize state so components can set `user-select: none`, cursors, and
+  visual state classes.
+- Keep persistence, z-index, maximized state, and app-specific focus callbacks outside
+  `@w1c/dnd`.
+
+Implementation rules:
+
+- Use plain TypeScript and DOM pointer-event types only.
+- Do not depend on Lit, Svelte, React, or browser storage.
+- Keep the core math pure and unit-testable.
+- Add optional DOM helpers only where they remove repeated pointer-capture boilerplate.
+- Let `w1c-window`, docs, and Storybook own their markup, styles, ARIA labels, and CSS
+  parts.
 
 ### `packages/lib`
 
@@ -274,7 +310,9 @@ Initial templates:
 Status: mostly done.
 
 - Establish the pnpm workspace with `packages/docs`, `packages/storybook`,
-  `packages/lib`, and `packages/cli`.
+  `packages/lib`, `packages/dnd`, and `packages/cli`.
+- Keep `packages/dnd` as the dependency-free drag/resize primitive package. Publish it as
+  `@w1c/dnd`.
 - Keep `packages/lib` as the Lit/Vite component package source. Publish it as
   `@w1c/components`.
 - Keep `packages/docs` as the public documentation app. Keep it private and use
@@ -316,6 +354,12 @@ Deliverable:
 ## Phase 2: First Components
 
 Goal: ship the smallest useful component set for standalone retro UIs.
+
+Interaction dependency:
+
+- Use `@w1c/dnd` for `w1c-window` dragging and resizing.
+- Preserve the Intrepid Ibex pointer-capture behavior while keeping persistence, focus,
+  maximized state, and z-index outside the primitive package.
 
 Priority 1:
 

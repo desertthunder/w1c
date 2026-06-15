@@ -8,6 +8,7 @@
     "dev:docs": "pnpm --filter @w1c/docs dev",
     "dev:storybook": "pnpm --filter @w1c/storybook dev",
     "dev:lib": "pnpm --filter @w1c/components dev",
+    "dev:dnd": "pnpm --filter @w1c/dnd check",
     "build": "pnpm -r build",
     "check": "pnpm -r check",
     "test": "pnpm -r test",

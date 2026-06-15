@@ -10,6 +10,7 @@ Storybook workshop, and a small scaffolding CLI.
 ```text
 packages/
   cli/          @w1c/cli scaffolding/bootstrap CLI
+  dnd/          @w1c/dnd drag, resize, and geometry primitives
   docs/         @w1c/docs public SvelteKit documentation app
   lib/          @w1c/components Lit + Vite web component library
   storybook/    @w1c/storybook Web Components Storybook app
@@ -116,6 +117,13 @@ pnpm --filter @w1c/components check
 pnpm --filter @w1c/components build
 ```
 
+DnD:
+
+```sh
+pnpm --filter @w1c/dnd check
+pnpm --filter @w1c/dnd build
+```
+
 CLI:
 
 ```sh
@@ -127,7 +135,8 @@ node packages/cli/dist/index.mjs --help
 ## Further Reading
 
 - [ROADMAP.md](./ROADMAP.md): project contract and implementation phases.
-- [RESEARCH.md](./RESEARCH.md): research notes on reference studies, web component libraries, and Web 1.0 / Geocities aesthetics.
+- [RESEARCH.md](./RESEARCH.md): research notes on reference studies, web component
+  libraries, and Web 1.0 / Geocities aesthetics.
 - [ibex](https://tangled.org/desertthunder.dev/ibex)
 - [tempest](https://tangled.org/desertthunder.dev/tempest)
 
@@ -137,6 +146,23 @@ node packages/cli/dist/index.mjs --help
 - [Web Awesome](https://webawesome.com/)
 - [Nord Design System Web Components](https://nordhealth.design/components/)
 - [Freshworks Crayons](https://crayons.freshworks.com/)
+
+### Web 1.0
+
+- [GeoCities](https://en.wikipedia.org/wiki/GeoCities)
+- [Web 1.0](https://en.wikipedia.org/wiki/Web_2.0#Web_1.0)
+- [History of web design](https://en.wikipedia.org/wiki/Web_design)
+- [Tableless web design](https://en.wikipedia.org/wiki/Tableless_web_design)
+- [Ghost Pages: A Wired.com Farewell to GeoCities](https://www.wired.com/2009/11/geocities)
+- [The indie web is here...](https://www.theverge.com/column/829831/indie-web-geocities-neocities)
+
+### Colors
+
+- [Reasonable Colors](https://github.com/matthewhowell/reasonable-colors)
+- [Uchu color system](https://code.webb.page/nevercease/uchu.git/about/)
+
+### Icons
+
 - [OpenMoji icon set](https://icon-sets.iconify.design/openmoji/)
 - [Twemoji icon set](https://icon-sets.iconify.design/twemoji/)
 - [FxEmoji icon set](https://icon-sets.iconify.design/fxemoji/)
@@ -144,11 +170,3 @@ node packages/cli/dist/index.mjs --help
 - [Ubuntu Humanity icon theme](https://github.com/mk-pmb/ubuntu-icon-theme-humanity)
 - [Iconify icon data](https://iconify.design/docs/icons/icon-data.html)
 - [icondata](https://github.com/carloskiki/icondata)
-- [Reasonable Colors](https://github.com/matthewhowell/reasonable-colors)
-- [Uchu color system](https://code.webb.page/nevercease/uchu.git/about/)
-- [GeoCities](https://en.wikipedia.org/wiki/GeoCities)
-- [Web 1.0](https://en.wikipedia.org/wiki/Web_2.0#Web_1.0)
-- [History of web design](https://en.wikipedia.org/wiki/Web_design)
-- [Tableless web design](https://en.wikipedia.org/wiki/Tableless_web_design)
-- [Ghost Pages: A Wired.com Farewell to GeoCities](https://www.wired.com/2009/11/geocities)
-- [The indie web is here to make the internet weird again](https://www.theverge.com/column/829831/indie-web-geocities-neocities)
