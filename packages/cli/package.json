@@ -2,6 +2,7 @@
   "name": "@w1c/cli",
   "private": true,
   "version": "0.0.0",
+  "license": "MIT",
   "type": "module",
   "bin": {
     "w1c": "./dist/index.mjs"
