@@ -28,19 +28,26 @@ export class W1cWindow extends LitElement {
 		return html`
 			<section part="chrome" class="chrome" role="group" aria-label=${this.title}>
 				<slot name="titlebar">
-					<w1c-titlebar part="titlebar" .title=${this.title}>
+					<w1c-titlebar
+						part="titlebar"
+						exportparts="chrome: titlebar-chrome, titlebar, icon, title, controls"
+						.title=${this.title}>
 						<slot name="icon" slot="icon"></slot>
 						<slot name="controls" slot="controls"></slot>
 					</w1c-titlebar>
 				</slot>
 				<slot name="toolbar">
-					<w1c-toolbar part="toolbar"></w1c-toolbar>
+					<w1c-toolbar
+						part="toolbar"
+						exportparts="chrome: toolbar-chrome, toolbar, controls: toolbar-controls"></w1c-toolbar>
 				</slot>
 				<div part="content" class="content">
 					<slot></slot>
 				</div>
 				<slot name="statusbar">
-					<w1c-statusbar part="statusbar">Ready</w1c-statusbar>
+					<w1c-statusbar part="statusbar" exportparts="chrome: statusbar-chrome, statusbar, content: statusbar-content">
+						Ready
+					</w1c-statusbar>
 				</slot>
 			</section>
 		`;

@@ -16,6 +16,6 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<AppShell primaryDocs={data.primaryDocs} topNavLinks={data.topNavLinks}>
+<AppShell primaryDocGroups={data.primaryDocGroups} topNavLinks={data.topNavLinks}>
 	{@render children()}
 </AppShell>

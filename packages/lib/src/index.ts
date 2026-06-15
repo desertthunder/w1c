@@ -1,3 +1,5 @@
+export type { W1cAssetBasePaths, W1cAssetKind } from './assets';
+export { getW1cAssetBasePath, resolveW1cAssetUrl, setW1cAssetBasePath, setW1cAssetBasePaths } from './assets';
 export { W1cButton } from './components/button';
 export { W1cIcon } from './components/icon';
 export { W1cStatusbar } from './components/statusbar';

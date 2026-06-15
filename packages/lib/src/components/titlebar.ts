@@ -7,7 +7,8 @@ import { customElement, property } from 'lit/decorators.js';
  * @slot - Title text.
  * @slot icon - Optional leading icon.
  * @slot controls - Optional window control buttons.
- * @csspart titlebar - The titlebar container.
+ * @csspart chrome - The titlebar chrome surface.
+ * @csspart titlebar - Alias for the titlebar chrome surface.
  * @csspart icon - The icon slot wrapper.
  * @csspart title - The title text wrapper.
  * @csspart controls - The controls slot wrapper.
@@ -19,7 +20,7 @@ export class W1cTitlebar extends LitElement {
 
 	render() {
 		return html`
-			<header part="titlebar">
+			<header part="chrome titlebar">
 				<span part="icon" class="icon"><slot name="icon"></slot></span>
 				<span part="title" class="title"><slot>${this.title}</slot></span>
 				<span part="controls" class="controls"><slot name="controls"></slot></span>

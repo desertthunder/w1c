@@ -5,12 +5,14 @@ import { customElement } from 'lit/decorators.js';
  * Compact toolbar surface for buttons, fields, and menus.
  *
  * @slot - Toolbar controls.
- * @csspart toolbar - The toolbar container.
+ * @csspart chrome - The toolbar chrome surface.
+ * @csspart toolbar - Alias for the toolbar chrome surface.
+ * @csspart controls - The toolbar controls container.
  */
 @customElement('w1c-toolbar')
 export class W1cToolbar extends LitElement {
 	render() {
-		return html`<div part="toolbar"><slot></slot></div>`;
+		return html`<div part="chrome toolbar controls"><slot></slot></div>`;
 	}
 
 	static styles = css`

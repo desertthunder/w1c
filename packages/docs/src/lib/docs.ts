@@ -1,4 +1,5 @@
 export type DocLink = { title: string; href: string; description: string; external?: boolean };
+export type DocGroup = { title: string; links: DocLink[] };
 
 export const NAV_LINKS: DocLink[] = [
 	{
@@ -23,9 +24,30 @@ export const DOC_MANIFEST: DocLink[] = [
 		href: '/docs/usage/',
 		description: 'Register components, cherry-pick imports, and apply theme CSS.'
 	},
+	{ title: 'Icons', href: '/docs/icons/', description: 'Use W1C icon data, metadata, asset paths, and icon parts.' },
 	{
 		title: 'Inspiration',
 		href: '/docs/inspiration/',
 		description: 'Credit the sources behind W1C themes, icons, and early-web patterns.'
 	}
+];
+
+const docsByHref = new Map(DOC_MANIFEST.map((doc) => [doc.href, doc]));
+
+function docs(...hrefs: string[]) {
+	return hrefs.map((href) => {
+		const doc = docsByHref.get(href);
+
+		if (!doc) throw new Error(`Missing doc manifest entry for ${href}`);
+
+		return doc;
+	});
+}
+
+export const FEATURED_DOCS: DocLink[] = docs('/docs/getting-started/', '/docs/icons/');
+
+export const DOC_GROUPS: DocGroup[] = [
+	{ title: 'Overview', links: docs('/docs/getting-started/') },
+	{ title: 'Manual', links: docs('/docs/installation/', '/docs/usage/', '/docs/icons/') },
+	{ title: 'Meta', links: docs('/docs/inspiration/') }
 ];

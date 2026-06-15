@@ -1,19 +1,25 @@
 <script lang="ts">
-	import type { DocLink } from '../lib/docs';
+	import type { DocGroup } from '../lib/docs';
 	import SearchBox from './SearchBox.svelte';
 
-	let { links, open, onNavigate }: { links: DocLink[]; open: boolean; onNavigate: () => void } = $props();
+	let { groups, open, onNavigate }: { groups: DocGroup[]; open: boolean; onNavigate: () => void } = $props();
 </script>
 
 <aside id="docs-sidebar" class:open class="sidebar" aria-label="Docs navigation">
 	<SearchBox />
-	<nav>
-		<p>Manual</p>
-		{#each links as item (`${item.href}:${item.title}`)}
-			<a href={item.href} onclick={onNavigate}>
-				<span>{item.title}</span>
-				<small>{item.description}</small>
-			</a>
+	<nav aria-label="Docs sections">
+		{#each groups as group (group.title)}
+			<section class="nav-group" aria-labelledby={`docs-group-${group.title.toLowerCase()}`}>
+				<p id={`docs-group-${group.title.toLowerCase()}`}>{group.title}</p>
+				<div>
+					{#each group.links as item (`${item.href}:${item.title}`)}
+						<a href={item.href} onclick={onNavigate}>
+							<span>{item.title}</span>
+							<small>{item.description}</small>
+						</a>
+					{/each}
+				</div>
+			</section>
 		{/each}
 	</nav>
 </aside>
@@ -32,8 +38,13 @@
 
 	nav {
 		display: grid;
-		gap: var(--space-2);
+		gap: var(--space-5);
 		margin-top: var(--space-5);
+	}
+
+	.nav-group {
+		display: grid;
+		gap: var(--space-2);
 	}
 
 	nav p {
@@ -42,6 +53,11 @@
 		font-size: 0.8rem;
 		font-weight: 600;
 		text-transform: uppercase;
+	}
+
+	.nav-group div {
+		display: grid;
+		gap: var(--space-2);
 	}
 
 	nav a {

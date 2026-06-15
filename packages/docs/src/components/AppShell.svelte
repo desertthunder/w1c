@@ -1,11 +1,14 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import type { DocLink } from '../lib/docs';
+	import type { DocGroup, DocLink } from '../lib/docs';
 	import DocsSidebar from './DocsSidebar.svelte';
 	import SiteHeader from './SiteHeader.svelte';
 
-	let { children, primaryDocs, topNavLinks }: { children: Snippet; primaryDocs: DocLink[]; topNavLinks: DocLink[] } =
-		$props();
+	let {
+		children,
+		primaryDocGroups,
+		topNavLinks
+	}: { children: Snippet; primaryDocGroups: DocGroup[]; topNavLinks: DocLink[] } = $props();
 
 	let sidebarOpen = $state(false);
 
@@ -26,7 +29,7 @@
 		{#if sidebarOpen}
 			<button class="sidebar-scrim" type="button" aria-label="Close docs navigation" onclick={closeSidebar}></button>
 		{/if}
-		<DocsSidebar links={primaryDocs} open={sidebarOpen} onNavigate={closeSidebar} />
+		<DocsSidebar groups={primaryDocGroups} open={sidebarOpen} onNavigate={closeSidebar} />
 
 		<main id="content" data-pagefind-body>
 			{@render children()}

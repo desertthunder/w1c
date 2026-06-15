@@ -5,7 +5,8 @@ import { customElement, property } from 'lit/decorators.js';
  * Retro push button primitive.
  *
  * @slot - Button label and inline content.
- * @csspart button - The native button element.
+ * @csspart control - The native button control.
+ * @csspart button - Alias for the native button control.
  */
 @customElement('w1c-button')
 export class W1cButton extends LitElement {
@@ -17,7 +18,7 @@ export class W1cButton extends LitElement {
 
 	render() {
 		return html`
-			<button part="button" type="button" ?disabled=${this.disabled} data-variant=${this.variant}>
+			<button part="control button" type="button" ?disabled=${this.disabled} data-variant=${this.variant}>
 				<slot></slot>
 			</button>
 		`;

@@ -22,11 +22,8 @@ new layers.
       with Iconify-style icon data.
 - [x] Add icon metadata for name, category, source/reference project, source icon name,
       source URL, license, attribution text, and intended size.
-- [ ] Add and document an asset base-path story for icons, sprite sheets, and images.
-- [ ] Verify icon licensing and redistribution assumptions before copying reference assets.
-- [ ] Expose CSS parts for chrome, titlebars, toolbars, controls, content, and statusbars.
-- [ ] Prefer slots, attributes/properties, CSS custom properties, and CSS parts over
-      app-specific render APIs.
+- [x] Add and document an asset base-path story for icons, sprite sheets, and images.
+- [x] Expose CSS parts for chrome, titlebars, toolbars, controls, content, and statusbars.
 
 ## Component Backlog
 
@@ -120,3 +117,9 @@ new layers.
 - [ ] Add package export checks for every documented import path.
 - [ ] Add docs build and Storybook build checks.
 - [ ] Add CI once repository workflow is ready.
+
+## Parking Lot
+
+- [ ] Verify icon licensing and redistribution assumptions before copying reference assets.
+- [ ] Prefer slots, attributes/properties, CSS custom properties, and CSS parts over
+      app-specific render APIs.

@@ -5,12 +5,14 @@ import { customElement } from 'lit/decorators.js';
  * Statusbar for messages and simple pane metadata.
  *
  * @slot - Status text or panes.
- * @csspart statusbar - The statusbar container.
+ * @csspart chrome - The statusbar chrome surface.
+ * @csspart statusbar - Alias for the statusbar chrome surface.
+ * @csspart content - The statusbar content container.
  */
 @customElement('w1c-statusbar')
 export class W1cStatusbar extends LitElement {
 	render() {
-		return html`<footer part="statusbar"><slot></slot></footer>`;
+		return html`<footer part="chrome statusbar content"><slot></slot></footer>`;
 	}
 
 	static styles = css`

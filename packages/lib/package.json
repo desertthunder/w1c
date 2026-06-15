@@ -6,6 +6,8 @@
 	"type": "module",
 	"exports": {
 		".": "./src/index.ts",
+		"./assets": "./src/assets/index.ts",
+		"./assets/index.js": "./src/assets/index.ts",
 		"./button": "./src/button/index.ts",
 		"./button/index.js": "./src/button/index.ts",
 		"./icon": "./src/icon/index.ts",

@@ -15,7 +15,7 @@
 		your next project.
 	</p>
 	<nav class="doc-cards" aria-label="Start reading">
-		{#each data.primaryDocs as item (`${item.href}:${item.title}`)}
+		{#each data.featuredDocs as item (`${item.href}:${item.title}`)}
 			<a href={item.href}>
 				<span>{item.title}</span>
 				<small>{item.description}</small>
