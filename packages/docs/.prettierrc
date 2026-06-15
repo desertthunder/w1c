@@ -1,0 +1,18 @@
+{
+	"$schema": "https://json.schemastore.org/prettierrc.json",
+	"bracketSameLine": true,
+	"useTabs": true,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"printWidth": 120,
+	"objectWrap": "collapse",
+	"plugins": ["prettier-plugin-svelte"],
+	"overrides": [
+		{
+			"files": "*.svelte",
+			"options": {
+				"parser": "svelte"
+			}
+		}
+	]
+}

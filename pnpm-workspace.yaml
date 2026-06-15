@@ -1,0 +1,12 @@
+packages:
+  - packages/*
+allowBuilds:
+  esbuild: true
+minimumReleaseAgeExclude:
+  - '@storybook/addon-docs@10.4.5'
+  - '@storybook/builder-vite@10.4.5'
+  - '@storybook/csf-plugin@10.4.5'
+  - '@storybook/react-dom-shim@10.4.5'
+  - '@storybook/web-components-vite@10.4.5'
+  - '@storybook/web-components@10.4.5'
+  - storybook@10.4.5
