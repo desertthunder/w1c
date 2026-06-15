@@ -19,5 +19,47 @@
 		--w1c-focus-ring: #204a87;
 		--w1c-radius-1: 2px;
 		--w1c-radius-2: 5px;
+		--w1c-window-radius: 4px 4px 2px 2px;
+		--w1c-titlebar-background:
+			linear-gradient(rgb(255 255 255 / 0.12), transparent 44%), linear-gradient(#4f78b5, #264f8b);
+		--w1c-titlebar-text-shadow: 0 1px 0 rgb(0 0 0 / 0.55);
+		--w1c-toolbar-background: linear-gradient(#eee7d7, #cdc3ad);
+		--w1c-toolbar-border-block-start: 1px solid rgb(255 255 255 / 0.74);
+		--w1c-toolbar-border-block-end: 1px solid #928873;
+		--w1c-panel-frame: #d8d2c3;
+		--w1c-panel-background: #fffdf6;
+		--w1c-panel-chrome-background: linear-gradient(#eee8dc, #d8d2c3);
+		--w1c-panel-radius: 5px;
+		--w1c-panel-shadow: inset 0 1px 0 rgb(255 255 255 / 0.72), 0 1px 2px rgb(0 0 0 / 0.16);
+		--w1c-taskbar-height: 28px;
+		--w1c-taskbar-text: #fff5df;
+		--w1c-taskbar-background:
+			linear-gradient(rgb(255 255 255 / 0.11), transparent 42%), linear-gradient(90deg, #3b2418, #1f140d);
+		--w1c-taskbar-border-block-start: 1px solid rgb(255 255 255 / 0.18);
+		--w1c-taskbar-border-block-end: 1px solid rgb(0 0 0 / 0.65);
+		--w1c-taskbar-shadow: 0 1px 3px rgb(0 0 0 / 0.5);
+		--w1c-taskbar-tray-border: 1px solid rgb(255 255 255 / 0.13);
+		--w1c-taskbar-button-background: rgb(255 238 203 / 0.1);
+		--w1c-taskbar-button-active-background: linear-gradient(#f5e7cb, #b99d78);
+		--w1c-taskbar-button-text: #fff5df;
+		--w1c-taskbar-button-radius: 3px;
+		--w1c-menu-bar-background: linear-gradient(#eee7d7, #cdc3ad);
+		--w1c-menu-bar-border-block-start: 1px solid rgb(255 255 255 / 0.74);
+		--w1c-menu-bar-border-block-end: 1px solid #928873;
+		--w1c-menu-background: linear-gradient(#f6efe1, #d8c9ad);
+		--w1c-menu-border: 1px solid #5d584e;
+		--w1c-menu-shadow: 0 10px 22px rgb(0 0 0 / 0.32);
+		--w1c-menu-item-active-background: #204a87;
+		--w1c-menu-item-active-text: #ffffff;
+		--w1c-menu-bar-item-active-background: #204a87;
+		--w1c-address-field-background: #fffdf6;
+		--w1c-address-field-border: 1px solid #8f8878;
+		--w1c-address-field-highlight: #ffffff;
+		--w1c-tab-background: linear-gradient(#eee7d7, #d4c8b6);
+		--w1c-tab-active-background: #fffdf6;
+		--w1c-tabs-panel-background: #fffdf6;
+		--w1c-toast-background: #fff8d7;
+		--w1c-toast-radius: 5px;
+		--w1c-toast-shadow: 0 8px 20px rgb(0 0 0 / 0.24);
 	}
 }

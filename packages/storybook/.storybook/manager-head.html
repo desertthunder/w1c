@@ -5,6 +5,8 @@
 		--w1c-storybook-sidebar: #c8eeee;
 		--w1c-storybook-sidebar-strong: #99d8d8;
 		--w1c-storybook-ink: #111111;
+		--w1c-storybook-selected: #0000ee;
+		--w1c-storybook-selected-ink: #ffffff;
 		--w1c-storybook-rule: #111111;
 		--w1c-storybook-shadow: #8b7200;
 	}
@@ -45,9 +47,17 @@
 	}
 
 	#storybook-explorer-tree [data-selected='true'] {
-		background: #ffffff !important;
-		box-shadow: inset 4px 0 0 var(--w1c-storybook-rule);
-		color: var(--w1c-storybook-ink) !important;
+		background: var(--w1c-storybook-selected) !important;
+		box-shadow:
+			inset 4px 0 0 var(--w1c-storybook-rule),
+			inset 0 0 0 1px var(--w1c-storybook-rule);
+		color: var(--w1c-storybook-selected-ink) !important;
+	}
+
+	#storybook-explorer-tree [data-selected='true'] * {
+		color: var(--w1c-storybook-selected-ink) !important;
+		fill: var(--w1c-storybook-selected-ink) !important;
+		stroke: var(--w1c-storybook-selected-ink) !important;
 	}
 
 	#storybook-explorer-tree a,

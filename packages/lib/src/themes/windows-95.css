@@ -44,5 +44,32 @@
 		--w1c-button-radius: 0;
 		--w1c-button-shadow-raised: inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff;
 		--w1c-button-shadow-sunken: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080;
+		--w1c-panel-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff;
+		--w1c-panel-shadow-sunken: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080;
+		--w1c-panel-header-border: 1px solid #808080;
+		--w1c-panel-footer-border: 1px solid #ffffff;
+		--w1c-taskbar-height: 30px;
+		--w1c-taskbar-background: #c0c0c0;
+		--w1c-taskbar-border-block-start: 1px solid #ffffff;
+		--w1c-taskbar-border-block-end: 1px solid #404040;
+		--w1c-taskbar-shadow: inset 0 -1px 0 #808080;
+		--w1c-taskbar-tray-border: 1px solid #808080;
+		--w1c-menu-bar-background: #c0c0c0;
+		--w1c-menu-bar-border-block-start: 1px solid #ffffff;
+		--w1c-menu-bar-border-block-end: 1px solid #808080;
+		--w1c-menu-background: #c0c0c0;
+		--w1c-menu-border: 1px solid #404040;
+		--w1c-menu-shadow: 2px 2px 0 rgb(0 0 0 / 0.35);
+		--w1c-menu-item-active-background: #000080;
+		--w1c-menu-item-active-text: #ffffff;
+		--w1c-address-field-background: #ffffff;
+		--w1c-address-field-border: 1px solid #808080;
+		--w1c-tabs-gap: 0;
+		--w1c-tab-background: #c0c0c0;
+		--w1c-tab-active-background: #ffffff;
+		--w1c-tabs-panel-border: 1px solid #404040;
+		--w1c-toast-background: #ffffcc;
+		--w1c-toast-border: 1px solid #404040;
+		--w1c-toast-shadow: 2px 2px 0 rgb(0 0 0 / 0.35);
 	}
 }

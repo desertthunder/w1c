@@ -29,7 +29,7 @@ new layers.
 
 - [x] Priority 1: `w1c-icon`, `w1c-button`, `w1c-window`, `w1c-titlebar`, `w1c-toolbar`,
       `w1c-statusbar`, `w1c-desktop-icon`, `w1c-dialog`.
-- [ ] Priority 2: `w1c-panel`, `w1c-taskbar`, `w1c-menu-bar`, `w1c-menu`, `w1c-menu-item`,
+- [x] Priority 2: `w1c-panel`, `w1c-taskbar`, `w1c-menu-bar`, `w1c-menu`, `w1c-menu-item`,
       `w1c-address-field`, `w1c-tabs`, `w1c-toast`.
 - [ ] Priority 3: `w1c-data-table`, `w1c-data-list`, `w1c-document-browser`,
       `w1c-word-processor`, `w1c-json-viewer`, `w1c-divider`.
