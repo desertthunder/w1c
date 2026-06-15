@@ -1,5 +1,8 @@
-export { W1cButton } from './components/button'
-export { W1cStatusbar } from './components/statusbar'
-export { W1cTitlebar } from './components/titlebar'
-export { W1cToolbar } from './components/toolbar'
-export { W1cWindow } from './components/window'
+export { W1cButton } from './components/button';
+export { W1cIcon } from './components/icon';
+export { W1cStatusbar } from './components/statusbar';
+export { W1cTitlebar } from './components/titlebar';
+export { W1cToolbar } from './components/toolbar';
+export { W1cWindow } from './components/window';
+export type { IconData, IconMetadata, W1cIconName } from './icons';
+export { getW1cIcon, W1C_ICON_METADATA, W1C_ICON_NAMES, W1C_ICONS } from './icons';

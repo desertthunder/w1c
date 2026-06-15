@@ -1,15 +1,8 @@
 <script lang="ts">
 	import type { DocLink } from '../lib/docs';
 
-	let {
-		links,
-		sidebarOpen,
-		onToggleSidebar
-	}: {
-		links: DocLink[];
-		sidebarOpen: boolean;
-		onToggleSidebar: () => void;
-	} = $props();
+	let { links, sidebarOpen, onToggleSidebar }: { links: DocLink[]; sidebarOpen: boolean; onToggleSidebar: () => void } =
+		$props();
 </script>
 
 <header class="site-header">
@@ -28,10 +21,7 @@
 	</button>
 	<nav aria-label="Primary docs">
 		{#each links as item (`${item.href}:${item.title}`)}
-			<a
-				href={item.href}
-				target={item.external ? '_blank' : undefined}
-				rel={item.external ? 'noreferrer' : undefined}>
+			<a href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noreferrer' : undefined}>
 				{item.title}
 			</a>
 		{/each}

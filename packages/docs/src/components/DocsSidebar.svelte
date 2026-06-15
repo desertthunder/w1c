@@ -2,15 +2,7 @@
 	import type { DocLink } from '../lib/docs';
 	import SearchBox from './SearchBox.svelte';
 
-	let {
-		links,
-		open,
-		onNavigate
-	}: {
-		links: DocLink[];
-		open: boolean;
-		onNavigate: () => void;
-	} = $props();
+	let { links, open, onNavigate }: { links: DocLink[]; open: boolean; onNavigate: () => void } = $props();
 </script>
 
 <aside id="docs-sidebar" class:open class="sidebar" aria-label="Docs navigation">

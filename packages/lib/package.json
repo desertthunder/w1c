@@ -1,46 +1,50 @@
 {
-  "name": "@w1c/components",
-  "private": true,
-  "version": "0.0.0",
-  "license": "MIT",
-  "type": "module",
-  "exports": {
-    ".": "./src/index.ts",
-    "./button": "./src/button/index.ts",
-    "./button/index.js": "./src/button/index.ts",
-    "./statusbar": "./src/statusbar/index.ts",
-    "./statusbar/index.js": "./src/statusbar/index.ts",
-    "./titlebar": "./src/titlebar/index.ts",
-    "./titlebar/index.js": "./src/titlebar/index.ts",
-    "./toolbar": "./src/toolbar/index.ts",
-    "./toolbar/index.js": "./src/toolbar/index.ts",
-    "./window": "./src/window/index.ts",
-    "./window/index.js": "./src/window/index.ts",
-    "./themes/classic-mac.css": "./src/themes/classic-mac.css",
-    "./themes/geocities.css": "./src/themes/geocities.css",
-    "./themes/gnome2.css": "./src/themes/gnome2.css",
-    "./themes/ubuntu-810.css": "./src/themes/ubuntu-810.css",
-    "./themes/web-1.css": "./src/themes/web-1.css",
-    "./themes/windows-95.css": "./src/themes/windows-95.css",
-    "./styles/native.css": "./src/styles/native.css",
-    "./styles/tokens.css": "./src/styles/tokens.css",
-    "./styles/utilities.css": "./src/styles/utilities.css"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "check": "tsc --noEmit",
-    "test": "vitest --run",
-    "format": "prettier --write ."
-  },
-  "dependencies": {
-    "lit": "^3.3.2"
-  },
-  "devDependencies": {
-    "prettier": "^3.8.3",
-    "typescript": "~6.0.2",
-    "vite": "^8.0.12",
-    "vitest": "^4.1.8"
-  }
+	"name": "@w1c/components",
+	"private": true,
+	"version": "0.0.0",
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts",
+		"./button": "./src/button/index.ts",
+		"./button/index.js": "./src/button/index.ts",
+		"./icon": "./src/icon/index.ts",
+		"./icon/index.js": "./src/icon/index.ts",
+		"./icons": "./src/icons/index.ts",
+		"./icons/index.js": "./src/icons/index.ts",
+		"./statusbar": "./src/statusbar/index.ts",
+		"./statusbar/index.js": "./src/statusbar/index.ts",
+		"./titlebar": "./src/titlebar/index.ts",
+		"./titlebar/index.js": "./src/titlebar/index.ts",
+		"./toolbar": "./src/toolbar/index.ts",
+		"./toolbar/index.js": "./src/toolbar/index.ts",
+		"./window": "./src/window/index.ts",
+		"./window/index.js": "./src/window/index.ts",
+		"./themes/classic-mac.css": "./src/themes/classic-mac.css",
+		"./themes/geocities.css": "./src/themes/geocities.css",
+		"./themes/gnome2.css": "./src/themes/gnome2.css",
+		"./themes/ubuntu-810.css": "./src/themes/ubuntu-810.css",
+		"./themes/web-1.css": "./src/themes/web-1.css",
+		"./themes/windows-95.css": "./src/themes/windows-95.css",
+		"./styles/native.css": "./src/styles/native.css",
+		"./styles/tokens.css": "./src/styles/tokens.css",
+		"./styles/utilities.css": "./src/styles/utilities.css"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"check": "tsc --noEmit",
+		"test": "vitest --run",
+		"format": "prettier --write . --ignore-path ../../.prettierignore"
+	},
+	"dependencies": {
+		"lit": "^3.3.2"
+	},
+	"devDependencies": {
+		"prettier": "^3.8.3",
+		"typescript": "~6.0.2",
+		"vite": "^8.0.12",
+		"vitest": "^4.1.8"
+	}
 }

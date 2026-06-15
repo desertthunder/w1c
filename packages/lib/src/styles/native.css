@@ -1,33 +1,33 @@
-@import "./tokens.css";
+@import './tokens.css';
 
 @layer w1c.native {
-  button,
-  input,
-  select,
-  textarea {
-    font: var(--w1c-control-font);
-  }
+	button,
+	input,
+	select,
+	textarea {
+		font: var(--w1c-control-font);
+	}
 
-  button {
-    color: var(--w1c-control-text);
-    background: var(--w1c-control-background);
-    border: var(--w1c-border-width-1) solid var(--w1c-control-dark-shadow);
-    border-block-start-color: var(--w1c-control-highlight);
-    border-inline-start-color: var(--w1c-control-highlight);
-    box-shadow: var(--w1c-shadow-raised);
-  }
+	button {
+		color: var(--w1c-control-text);
+		background: var(--w1c-control-background);
+		border: var(--w1c-border-width-1) solid var(--w1c-control-dark-shadow);
+		border-block-start-color: var(--w1c-control-highlight);
+		border-inline-start-color: var(--w1c-control-highlight);
+		box-shadow: var(--w1c-shadow-raised);
+	}
 
-  input,
-  select,
-  textarea {
-    color: var(--w1c-control-text);
-    background: var(--w1c-window-content-background);
-    border: var(--w1c-border-width-1) solid var(--w1c-control-shadow);
-    box-shadow: var(--w1c-shadow-sunken);
-  }
+	input,
+	select,
+	textarea {
+		color: var(--w1c-control-text);
+		background: var(--w1c-window-content-background);
+		border: var(--w1c-border-width-1) solid var(--w1c-control-shadow);
+		box-shadow: var(--w1c-shadow-sunken);
+	}
 
-  :focus-visible {
-    outline: var(--w1c-border-width-1) dotted var(--w1c-focus-ring);
-    outline-offset: 2px;
-  }
+	:focus-visible {
+		outline: var(--w1c-border-width-1) dotted var(--w1c-focus-ring);
+		outline-offset: 2px;
+	}
 }

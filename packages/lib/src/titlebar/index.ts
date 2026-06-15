@@ -1,1 +1,1 @@
-export { W1cTitlebar } from '../components/titlebar'
+export { W1cTitlebar } from '../components/titlebar';

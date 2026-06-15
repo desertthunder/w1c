@@ -1,40 +1,38 @@
 <script lang="ts">
-	import { browser } from '$app/environment'
-	import { base } from '$app/paths'
-	import { onMount } from 'svelte'
+	import { browser } from '$app/environment';
+	import { base } from '$app/paths';
+	import { onMount } from 'svelte';
 
-	let searchRoot: HTMLDivElement
-	let unavailable = $state(false)
+	let searchRoot: HTMLDivElement;
+	let unavailable = $state(false);
 
 	type PagefindWindow = Window &
 		typeof globalThis & {
 			PagefindUI?: new (options: {
-				element: HTMLElement
-				bundlePath?: string
-				showSubResults?: boolean
-				showImages?: boolean
-			}) => unknown
-		}
+				element: HTMLElement;
+				bundlePath?: string;
+				showSubResults?: boolean;
+				showImages?: boolean;
+			}) => unknown;
+		};
 
 	onMount(() => {
-		if (!browser) return
+		if (!browser) return;
 
-		const pagefindCssUrl = `${base}/pagefind/pagefind-ui.css`
-		const pagefindUrl = `${base}/pagefind/pagefind-ui.js`
-		const pagefindBundlePath = `${base}/pagefind/`
-		const existingStylesheet = document.querySelector<HTMLLinkElement>(
-			`link[href="${pagefindCssUrl}"]`
-		)
+		const pagefindCssUrl = `${base}/pagefind/pagefind-ui.css`;
+		const pagefindUrl = `${base}/pagefind/pagefind-ui.js`;
+		const pagefindBundlePath = `${base}/pagefind/`;
+		const existingStylesheet = document.querySelector<HTMLLinkElement>(`link[href="${pagefindCssUrl}"]`);
 
 		if (!existingStylesheet) {
-			const stylesheet = document.createElement('link')
-			stylesheet.rel = 'stylesheet'
-			stylesheet.href = pagefindCssUrl
-			document.head.append(stylesheet)
+			const stylesheet = document.createElement('link');
+			stylesheet.rel = 'stylesheet';
+			stylesheet.href = pagefindCssUrl;
+			document.head.append(stylesheet);
 		}
 
 		const startSearch = () => {
-			const PagefindUI = (window as PagefindWindow).PagefindUI
+			const PagefindUI = (window as PagefindWindow).PagefindUI;
 
 			if (PagefindUI) {
 				new PagefindUI({
@@ -42,32 +40,32 @@
 					bundlePath: pagefindBundlePath,
 					showImages: false,
 					showSubResults: true
-				})
+				});
 			} else {
-				unavailable = true
+				unavailable = true;
 			}
-		}
+		};
 
-		const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${pagefindUrl}"]`)
+		const existingScript = document.querySelector<HTMLScriptElement>(`script[src="${pagefindUrl}"]`);
 
 		if (existingScript) {
 			if ((window as PagefindWindow).PagefindUI) {
-				startSearch()
+				startSearch();
 			} else {
-				existingScript.addEventListener('load', startSearch, { once: true })
+				existingScript.addEventListener('load', startSearch, { once: true });
 			}
-			return
+			return;
 		}
 
-		const script = document.createElement('script')
-		script.src = pagefindUrl
-		script.async = true
-		script.addEventListener('load', startSearch, { once: true })
+		const script = document.createElement('script');
+		script.src = pagefindUrl;
+		script.async = true;
+		script.addEventListener('load', startSearch, { once: true });
 		script.addEventListener('error', () => {
-			unavailable = true
-		})
-		document.head.append(script)
-	})
+			unavailable = true;
+		});
+		document.head.append(script);
+	});
 </script>
 
 <div class="search-box">

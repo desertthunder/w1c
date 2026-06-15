@@ -25,6 +25,28 @@ import '@w1c/components/window';
 import '@w1c/components/window/index.js';
 ```
 
+## Use icons
+
+The package includes one W1C icon set as data exports. The root import registers
+`w1c-icon`, and `@w1c/components/icons` exposes icon data, names, and metadata.
+
+```ts
+import '@w1c/components/icon';
+import type { IconData } from '@w1c/components/icons';
+import { W1C_ICON_METADATA, W1C_ICONS } from '@w1c/components/icons';
+
+const folder: IconData = W1C_ICONS.folder;
+const license = W1C_ICON_METADATA.folder.license;
+```
+
+```html
+<w1c-icon name="folder" label="Folder"></w1c-icon>
+```
+
+Icon metadata includes name, category, source/reference project, source icon name,
+source URL, license, attribution text, and intended size. The first set is original
+W1C artwork under MIT.
+
 ## Compose with slots
 
 ```html

@@ -1,25 +1,25 @@
 {
-  "name": "@w1c/storybook",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "storybook dev -p 6006",
-    "build": "storybook build",
-    "check": "tsc --noEmit",
-    "test": "storybook test --ci",
-    "format": "prettier --write ."
-  },
-  "dependencies": {
-    "@w1c/components": "workspace:*",
-    "lit": "^3.3.2"
-  },
-  "devDependencies": {
-    "@storybook/addon-docs": "^10.4.5",
-    "@storybook/web-components-vite": "^10.4.5",
-    "prettier": "^3.8.3",
-    "storybook": "^10.4.5",
-    "typescript": "~6.0.2",
-    "vite": "^8.0.16"
-  }
+	"name": "@w1c/storybook",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "storybook dev -p 6006",
+		"build": "storybook build",
+		"check": "tsc --noEmit",
+		"test": "storybook test --ci",
+		"format": "prettier --write . --ignore-path ../../.prettierignore"
+	},
+	"dependencies": {
+		"@w1c/components": "workspace:*",
+		"lit": "^3.3.2"
+	},
+	"devDependencies": {
+		"@storybook/addon-docs": "^10.4.5",
+		"@storybook/web-components-vite": "^10.4.5",
+		"prettier": "^3.8.3",
+		"storybook": "^10.4.5",
+		"typescript": "~6.0.2",
+		"vite": "^8.0.16"
+	}
 }

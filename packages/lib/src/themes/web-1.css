@@ -1,24 +1,24 @@
-@import "../styles/tokens.css";
+@import '../styles/tokens.css';
 
 @layer w1c.theme {
-  :root {
-    --w1c-theme-name: "Web 1.0";
-    --w1c-font-ui: Arial, Helvetica, sans-serif;
-    --w1c-font-mono: "Courier New", monospace;
-    --w1c-surface: #d7e6ff;
-    --w1c-surface-raised: #ffffff;
-    --w1c-window-content-background: #ffffff;
-    --w1c-control-background: #e6e6e6;
-    --w1c-control-text: #000000;
-    --w1c-control-highlight: #ffffff;
-    --w1c-control-shadow: #777777;
-    --w1c-control-dark-shadow: #333333;
-    --w1c-active-titlebar: #003399;
-    --w1c-active-titlebar-text: #ffffff;
-    --w1c-inactive-titlebar: #99a8c7;
-    --w1c-inactive-titlebar-text: #000000;
-    --w1c-focus-ring: #cc0000;
-    --w1c-radius-1: 0;
-    --w1c-radius-2: 0;
-  }
+	:root {
+		--w1c-theme-name: 'Web 1.0';
+		--w1c-font-ui: Arial, Helvetica, sans-serif;
+		--w1c-font-mono: 'Courier New', monospace;
+		--w1c-surface: #d7e6ff;
+		--w1c-surface-raised: #ffffff;
+		--w1c-window-content-background: #ffffff;
+		--w1c-control-background: #e6e6e6;
+		--w1c-control-text: #000000;
+		--w1c-control-highlight: #ffffff;
+		--w1c-control-shadow: #777777;
+		--w1c-control-dark-shadow: #333333;
+		--w1c-active-titlebar: #003399;
+		--w1c-active-titlebar-text: #ffffff;
+		--w1c-inactive-titlebar: #99a8c7;
+		--w1c-inactive-titlebar-text: #000000;
+		--w1c-focus-ring: #cc0000;
+		--w1c-radius-1: 0;
+		--w1c-radius-2: 0;
+	}
 }

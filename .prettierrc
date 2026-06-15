@@ -7,12 +7,5 @@
 	"printWidth": 120,
 	"objectWrap": "collapse",
 	"plugins": ["prettier-plugin-svelte"],
-	"overrides": [
-		{
-			"files": "*.svelte",
-			"options": {
-				"parser": "svelte"
-			}
-		}
-	]
+	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
 }

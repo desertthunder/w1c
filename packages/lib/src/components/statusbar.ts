@@ -1,5 +1,5 @@
-import { LitElement, css, html } from 'lit'
-import { customElement } from 'lit/decorators.js'
+import { LitElement, css, html } from 'lit';
+import { customElement } from 'lit/decorators.js';
 
 /**
  * Statusbar for messages and simple pane metadata.
@@ -9,32 +9,32 @@ import { customElement } from 'lit/decorators.js'
  */
 @customElement('w1c-statusbar')
 export class W1cStatusbar extends LitElement {
-  render() {
-    return html`<footer part="statusbar"><slot></slot></footer>`
-  }
+	render() {
+		return html`<footer part="statusbar"><slot></slot></footer>`;
+	}
 
-  static styles = css`
-    :host {
-      display: block;
-      color: var(--w1c-control-text, #111111);
-      font: var(--w1c-statusbar-font, 12px/1.2 "MS Sans Serif", Tahoma, sans-serif);
-    }
+	static styles = css`
+		:host {
+			display: block;
+			color: var(--w1c-control-text, #111111);
+			font: var(--w1c-statusbar-font, 12px/1.2 'MS Sans Serif', Tahoma, sans-serif);
+		}
 
-    footer {
-      box-sizing: border-box;
-      min-height: var(--w1c-statusbar-height, 22px);
-      display: flex;
-      align-items: center;
-      gap: var(--w1c-space-2, 8px);
-      padding: var(--w1c-statusbar-padding, 3px 4px);
-      border-block-start: 1px solid var(--w1c-control-shadow, #808080);
-      background: var(--w1c-statusbar-background, var(--w1c-surface, #c0c0c0));
-    }
-  `
+		footer {
+			box-sizing: border-box;
+			min-height: var(--w1c-statusbar-height, 22px);
+			display: flex;
+			align-items: center;
+			gap: var(--w1c-space-2, 8px);
+			padding: var(--w1c-statusbar-padding, 3px 4px);
+			border-block-start: 1px solid var(--w1c-control-shadow, #808080);
+			background: var(--w1c-statusbar-background, var(--w1c-surface, #c0c0c0));
+		}
+	`;
 }
 
 declare global {
-  interface HTMLElementTagNameMap {
-    'w1c-statusbar': W1cStatusbar
-  }
+	interface HTMLElementTagNameMap {
+		'w1c-statusbar': W1cStatusbar;
+	}
 }

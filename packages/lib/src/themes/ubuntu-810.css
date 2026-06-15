@@ -1,23 +1,23 @@
-@import "../styles/tokens.css";
+@import '../styles/tokens.css';
 
 @layer w1c.theme {
-  :root {
-    --w1c-theme-name: "Ubuntu 8.10";
-    --w1c-font-ui: Ubuntu, "DejaVu Sans", Arial, sans-serif;
-    --w1c-surface: #d6d0c8;
-    --w1c-surface-raised: #f0ebe4;
-    --w1c-window-content-background: #ffffff;
-    --w1c-control-background: #d6d0c8;
-    --w1c-control-text: #2b211c;
-    --w1c-control-highlight: #fff8f0;
-    --w1c-control-shadow: #8f8178;
-    --w1c-control-dark-shadow: #574b43;
-    --w1c-active-titlebar: #8b3f16;
-    --w1c-active-titlebar-text: #ffffff;
-    --w1c-inactive-titlebar: #9c8d82;
-    --w1c-inactive-titlebar-text: #ffffff;
-    --w1c-focus-ring: #c35a21;
-    --w1c-radius-1: 2px;
-    --w1c-radius-2: 5px;
-  }
+	:root {
+		--w1c-theme-name: 'Ubuntu 8.10';
+		--w1c-font-ui: Ubuntu, 'DejaVu Sans', Arial, sans-serif;
+		--w1c-surface: #d6d0c8;
+		--w1c-surface-raised: #f0ebe4;
+		--w1c-window-content-background: #ffffff;
+		--w1c-control-background: #d6d0c8;
+		--w1c-control-text: #2b211c;
+		--w1c-control-highlight: #fff8f0;
+		--w1c-control-shadow: #8f8178;
+		--w1c-control-dark-shadow: #574b43;
+		--w1c-active-titlebar: #8b3f16;
+		--w1c-active-titlebar-text: #ffffff;
+		--w1c-inactive-titlebar: #9c8d82;
+		--w1c-inactive-titlebar-text: #ffffff;
+		--w1c-focus-ring: #c35a21;
+		--w1c-radius-1: 2px;
+		--w1c-radius-2: 5px;
+	}
 }

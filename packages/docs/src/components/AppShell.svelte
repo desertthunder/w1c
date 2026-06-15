@@ -4,15 +4,8 @@
 	import DocsSidebar from './DocsSidebar.svelte';
 	import SiteHeader from './SiteHeader.svelte';
 
-	let {
-		children,
-		primaryDocs,
-		topNavLinks
-	}: {
-		children: Snippet;
-		primaryDocs: DocLink[];
-		topNavLinks: DocLink[];
-	} = $props();
+	let { children, primaryDocs, topNavLinks }: { children: Snippet; primaryDocs: DocLink[]; topNavLinks: DocLink[] } =
+		$props();
 
 	let sidebarOpen = $state(false);
 
@@ -31,11 +24,7 @@
 
 	<div class="page-grid">
 		{#if sidebarOpen}
-			<button
-				class="sidebar-scrim"
-				type="button"
-				aria-label="Close docs navigation"
-				onclick={closeSidebar}></button>
+			<button class="sidebar-scrim" type="button" aria-label="Close docs navigation" onclick={closeSidebar}></button>
 		{/if}
 		<DocsSidebar links={primaryDocs} open={sidebarOpen} onNavigate={closeSidebar} />
 

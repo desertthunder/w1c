@@ -1,17 +1,20 @@
 {
-  "name": "w1c-workspace",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "pnpm --filter @w1c/docs dev",
-    "dev:docs": "pnpm --filter @w1c/docs dev",
-    "dev:storybook": "pnpm --filter @w1c/storybook dev",
-    "dev:lib": "pnpm --filter @w1c/components dev",
-    "dev:dnd": "pnpm --filter @w1c/dnd check",
-    "build": "pnpm -r build",
-    "check": "pnpm -r check",
-    "test": "pnpm -r test",
-    "format": "pnpm -r format"
-  }
+	"name": "w1c-workspace",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "pnpm --filter @w1c/docs dev",
+		"dev:docs": "pnpm --filter @w1c/docs dev",
+		"dev:storybook": "pnpm --filter @w1c/storybook dev",
+		"dev:lib": "pnpm --filter @w1c/components dev",
+		"dev:dnd": "pnpm --filter @w1c/dnd check",
+		"build": "pnpm -r build",
+		"check": "pnpm -r check",
+		"test": "pnpm -r test",
+		"format": "pnpm -r format"
+	},
+	"devDependencies": {
+		"prettier-plugin-svelte": "^4.1.0"
+	}
 }

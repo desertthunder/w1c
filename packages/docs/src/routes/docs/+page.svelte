@@ -1,22 +1,16 @@
 <script lang="ts">
-	let { data } = $props()
+	let { data } = $props();
 </script>
 
 <svelte:head>
 	<title>Manual | W1C Docs</title>
-	<meta
-		name="description"
-		content="Start reading the W1C manual for installation, usage, and component guidance."
-	/>
+	<meta name="description" content="Start reading the W1C manual for installation, usage, and component guidance." />
 </svelte:head>
 
 <section class="manual-index">
 	<p class="doc-kicker">Manual</p>
 	<h1>Read the W1C manual</h1>
-	<p class="lede">
-		Start with the first window, then wire W1C into the kind of site you are
-		building.
-	</p>
+	<p class="lede">Start with the first window, then wire W1C into the kind of site you are building.</p>
 
 	<nav class="manual-links" aria-label="Manual pages">
 		{#each data.primaryDocs as item}

@@ -1,1 +1,1 @@
-export { W1cToolbar } from '../components/toolbar'
+export { W1cToolbar } from '../components/toolbar';

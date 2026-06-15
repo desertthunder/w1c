@@ -16,11 +16,11 @@ new layers.
 - [x] Use Reasonable Colors and Uchu as references for practical theme color scales.
 - [x] Add `styles/native.css` and `styles/utilities.css` as optional imports separate from
       required component/theme styles.
-- [ ] Add one W1C icon set. Do not expose separate icon styles or family-specific public
+- [x] Add one W1C icon set. Do not expose separate icon styles or family-specific public
       packages.
-- [ ] Add `IconData` as a primitive type/export for single-icon data, with a shape compatible
+- [x] Add `IconData` as a primitive type/export for single-icon data, with a shape compatible
       with Iconify-style icon data.
-- [ ] Add icon metadata for name, category, source/reference project, source icon name,
+- [x] Add icon metadata for name, category, source/reference project, source icon name,
       source URL, license, attribution text, and intended size.
 - [ ] Add and document an asset base-path story for icons, sprite sheets, and images.
 - [ ] Verify icon licensing and redistribution assumptions before copying reference assets.

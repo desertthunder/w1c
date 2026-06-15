@@ -22,7 +22,7 @@ pnpm add @w1c/components
 ## First window
 
 ```ts
-import '@w1c/components'
+import '@w1c/components';
 ```
 
 ```html
