@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-static'
 import { mdsvex } from 'mdsvex'
 
+const markdownLayout = new URL('./src/components/MarkdownPage.svelte', import.meta.url).pathname
+
 const escapeHtml = (value) =>
 	value
 		.replaceAll('&', '&amp;')
@@ -21,7 +23,11 @@ const highlightCode = (code, lang = 'text') => {
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	compilerOptions: {
-		runes: ({ filename }) => (filename?.split(/[/\\]/).includes('node_modules') ? undefined : true)
+		runes: ({ filename }) => {
+			if (!filename || filename.split(/[/\\]/).includes('node_modules')) return undefined
+			if (/\.(md|svx)$/.test(filename)) return false
+			return true
+		}
 	},
 	extensions: ['.svelte', '.svx', '.md'],
 	kit: {
@@ -30,6 +36,7 @@ const config = {
 	preprocess: [
 		mdsvex({
 			extensions: ['.svx', '.md'],
+			layout: markdownLayout,
 			highlight: {
 				highlighter: highlightCode
 			}

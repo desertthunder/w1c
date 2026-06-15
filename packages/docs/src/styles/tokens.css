@@ -1,0 +1,35 @@
+:root {
+	--font-serif: 'IBM Plex Serif', Georgia, serif;
+	--font-sans: 'IBM Plex Sans Variable', 'IBM Plex Sans', Tahoma, sans-serif;
+	--font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+	--color-desktop: #f7d84a;
+	--color-desktop-grid: rgba(120, 92, 0, 0.16);
+	--color-paper: #fff9cf;
+	--color-paper-dark: #f0df82;
+	--color-ink: #111111;
+	--color-link: #0000ee;
+	--color-visited: #551a8b;
+	--color-muted: #46402a;
+	--color-rule: #111111;
+	--color-shadow: #8b7200;
+	--color-badge: #ffea00;
+	--color-panel: rgba(255, 252, 221, 0.95);
+	--color-panel-solid: #fff9cf;
+	--color-panel-strong: #d1a900;
+	--color-sidebar: #c8eeee;
+	--color-sidebar-strong: #99d8d8;
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-5: 1.5rem;
+	--space-6: 2rem;
+	--space-7: 3rem;
+	--measure: 74ch;
+	font-family: var(--font-sans);
+	color: var(--color-ink);
+	background:
+		linear-gradient(45deg, var(--color-desktop-grid) 25%, transparent 25%) 0 0 / 12px 12px,
+		linear-gradient(45deg, transparent 75%, rgba(112, 82, 0, 0.18) 75%) 0 0 / 12px 12px,
+		var(--color-desktop);
+}

@@ -1,7 +1,7 @@
-<svelte:head>
-	<title>Getting started | W1C Docs</title>
-	<meta name="description" content="Install W1C and render the first retro custom element." />
-</svelte:head>
+---
+title: Getting started | W1C Docs
+description: Install W1C and render the first retro custom element.
+---
 
 <p class="doc-kicker">Getting started</p>
 

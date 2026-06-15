@@ -53,7 +53,8 @@
 	.doc-page :global(.resource-list ul) {
 		display: grid;
 		gap: var(--space-3);
-		padding-inline-start: 1.25rem;
+		padding-inline-start: 0;
+		list-style: none;
 	}
 
 	.doc-page :global(.resource-list li) {

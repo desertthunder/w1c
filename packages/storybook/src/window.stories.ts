@@ -11,6 +11,15 @@ const meta = {
         width: min(680px, 100%);
       }
 
+      .story-frame h2 {
+        margin: 0 0 var(--w1c-space-2, 8px);
+        font: var(--w1c-titlebar-font, 700 13px/1.2 "MS Sans Serif", Tahoma, sans-serif);
+      }
+
+      .story-frame p {
+        margin: 0;
+      }
+
       .window-controls {
         display: inline-flex;
         gap: 2px;

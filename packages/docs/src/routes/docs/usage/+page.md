@@ -1,7 +1,7 @@
-<svelte:head>
-<title>Usage | W1C Docs</title>
-<meta name="description" content="Use W1C components with slots, attributes, CSS custom properties, and CSS parts." />
-</svelte:head>
+---
+title: Usage | W1C Docs
+description: Use W1C components with slots, attributes, CSS custom properties, and CSS parts.
+---
 
 <p class="doc-kicker">Usage</p>
 

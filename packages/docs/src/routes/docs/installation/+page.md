@@ -1,7 +1,7 @@
-<svelte:head>
-<title>Installation | W1C Docs</title>
-<meta name="description" content="Install W1C with npm, bundlers, static HTML, and server-rendered pages." />
-</svelte:head>
+---
+title: Installation | W1C Docs
+description: Install W1C with npm, bundlers, static HTML, and server-rendered pages.
+---
 
 <p class="doc-kicker">Installation</p>
 

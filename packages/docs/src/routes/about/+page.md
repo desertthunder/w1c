@@ -1,8 +1,7 @@
-<svelte:head>
-    <title>About | W1C</title>
-    <meta name="description"
-    		  content="Why W1C exists: retro web components for static pages, desktop-style UI, and early-web patterns." />
-</svelte:head>
+---
+title: About | W1C
+description: Why W1C exists: retro web components for static pages, desktop-style UI, and early-web patterns.
+---
 
 <p class="doc-kicker">About</p>
 
