@@ -26,15 +26,8 @@ export class W1cButton extends LitElement {
 
 	static styles = css`
 		:host {
-			--w1c-button-background: var(--w1c-control-background, #c0c0c0);
-			--w1c-button-text: var(--w1c-control-text, #111111);
-			--w1c-button-highlight: var(--w1c-control-highlight, #ffffff);
-			--w1c-button-shadow: var(--w1c-control-shadow, #808080);
-			--w1c-button-dark-shadow: var(--w1c-control-dark-shadow, #404040);
-			--w1c-button-focus: var(--w1c-focus-ring, #000000);
-
 			display: inline-block;
-			color: var(--w1c-button-text);
+			color: var(--w1c-button-text, var(--w1c-control-text, #111111));
 			font: var(--w1c-control-font, 13px/1.2 'MS Sans Serif', Tahoma, sans-serif);
 		}
 
@@ -47,14 +40,19 @@ export class W1cButton extends LitElement {
 			justify-content: center;
 			gap: var(--w1c-space-1, 4px);
 			padding: var(--w1c-button-padding, 3px 12px);
-			border: 1px solid var(--w1c-button-dark-shadow);
-			border-block-start-color: var(--w1c-button-highlight);
-			border-inline-start-color: var(--w1c-button-highlight);
+			border-width: var(--w1c-button-border-width, 1px);
+			border-style: solid;
+			border-color: var(--w1c-button-dark-shadow, var(--w1c-control-dark-shadow, #404040));
+			border-block-start-color: var(--w1c-button-highlight, var(--w1c-control-highlight, #ffffff));
+			border-inline-start-color: var(--w1c-button-highlight, var(--w1c-control-highlight, #ffffff));
+			border-radius: var(--w1c-button-radius, var(--w1c-radius-1, 0));
 			color: inherit;
-			background: var(--w1c-button-background);
-			box-shadow:
-				inset -1px -1px 0 var(--w1c-button-shadow),
-				inset 1px 1px 0 var(--w1c-button-highlight);
+			background: var(--w1c-button-background, var(--w1c-control-background, #c0c0c0));
+			box-shadow: var(
+				--w1c-button-shadow-raised,
+				inset -1px -1px 0 var(--w1c-button-shadow, var(--w1c-control-shadow, #808080)),
+				inset 1px 1px 0 var(--w1c-button-highlight, var(--w1c-control-highlight, #ffffff))
+			);
 			font: inherit;
 			text-align: center;
 			white-space: nowrap;
@@ -63,30 +61,43 @@ export class W1cButton extends LitElement {
 
 		button[data-variant='sunken'],
 		button:active:not(:disabled) {
-			border-color: var(--w1c-button-highlight);
-			border-block-start-color: var(--w1c-button-dark-shadow);
-			border-inline-start-color: var(--w1c-button-dark-shadow);
-			box-shadow:
-				inset -1px -1px 0 var(--w1c-button-highlight),
-				inset 1px 1px 0 var(--w1c-button-shadow);
+			border-color: var(--w1c-button-highlight, var(--w1c-control-highlight, #ffffff));
+			border-block-start-color: var(--w1c-button-dark-shadow, var(--w1c-control-dark-shadow, #404040));
+			border-inline-start-color: var(--w1c-button-dark-shadow, var(--w1c-control-dark-shadow, #404040));
+			color: var(--w1c-button-active-text, inherit);
+			background: var(
+				--w1c-button-active-background,
+				var(--w1c-button-background, var(--w1c-control-background, #c0c0c0))
+			);
+			box-shadow: var(
+				--w1c-button-shadow-sunken,
+				inset -1px -1px 0 var(--w1c-button-highlight, var(--w1c-control-highlight, #ffffff)),
+				inset 1px 1px 0 var(--w1c-button-shadow, var(--w1c-control-shadow, #808080))
+			);
 			padding-block-start: calc(var(--w1c-button-press-offset, 3px) + 1px);
 			padding-block-end: calc(var(--w1c-button-press-offset, 3px) - 1px);
 		}
 
 		button[data-variant='flat'] {
-			border-color: var(--w1c-button-shadow);
-			background: var(--w1c-button-background);
-			box-shadow: none;
+			border-color: var(--w1c-button-flat-border, var(--w1c-button-shadow, var(--w1c-control-shadow, #808080)));
+			background: var(
+				--w1c-button-flat-background,
+				var(--w1c-button-background, var(--w1c-control-background, #c0c0c0))
+			);
+			box-shadow: var(--w1c-button-shadow-flat, none);
 		}
 
 		button:focus-visible {
-			outline: 1px dotted var(--w1c-button-focus);
+			outline: var(--w1c-button-focus-outline, 1px dotted var(--w1c-button-focus, var(--w1c-focus-ring, #000000)));
 			outline-offset: -4px;
 		}
 
 		button:disabled {
 			color: var(--w1c-disabled-text, #808080);
-			text-shadow: 1px 1px 0 var(--w1c-button-highlight);
+			text-shadow: var(
+				--w1c-button-disabled-text-shadow,
+				1px 1px 0 var(--w1c-button-highlight, var(--w1c-control-highlight, #ffffff))
+			);
 		}
 	`;
 }

@@ -7,6 +7,7 @@ import ubuntu810Url from '@w1c/components/themes/ubuntu-810.css?url';
 import web1Url from '@w1c/components/themes/web-1.css?url';
 import windows95Url from '@w1c/components/themes/windows-95.css?url';
 import './preview.css';
+import w1cTheme from './w1c-theme';
 
 const themeUrls = {
 	'windows-95': windows95Url,
@@ -57,7 +58,7 @@ const preview: Preview = {
 			}
 		}
 	},
-	parameters: { controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } } },
+	parameters: { controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } }, docs: { theme: w1cTheme } },
 	decorators: [
 		(story, context) => {
 			const storyTheme = String(context.args.theme ?? 'global') as StoryTheme;

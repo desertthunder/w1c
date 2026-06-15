@@ -6,6 +6,16 @@
 		--w1c-font-ui: Chicago, 'Charcoal CY', Geneva, sans-serif;
 		--w1c-surface: #dddddd;
 		--w1c-surface-raised: #f6f6f6;
+		--w1c-desktop-background: #ffffff;
+		--w1c-desktop-background-image:
+			linear-gradient(90deg, #ffffff 21px, transparent 1%), linear-gradient(#ffffff 21px, transparent 1%),
+			linear-gradient(90deg, transparent 21px, #000000 1%), linear-gradient(transparent 21px, #000000 1%);
+		--w1c-desktop-background-size: 22px 22px;
+		--w1c-desktop-icon-text: #000000;
+		--w1c-desktop-icon-shadow: transparent;
+		--w1c-desktop-icon-text-shadow: none;
+		--w1c-desktop-icon-selection: #000000;
+		--w1c-desktop-icon-selection-text: #ffffff;
 		--w1c-window-content-background: #ffffff;
 		--w1c-control-background: #eeeeee;
 		--w1c-control-text: #000000;
@@ -19,5 +29,37 @@
 		--w1c-focus-ring: #000000;
 		--w1c-radius-1: 0;
 		--w1c-radius-2: 0;
+		--w1c-window-border: 2px solid #000000;
+		--w1c-window-highlight: #000000;
+		--w1c-window-shadow-color: #000000;
+		--w1c-window-shadow: none;
+		--w1c-window-content-border: 2px solid #000000;
+		--w1c-window-content-padding: 16px 24px;
+		--w1c-titlebar-background: repeating-linear-gradient(0deg, #000000 0 1px, transparent 1px 3px);
+		--w1c-titlebar-text: #000000;
+		--w1c-titlebar-columns: 1fr auto 1fr;
+		--w1c-titlebar-title-align: center;
+		--w1c-titlebar-title-background: #ffffff;
+		--w1c-titlebar-title-padding: 0 8px;
+		--w1c-titlebar-border-block-end: 2px solid #000000;
+		--w1c-toolbar-background: #ffffff;
+		--w1c-toolbar-border-block-start: 2px solid #000000;
+		--w1c-toolbar-border-block-end: 2px solid #000000;
+		--w1c-statusbar-background: #ffffff;
+		--w1c-statusbar-border-block-start: 2px solid #000000;
+		--w1c-dialog-border: 2px solid #000000;
+		--w1c-dialog-shadow: 2px 2px 0 #000000;
+		--w1c-dialog-background: #ffffff;
+		--w1c-button-padding: 2px 20px;
+		--w1c-button-background: #ffffff;
+		--w1c-button-border-width: 2px;
+		--w1c-button-highlight: #000000;
+		--w1c-button-shadow: #000000;
+		--w1c-button-dark-shadow: #000000;
+		--w1c-button-shadow-raised: none;
+		--w1c-button-shadow-sunken: none;
+		--w1c-button-active-background: #000000;
+		--w1c-button-active-text: #ffffff;
+		--w1c-button-disabled-text-shadow: none;
 	}
 }

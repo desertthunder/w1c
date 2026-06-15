@@ -29,8 +29,9 @@ export class W1cStatusbar extends LitElement {
 			align-items: center;
 			gap: var(--w1c-space-2, 8px);
 			padding: var(--w1c-statusbar-padding, 3px 4px);
-			border-block-start: 1px solid var(--w1c-control-shadow, #808080);
+			border-block-start: var(--w1c-statusbar-border-block-start, 1px solid var(--w1c-control-shadow, #808080));
 			background: var(--w1c-statusbar-background, var(--w1c-surface, #c0c0c0));
+			box-shadow: var(--w1c-statusbar-shadow, none);
 		}
 	`;
 }

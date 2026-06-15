@@ -1,23 +1,23 @@
 body {
 	color: var(--w1c-control-text, #111111);
-	background:
-		linear-gradient(90deg, rgb(255 255 255 / 0.28) 1px, transparent 1px) 0 0 / 16px 16px,
-		linear-gradient(rgb(255 255 255 / 0.28) 1px, transparent 1px) 0 0 / 16px 16px,
-		var(--w1c-surface, #c0c0c0);
+	background-color: var(--w1c-desktop-background, var(--w1c-surface, #c0c0c0));
+	background-image: var(--w1c-desktop-background-image, none);
+	background-size: var(--w1c-desktop-background-size, auto);
 	font: var(--w1c-body-font, 13px/1.35 'MS Sans Serif', Tahoma, sans-serif);
 }
 
 .w1c-story-shell {
-	min-height: 100vh;
-	padding: 32px;
+	width: max-content;
+	max-width: 100%;
+	padding: 16px;
 	color: var(--w1c-control-text, #111111);
 	background: transparent;
 }
 
 .w1c-story-note {
 	width: fit-content;
-	margin: 0 0 16px;
-	padding: 4px 8px;
+	margin: 0 0 10px;
+	padding: 2px 6px;
 	color: var(--w1c-active-titlebar-text, #ffffff);
 	background: var(--w1c-active-titlebar, #000080);
 	font: var(--w1c-statusbar-font, 12px/1.2 'MS Sans Serif', Tahoma, sans-serif);

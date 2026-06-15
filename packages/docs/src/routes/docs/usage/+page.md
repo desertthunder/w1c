@@ -21,6 +21,8 @@ Direct imports register one component and its local dependencies:
 
 ```ts
 import '@w1c/components/window';
+import '@w1c/components/dialog';
+import '@w1c/components/desktop-icon';
 // or
 import '@w1c/components/window/index.js';
 ```
@@ -62,6 +64,24 @@ Icon metadata includes name, category, source/reference project, source icon nam
 </w1c-window>
 ```
 
+Dialogs and desktop icons use the same slot-first shape:
+
+```html
+<w1c-dialog title="Confirm Move" variant="alert">
+	<w1c-icon slot="icon" name="info" label="Information"></w1c-icon>
+	<p>The selected file will be moved to the archive folder.</p>
+	<div slot="actions">
+		<w1c-button>Cancel</w1c-button>
+		<w1c-button>Move</w1c-button>
+	</div>
+</w1c-dialog>
+
+<w1c-desktop-icon label="Home Folder" href="/home">
+	<w1c-icon slot="icon" name="folder" label="Folder"></w1c-icon>
+	Home Folder
+</w1c-desktop-icon>
+```
+
 ## Style with tokens and parts
 
 Theme files set W1C tokens for color, type, spacing, border, radius, shadow, z-index, and motion. The first themes are hand-authored against the retro references, with practical color scales informed by Reasonable Colors and Uchu.
@@ -81,3 +101,5 @@ w1c-window::part(content) {
 ## Keep behavior outside the shell
 
 `w1c-window` is a presentational shell today. Dragging and resizing belong to `@w1c/dnd`, which will keep pointer math out of the component package.
+
+`w1c-dialog` sets dialog roles but does not trap focus or make the page modal. Applications own focus movement, inert background state, close behavior, and any persistence.

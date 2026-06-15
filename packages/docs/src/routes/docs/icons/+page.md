@@ -3,11 +3,12 @@ title: Icons | W1C Docs
 description: Use W1C icons, icon metadata, and asset base paths for copied icon files, sprite sheets, and images.
 ---
 
-<p class="doc-kicker">Icons</p>
+<p class="doc-kicker">Icon Data</p>
 
 # Icons
 
-W1C ships one small icon set as TypeScript data. The icons are inline SVG paths, so they do not need a network request or asset base path.
+W1C ships one small icon set as TypeScript data. The icons are inline
+SVG paths, so they do not need a network request or asset base path.
 
 ```ts
 import '@w1c/components/icon';
@@ -40,7 +41,8 @@ type IconData = {
 };
 ```
 
-Use package-provided data or trusted local data. Do not pass user-authored SVG strings into `w1c-icon`.
+Use package-provided data or trusted local data. Do not pass user-authored SVG strings
+into `w1c-icon`.
 
 ## Metadata
 
@@ -55,11 +57,15 @@ Each bundled icon has metadata for:
 - attribution text
 - intended size
 
-The first W1C icon set is original artwork under MIT metadata. Reference icons can guide style, but copied icon assets still need file-level license review before they are added to the package.
+The first W1C icon set is original artwork under MIT metadata. Reference icons can guide
+style, but copied icon assets still need file-level license review before they are added
+to the package.
 
 ## Asset base paths
 
-Inline W1C icons do not need asset paths. Copied assets do: external icon files, SVG sprite sheets, tiled backgrounds, and images need predictable URLs in static HTML, CDN, Vite, SvelteKit, and server-rendered pages.
+Inline W1C icons do not need asset paths. Copied assets do: external icon files, SVG
+sprite sheets, tiled backgrounds, and images need predictable URLs in static HTML, CDN,
+Vite, SvelteKit, and server-rendered pages.
 
 Configure those paths once:
 
@@ -73,7 +79,9 @@ const spriteUrl = resolveW1cAssetUrl('sprites', 'system.svg#close');
 const tileUrl = resolveW1cAssetUrl('images', 'tiles/stars.gif');
 ```
 
-`resolveW1cAssetUrl` leaves absolute URLs, root-relative URLs, data URLs, and fragment-only URLs alone. Relative paths are joined to the configured base path for their asset kind.
+`resolveW1cAssetUrl` leaves absolute URLs, root-relative URLs, data URLs, and
+fragment-only URLs alone. Relative paths are joined to the configured base path for
+their asset kind.
 
 ## Styling
 

@@ -55,15 +55,9 @@ export class W1cWindow extends LitElement {
 
 	static styles = css`
 		:host {
-			--w1c-window-background: var(--w1c-window-content-background, #ffffff);
-			--w1c-window-frame: var(--w1c-surface, #c0c0c0);
-			--w1c-window-highlight: var(--w1c-control-highlight, #ffffff);
-			--w1c-window-shadow: var(--w1c-control-shadow, #808080);
-			--w1c-window-dark-shadow: var(--w1c-control-dark-shadow, #404040);
-
 			display: block;
 			min-width: min(100%, 220px);
-			color: var(--w1c-window-text, #111111);
+			color: var(--w1c-window-text, var(--w1c-control-text, #111111));
 			font: var(--w1c-body-font, 13px/1.35 'MS Sans Serif', Tahoma, sans-serif);
 		}
 
@@ -72,13 +66,21 @@ export class W1cWindow extends LitElement {
 			display: grid;
 			grid-template-rows: auto auto minmax(0, 1fr) auto;
 			min-height: var(--w1c-window-min-height, 160px);
-			border: 1px solid var(--w1c-window-dark-shadow);
-			border-block-start-color: var(--w1c-window-highlight);
-			border-inline-start-color: var(--w1c-window-highlight);
-			background: var(--w1c-window-frame);
-			box-shadow:
-				inset -1px -1px 0 var(--w1c-window-shadow),
-				inset 1px 1px 0 var(--w1c-window-highlight);
+			border: var(
+				--w1c-window-border,
+				1px solid var(--w1c-window-dark-shadow, var(--w1c-control-dark-shadow, #404040))
+			);
+			border-block-start-color: var(--w1c-window-highlight, var(--w1c-control-highlight, #ffffff));
+			border-inline-start-color: var(--w1c-window-highlight, var(--w1c-control-highlight, #ffffff));
+			border-radius: var(--w1c-window-radius, var(--w1c-radius-1, 0));
+			background: var(--w1c-window-frame, var(--w1c-surface, #c0c0c0));
+			box-shadow: var(
+				--w1c-window-shadow,
+				inset -1px -1px 0 var(--w1c-window-shadow-color, var(--w1c-control-shadow, #808080)),
+				inset 1px 1px 0 var(--w1c-window-highlight, var(--w1c-control-highlight, #ffffff)),
+				var(--w1c-window-shadow-outer, var(--w1c-shadow-none, none))
+			);
+			overflow: hidden;
 		}
 
 		.content {
@@ -86,8 +88,11 @@ export class W1cWindow extends LitElement {
 			min-width: 0;
 			min-height: 0;
 			padding: var(--w1c-window-content-padding, 12px);
-			border: var(--w1c-window-content-border, 1px solid var(--w1c-window-shadow));
-			background: var(--w1c-window-background);
+			border: var(
+				--w1c-window-content-border,
+				1px solid var(--w1c-window-shadow-color, var(--w1c-control-shadow, #808080))
+			);
+			background: var(--w1c-window-background, var(--w1c-window-content-background, #ffffff));
 			overflow: auto;
 		}
 	`;

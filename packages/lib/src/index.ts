@@ -1,6 +1,8 @@
 export type { W1cAssetBasePaths, W1cAssetKind } from './assets';
 export { getW1cAssetBasePath, resolveW1cAssetUrl, setW1cAssetBasePath, setW1cAssetBasePaths } from './assets';
 export { W1cButton } from './components/button';
+export { W1cDesktopIcon } from './components/desktop-icon';
+export { W1cDialog } from './components/dialog';
 export { W1cIcon } from './components/icon';
 export { W1cStatusbar } from './components/statusbar';
 export { W1cTitlebar } from './components/titlebar';

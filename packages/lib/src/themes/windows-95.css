@@ -6,6 +6,17 @@
 		--w1c-font-ui: 'MS Sans Serif', Tahoma, Geneva, sans-serif;
 		--w1c-surface: #c0c0c0;
 		--w1c-surface-raised: #dfdfdf;
+		--w1c-desktop-background: #0b7f7f;
+		--w1c-desktop-background-image:
+			linear-gradient(45deg, rgb(255 255 255 / 0.07) 25%, transparent 25%),
+			linear-gradient(-45deg, rgb(0 0 0 / 0.08) 25%, transparent 25%),
+			linear-gradient(45deg, transparent 75%, rgb(0 0 0 / 0.08) 75%),
+			linear-gradient(-45deg, transparent 75%, rgb(255 255 255 / 0.07) 75%);
+		--w1c-desktop-background-size: 8px 8px;
+		--w1c-desktop-icon-rendering: pixelated;
+		--w1c-desktop-icon-text: #ffffff;
+		--w1c-desktop-icon-shadow: rgb(0 0 0 / 0.75);
+		--w1c-desktop-icon-selection: #07137a;
 		--w1c-window-content-background: #ffffff;
 		--w1c-control-background: #c0c0c0;
 		--w1c-control-text: #000000;
@@ -20,5 +31,18 @@
 		--w1c-focus-ring: #000000;
 		--w1c-radius-1: 0;
 		--w1c-radius-2: 0;
+		--w1c-window-border: 1px solid #404040;
+		--w1c-window-highlight: #ffffff;
+		--w1c-window-shadow-color: #808080;
+		--w1c-window-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff;
+		--w1c-window-content-border: 1px solid #808080;
+		--w1c-titlebar-background: linear-gradient(90deg, #000080, #1084d0);
+		--w1c-titlebar-border-block-end: 1px solid #404040;
+		--w1c-toolbar-background: #c0c0c0;
+		--w1c-toolbar-border-block-start: 1px solid #ffffff;
+		--w1c-toolbar-border-block-end: 1px solid #808080;
+		--w1c-button-radius: 0;
+		--w1c-button-shadow-raised: inset -1px -1px 0 #808080, inset 1px 1px 0 #ffffff;
+		--w1c-button-shadow-sunken: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #808080;
 	}
 }

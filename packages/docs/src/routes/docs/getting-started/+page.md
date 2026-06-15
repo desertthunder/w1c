@@ -44,4 +44,5 @@ import '@w1c/components';
 <ol class="steps">
 	<li><a href="/docs/installation/">Install W1C</a> in a bundler, static page, or server-rendered site.</li>
 	<li><a href="/docs/usage/">Use W1C components</a> with slots, attributes, and direct imports.</li>
+	<li><a href="/docs/components/">Browse the component catalog</a> for slots, parts, and theme notes.</li>
 </ol>

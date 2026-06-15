@@ -403,7 +403,53 @@ Deliverable:
 - Docs and Storybook demonstrate the first components across GNOME 2/Ubuntu, Windows 95,
   classic Mac, and Geocities themes.
 
-## Phase 3: Usage Recipes
+## Phase 3: Component Test Coverage
+
+Goal: add complete test coverage after the component backlog is stable enough that tests
+protect behavior instead of freezing churn.
+
+Start in `packages/lib` with Vitest. This package owns the component contract, so its
+tests should cover the behavior users rely on when they import `@w1c/components`.
+
+`packages/lib` Vitest tasks:
+
+- Add a shared DOM test setup for Lit custom elements.
+- Test every public custom element registration.
+- Test reflected attributes and properties for each component.
+- Test shadow DOM structure for roles, slots, CSS parts, default content, and named
+  regions.
+- Test event behavior where components emit events or proxy native control state.
+- Test keyboard and focus behavior for interactive components.
+- Test reduced-motion and accessibility helper behavior where components expose it.
+- Test icon lookup, asset base-path resolution, and every documented package export path.
+- Add focused regression tests when fixing component bugs.
+
+Then cover `packages/storybook`. Storybook is the integration and visual workshop, not the
+source of component truth.
+
+`packages/storybook` test tasks:
+
+- Keep `storybook test --ci` as the package test command.
+- Add stories for every public component state that `packages/lib` tests as behavior:
+  default, disabled, focused, long-label, narrow-viewport, high-density, reduced-motion,
+  slotted content, and theme variants.
+- Add interaction stories for menus, tabs, dialogs, window controls, drag handles, and any
+  future resize behavior.
+- Add visual smoke coverage across GNOME 2/Ubuntu, Windows 95, classic Mac, Web 1.0, and
+  Geocities themes.
+- Add a small story coverage checklist when a new component is added: docs page, default
+  story, state stories, theme coverage, and interaction coverage when applicable.
+
+Completion criteria:
+
+- `pnpm --filter @w1c/components test` covers all stable components, helpers, and public
+  entrypoints.
+- `pnpm --filter @w1c/storybook test` verifies the Storybook catalog renders and runs
+  interaction stories.
+- `pnpm test`, `pnpm check`, and `pnpm build` pass before a release branch is cut.
+- Docs and Storybook are updated in the same change as any new public component behavior.
+
+## Phase 4: Usage Recipes
 
 Goal: prove the package works in common integration styles.
 
@@ -417,16 +463,15 @@ Deliverable:
 - Docs include copy-paste examples for common project types without assuming a specific
   app.
 
-## Phase 4: Quality Gates
+## Phase 5: Quality Gates
 
 Goal: make changes safe enough for a visual component library.
 
-- Add unit tests for registration, attributes/properties, events, and accessibility
-  helpers.
-- Add browser tests for focus, keyboard menus, dialog behavior, and slot rendering.
-- Add visual smoke tests across themes.
-- Add package export checks for every documented import path.
+- Treat the Phase 3 `packages/lib` and `packages/storybook` test suites as required
+  release checks.
 - Add docs build checks and Storybook build checks.
+- Add package export checks for every documented import path if they are not already
+  covered by the `packages/lib` Vitest suite.
 - Add CI once repository workflow is ready.
 
 ## Non-Goals For Now

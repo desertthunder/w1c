@@ -27,7 +27,7 @@ new layers.
 
 ## Component Backlog
 
-- [ ] Priority 1: `w1c-icon`, `w1c-button`, `w1c-window`, `w1c-titlebar`, `w1c-toolbar`,
+- [x] Priority 1: `w1c-icon`, `w1c-button`, `w1c-window`, `w1c-titlebar`, `w1c-toolbar`,
       `w1c-statusbar`, `w1c-desktop-icon`, `w1c-dialog`.
 - [ ] Priority 2: `w1c-panel`, `w1c-taskbar`, `w1c-menu-bar`, `w1c-menu`, `w1c-menu-item`,
       `w1c-address-field`, `w1c-tabs`, `w1c-toast`.
@@ -38,6 +38,34 @@ new layers.
       `w1c-tiled-background`, `w1c-link-cluster`, `w1c-last-updated`, `w1c-image-map`.
 - [ ] Form/admin primitives: label, input, select, textarea, checkbox, validation message,
       flash/alert, status card, endpoint row.
+
+## Phase 3: Component Test Coverage
+
+- [ ] Add a shared `packages/lib` Vitest DOM setup for Lit custom elements.
+- [ ] Add `packages/lib` tests for every public custom element registration.
+- [ ] Add `packages/lib` tests for reflected attributes and properties on each component.
+- [ ] Add `packages/lib` tests for shadow DOM roles, slots, CSS parts, default content, and
+      named regions.
+- [ ] Add `packages/lib` tests for component events and native-control state proxying.
+- [ ] Add `packages/lib` tests for keyboard and focus behavior on interactive components.
+- [ ] Add `packages/lib` tests for reduced-motion and accessibility helper behavior where
+      components expose it.
+- [ ] Add `packages/lib` tests for icon lookup, asset base-path resolution, and every
+      documented package export path.
+- [ ] Add focused `packages/lib` regression tests when fixing component bugs.
+- [ ] Keep `packages/storybook` on `storybook test --ci` instead of adding a separate
+      Vitest layer there.
+- [ ] Add Storybook state stories for default, disabled, focused, long-label,
+      narrow-viewport, high-density, reduced-motion, slotted content, and theme variants.
+- [ ] Add Storybook interaction stories for menus, tabs, dialogs, window controls, drag
+      handles, and future resize behavior.
+- [ ] Add visual smoke coverage across GNOME 2/Ubuntu, Windows 95, classic Mac, Web 1.0,
+      and Geocities themes.
+- [ ] Add a new-component story coverage checklist: docs page, default story, state
+      stories, theme coverage, and interaction coverage when applicable.
+- [ ] Require `pnpm --filter @w1c/components test`,
+      `pnpm --filter @w1c/storybook test`, `pnpm test`, `pnpm check`, and `pnpm build`
+      before a release branch is cut.
 
 ## DnD Package
 
@@ -62,7 +90,7 @@ new layers.
 - [x] Replace the starter docs page with real getting-started, installation, and usage pages.
 - [ ] Document CDN/no-build usage, npm package usage, bundlers, static HTML, and
       server-rendered HTML.
-- [ ] Add component catalog pages with status, category, description, examples, API,
+- [x] Add component catalog pages with status, category, description, examples, API,
       accessibility notes, and theming notes.
 - [ ] Add an icon catalog page for the W1C icon set, with source and license attribution per
       icon.
@@ -83,8 +111,8 @@ new layers.
 
 ## Storybook
 
-- [ ] Replace the starter `my-element` story with one page per public component.
-- [ ] Add global theme switching for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, Web 1.0,
+- [x] Replace the starter `my-element` story with one page per public component.
+- [x] Add global theme switching for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, Web 1.0,
       and Geocities.
 - [ ] Add icon gallery stories for the W1C icon set, including `IconData` rendering examples.
 - [ ] Add reference examples for GNOME 2/Ubuntu and Windows 95 screens without depending on

@@ -30,12 +30,9 @@ export class W1cTitlebar extends LitElement {
 
 	static styles = css`
 		:host {
-			--w1c-titlebar-background: var(--w1c-active-titlebar, #000080);
-			--w1c-titlebar-text: var(--w1c-active-titlebar-text, #ffffff);
-
 			display: block;
 			min-width: 0;
-			color: var(--w1c-titlebar-text);
+			color: var(--w1c-titlebar-text, var(--w1c-active-titlebar-text, #ffffff));
 			font: var(--w1c-titlebar-font, 700 13px/1.2 'MS Sans Serif', Tahoma, sans-serif);
 		}
 
@@ -43,11 +40,13 @@ export class W1cTitlebar extends LitElement {
 			box-sizing: border-box;
 			min-height: var(--w1c-titlebar-height, 22px);
 			display: grid;
-			grid-template-columns: auto minmax(0, 1fr) auto;
+			grid-template-columns: var(--w1c-titlebar-columns, auto minmax(0, 1fr) auto);
 			align-items: center;
 			gap: var(--w1c-space-1, 4px);
 			padding: var(--w1c-titlebar-padding, 2px 3px);
-			background: var(--w1c-titlebar-background);
+			border-block-end: var(--w1c-titlebar-border-block-end, 0);
+			background: var(--w1c-titlebar-background, var(--w1c-active-titlebar, #000080));
+			text-shadow: var(--w1c-titlebar-text-shadow, none);
 		}
 
 		.icon,
@@ -62,6 +61,9 @@ export class W1cTitlebar extends LitElement {
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
+			padding: var(--w1c-titlebar-title-padding, 0);
+			background: var(--w1c-titlebar-title-background, transparent);
+			text-align: var(--w1c-titlebar-title-align, start);
 		}
 	`;
 }

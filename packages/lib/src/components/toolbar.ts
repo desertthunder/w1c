@@ -29,9 +29,10 @@ export class W1cToolbar extends LitElement {
 			align-items: center;
 			gap: var(--w1c-space-1, 4px);
 			padding: var(--w1c-toolbar-padding, 4px);
-			border-block-start: 1px solid var(--w1c-control-highlight, #ffffff);
-			border-block-end: 1px solid var(--w1c-control-shadow, #808080);
+			border-block-start: var(--w1c-toolbar-border-block-start, 1px solid var(--w1c-control-highlight, #ffffff));
+			border-block-end: var(--w1c-toolbar-border-block-end, 1px solid var(--w1c-control-shadow, #808080));
 			background: var(--w1c-toolbar-background, var(--w1c-surface, #c0c0c0));
+			box-shadow: var(--w1c-toolbar-shadow, none);
 		}
 	`;
 }

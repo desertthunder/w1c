@@ -27,13 +27,13 @@
 		--w1c-font-ui: 'MS Sans Serif', Tahoma, Geneva, sans-serif;
 		--w1c-font-system: system-ui, sans-serif;
 		--w1c-font-mono: 'Courier New', monospace;
-		--w1c-font-size-0: 11px;
-		--w1c-font-size-1: 12px;
-		--w1c-font-size-2: 13px;
-		--w1c-font-size-3: 14px;
-		--w1c-font-size-4: 16px;
-		--w1c-line-tight: 1.2;
-		--w1c-line-normal: 1.35;
+		--w1c-font-size-0: 14px;
+		--w1c-font-size-1: 15px;
+		--w1c-font-size-2: 16px;
+		--w1c-font-size-3: 18px;
+		--w1c-font-size-4: 20px;
+		--w1c-line-tight: 1.125;
+		--w1c-line-normal: 1.25;
 		--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
 		--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
 		--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
@@ -51,8 +51,8 @@
 		--w1c-border-width-2: 2px;
 		--w1c-border-width-3: 3px;
 		--w1c-radius-0: 0;
-		--w1c-radius-1: 2px;
-		--w1c-radius-2: 4px;
+		--w1c-radius-1: 1.5px;
+		--w1c-radius-2: 3px;
 
 		--w1c-shadow-none: none;
 		--w1c-shadow-raised: inset -1px -1px 0 var(--w1c-control-shadow), inset 1px 1px 0 var(--w1c-control-highlight);
