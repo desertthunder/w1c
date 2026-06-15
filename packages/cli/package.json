@@ -1,0 +1,32 @@
+{
+  "name": "@w1c/cli",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "w1c": "./dist/index.mjs"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsdown src/index.ts --format esm --dts --clean",
+    "check": "tsc --noEmit",
+    "test": "vitest --run",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.5.1",
+    "cac": "^7.0.0",
+    "execa": "^9.6.1",
+    "fs-extra": "^11.3.5"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.10.2",
+    "prettier": "^3.8.3",
+    "tsdown": "^0.22.2",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.2",
+    "vitest": "^4.1.8"
+  }
+}
