@@ -62,7 +62,7 @@ new layers.
 
 ## Docs
 
-- [ ] Replace the starter docs page with real getting-started, installation, and usage pages.
+- [x] Replace the starter docs page with real getting-started, installation, and usage pages.
 - [ ] Document CDN/no-build usage, npm package usage, bundlers, static HTML, and
       server-rendered HTML.
 - [ ] Add component catalog pages with status, category, description, examples, API,

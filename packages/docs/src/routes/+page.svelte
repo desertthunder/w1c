@@ -1,122 +1,83 @@
 <script lang="ts">
-	import '@w1c/components';
+	let { data } = $props();
 </script>
 
 <svelte:head>
-	<title>W1C Web Components</title>
-	<meta
-		name="description"
-		content="Public documentation for W1C, a retro web component library."
-	/>
+	<title>W1C Docs</title>
+	<meta name="description" content="Documentation for W1C, a retro web component library for modern pages." />
 </svelte:head>
 
-<main>
-	<section class="hero">
-		<p class="eyebrow">Web 1.0 components for modern apps</p>
-		<h1>W1C</h1>
-		<p>
-			Reusable Lit web components, icons, and themes inspired by GNOME 2, old
-			Ubuntu, Windows 95, classic Mac, and Geocities.
-		</p>
-	</section>
-
-	<section class="preview" aria-label="Component preview">
-		<w1c-window title="Library Preview">
-			<span slot="icon" aria-hidden="true">W</span>
-			<div slot="controls" class="window-controls">
-				<w1c-button aria-label="Minimize">_</w1c-button>
-				<w1c-button aria-label="Maximize">□</w1c-button>
-				<w1c-button aria-label="Close">x</w1c-button>
-			</div>
-			<w1c-toolbar slot="toolbar">
-				<w1c-button>Install</w1c-button>
-				<w1c-button>Components</w1c-button>
-				<w1c-button>Themes</w1c-button>
-			</w1c-toolbar>
-			<h2>Real custom elements</h2>
-			<p>
-				The package now registers W1C-prefixed components and exposes direct
-				imports for each component.
-			</p>
-			<w1c-statusbar slot="statusbar">@w1c/components</w1c-statusbar>
-		</w1c-window>
-	</section>
-</main>
+<section class="home">
+	<p class="kicker">Web components for the indie web.</p>
+	<h1>W1C</h1>
+	<p class="lede">
+		W1C (Web 1.0 Components) takes retro operating-system and early-web UI patterns as components & UI primitives for
+		your next project.
+	</p>
+	<nav class="doc-cards" aria-label="Start reading">
+		{#each data.primaryDocs as item (`${item.href}:${item.title}`)}
+			<a href={item.href}>
+				<span>{item.title}</span>
+				<small>{item.description}</small>
+			</a>
+		{/each}
+	</nav>
+</section>
 
 <style>
-	:global(body) {
+	.home {
+		display: grid;
+		gap: var(--space-5);
+	}
+
+	.kicker {
+		width: fit-content;
 		margin: 0;
-		background: #f6f1df;
-		color: #151515;
-		font-family:
-			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-			"Segoe UI", sans-serif;
-	}
-
-	:global(:root) {
-		--w1c-surface: #c0c0c0;
-		--w1c-control-background: #c0c0c0;
-		--w1c-control-text: #111111;
-		--w1c-control-highlight: #ffffff;
-		--w1c-control-shadow: #808080;
-		--w1c-control-dark-shadow: #404040;
-		--w1c-active-titlebar: #000080;
-		--w1c-active-titlebar-text: #ffffff;
-		--w1c-window-content-background: #ffffff;
-	}
-
-	main {
-		min-width: 320px;
-	}
-
-	.hero {
-		box-sizing: border-box;
-		min-height: 42svh;
-		padding: clamp(48px, 8vw, 96px) clamp(20px, 6vw, 80px);
-		background:
-			linear-gradient(90deg, rgba(0, 106, 166, 0.16) 1px, transparent 1px),
-			linear-gradient(rgba(0, 106, 166, 0.14) 1px, transparent 1px),
-			#f6f1df;
-		background-size: 18px 18px;
-		border-bottom: 4px double #151515;
-	}
-
-	.eyebrow {
-		margin: 0 0 12px;
-		font-family: "Courier New", ui-monospace, monospace;
-		font-size: 14px;
+		padding: var(--space-1) var(--space-2);
+		background: var(--color-badge);
+		border: 2px solid var(--color-rule);
+		font-family: var(--font-mono);
+		font-size: 0.85rem;
+		font-weight: 600;
 		text-transform: uppercase;
 	}
 
-	h1 {
+	.lede {
 		margin: 0;
-		font-size: clamp(56px, 12vw, 132px);
-		line-height: 0.9;
+		font-size: clamp(1.2rem, 2vw, 1.55rem);
 	}
 
-	.hero p:last-child {
-		max-width: 720px;
-		margin: 24px 0 0;
-		font-size: 20px;
-		line-height: 1.5;
+	.doc-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: var(--space-4);
+		max-width: 980px;
 	}
 
-	.preview {
+	.doc-cards a {
+		display: grid;
+		gap: var(--space-2);
+		min-height: 150px;
+		padding: var(--space-4);
+		color: var(--color-ink);
 		background: #ffffff;
-		padding: clamp(24px, 6vw, 72px);
+		border: 3px double var(--color-rule);
+		box-shadow: 6px 6px 0 var(--color-shadow);
+		text-decoration: none;
 	}
 
-	.preview w1c-window {
-		max-width: 720px;
-		margin: 0 auto;
+	.doc-cards a:visited {
+		color: var(--color-ink);
 	}
 
-	.window-controls {
-		display: inline-flex;
-		gap: 2px;
+	.doc-cards span {
+		font-family: var(--font-serif);
+		font-size: 1.55rem;
+		font-weight: 700;
 	}
 
-	.window-controls w1c-button {
-		--w1c-button-padding: 1px 6px;
+	.doc-cards small {
+		font-size: 1rem;
+		line-height: 1.4;
 	}
 </style>

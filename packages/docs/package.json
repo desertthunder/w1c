@@ -4,8 +4,10 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
+		"dev": "pnpm run pagefind:dev && vite dev",
+		"dev:plain": "vite dev",
+		"pagefind:dev": "vite build && pagefind --site build --output-path static/pagefind --quiet",
+		"build": "vite build && pagefind --site build --output-subdir pagefind",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -16,6 +18,9 @@
 		"test": "pnpm run test:unit -- --run"
 	},
 	"dependencies": {
+		"@fontsource-variable/ibm-plex-sans": "^5.2.8",
+		"@fontsource/ibm-plex-mono": "^5.2.7",
+		"@fontsource/ibm-plex-serif": "^5.2.7",
 		"@w1c/components": "workspace:*"
 	},
 	"devDependencies": {
@@ -30,6 +35,7 @@
 		"eslint-plugin-svelte": "^3.19.0",
 		"globals": "^17.6.0",
 		"mdsvex": "^0.12.7",
+		"pagefind": "^1.5.2",
 		"playwright": "^1.60.0",
 		"prettier": "^3.8.3",
 		"prettier-plugin-svelte": "^4.1.0",
