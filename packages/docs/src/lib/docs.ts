@@ -8,7 +8,7 @@
 export type DocLink = { title: string; href: string; description: string; external?: boolean };
 
 /** Documentation category */
-export type DocGroup = { title: string; links: DocLink[] };
+export type DocGroup = { title: string; links?: DocLink[]; groups?: DocGroup[] };
 
 export const NAV_LINKS: DocLink[] = [
 	{
@@ -131,6 +131,87 @@ export const COMPONENT_DOCS: DocLink[] = [
 	{ title: 'Divider', href: '/docs/components/divider/', description: 'Horizontal or vertical separator.' }
 ];
 
+const componentDocsByHref = new Map(COMPONENT_DOCS.map((doc) => [doc.href, doc]));
+
+function componentDocs(...hrefs: string[]) {
+	return hrefs.map((href) => {
+		const doc = componentDocsByHref.get(href);
+		if (!doc) throw new Error(`Missing component doc manifest entry for ${href}`);
+		return doc;
+	});
+}
+
+export const COMPONENT_DOC_GROUPS: DocGroup[] = [
+	{
+		title: 'Shell',
+		links: componentDocs(
+			'/docs/components/window/',
+			'/docs/components/titlebar/',
+			'/docs/components/toolbar/',
+			'/docs/components/statusbar/',
+			'/docs/components/panel/',
+			'/docs/components/divider/'
+		)
+	},
+	{
+		title: 'Controls',
+		links: componentDocs(
+			'/docs/components/button/',
+			'/docs/components/address-field/',
+			'/docs/components/label/',
+			'/docs/components/input/',
+			'/docs/components/select/',
+			'/docs/components/textarea/',
+			'/docs/components/checkbox/',
+			'/docs/components/validation-message/',
+			'/docs/components/tabs/'
+		)
+	},
+	{ title: 'Desktop', links: componentDocs('/docs/components/desktop-icon/', '/docs/components/taskbar/') },
+	{
+		title: 'Geocities',
+		links: componentDocs(
+			'/docs/components/badge-88x31/',
+			'/docs/components/visitor-counter/',
+			'/docs/components/guestbook-panel/',
+			'/docs/components/webring/',
+			'/docs/components/under-construction/',
+			'/docs/components/marquee/',
+			'/docs/components/blink/',
+			'/docs/components/tiled-background/',
+			'/docs/components/link-cluster/',
+			'/docs/components/last-updated/',
+			'/docs/components/image-map/'
+		)
+	},
+	{
+		title: 'Menus',
+		links: componentDocs('/docs/components/menu-bar/', '/docs/components/menu/', '/docs/components/menu-item/')
+	},
+	{
+		title: 'Documents and data',
+		links: componentDocs(
+			'/docs/components/data-table/',
+			'/docs/components/data-list/',
+			'/docs/components/status-card/',
+			'/docs/components/endpoint-row/',
+			'/docs/components/source-viewer/',
+			'/docs/components/document-browser/',
+			'/docs/components/word-processor/',
+			'/docs/components/json-viewer/'
+		)
+	},
+	{
+		title: 'Feedback and icons',
+		links: componentDocs(
+			'/docs/components/dialog/',
+			'/docs/components/toast/',
+			'/docs/components/alert/',
+			'/docs/components/icon/'
+		)
+	}
+];
+
 const docsByHref = new Map(DOC_MANIFEST.map((doc) => [doc.href, doc]));
 
 function docs(...hrefs: string[]) {
@@ -156,6 +237,6 @@ export const DOC_GROUPS: DocGroup[] = [
 			'/docs/components/'
 		)
 	},
-	{ title: 'Components', links: COMPONENT_DOCS },
+	{ title: 'Components', groups: COMPONENT_DOC_GROUPS },
 	{ title: 'Meta', links: docs('/docs/inspiration/') }
 ];

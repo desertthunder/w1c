@@ -20,14 +20,14 @@ import '@w1c/components/badge-88x31';
 <ComponentPreview components={['badge-88x31']}>
 <w1c-badge-88x31 href="/about/" label="My Site">
 <span slot="icon">★</span>
-Best Viewed
+LOL
 </w1c-badge-88x31>
 </ComponentPreview>
 
 ```html
 <w1c-badge-88x31 href="/about/" label="My Site">
 	<span slot="icon">★</span>
-	Best Viewed
+	LOL
 </w1c-badge-88x31>
 ```
 

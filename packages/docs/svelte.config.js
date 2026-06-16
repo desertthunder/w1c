@@ -17,7 +17,7 @@ function escapeHtml(value) {
 function highlightCode(code, lang = 'text') {
 	const language = lang || 'text';
 	const escapedLanguage = escapeHtml(language);
-	return `<pre class="language-${escapedLanguage}"><code class="language-${escapedLanguage}">${escapeHtml(code)}</code></pre>`;
+	return `<div class="code-block" data-docs-code-block><button class="copy-button copy-button--code" type="button" data-copy-code>Copy</button><pre class="language-${escapedLanguage}"><code class="language-${escapedLanguage}">${escapeHtml(code)}</code></pre></div>`;
 }
 
 /** @type {import('@sveltejs/kit').Config} */

@@ -161,4 +161,22 @@
 	.component-preview :global(w1c-window) {
 		max-width: 100%;
 	}
+
+	.component-preview :global(w1c-titlebar),
+	.component-preview :global(w1c-window) {
+		--w1c-titlebar-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+		--w1c-titlebar-title-align: center;
+	}
+
+	.component-preview :global(w1c-titlebar::part(icon)),
+	.component-preview :global(w1c-window::part(icon)) {
+		justify-self: start;
+		justify-content: flex-start;
+	}
+
+	.component-preview :global(w1c-titlebar::part(controls)),
+	.component-preview :global(w1c-window::part(controls)) {
+		justify-self: end;
+		justify-content: flex-end;
+	}
 </style>
