@@ -17,7 +17,7 @@ body {
 .w1c-story-note {
 	width: fit-content;
 	margin: 0 0 10px;
-	padding: 2px 6px;
+	padding: 8px;
 	color: var(--w1c-active-titlebar-text, #ffffff);
 	background: var(--w1c-active-titlebar, #000080);
 	font: var(--w1c-statusbar-font, 12px/1.2 'MS Sans Serif', Tahoma, sans-serif);

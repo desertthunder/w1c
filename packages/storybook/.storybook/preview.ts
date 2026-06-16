@@ -18,6 +18,15 @@ const themeUrls = {
 	geocities: geocitiesUrl
 } as const;
 
+const themeLabels: Record<ThemeName, string> = {
+	'web-1': 'Web 1.0',
+	'windows-95': 'Windows 95',
+	geocities: 'Geocities',
+	'classic-mac': 'Classic Mac (System 7)',
+	gnome2: 'GNOME 2',
+	'ubuntu-810': 'Ubuntu 8.10'
+} as const;
+
 type ThemeName = keyof typeof themeUrls;
 type StoryTheme = ThemeName | 'global';
 
@@ -48,12 +57,12 @@ const preview: Preview = {
 				title: 'Theme',
 				icon: 'paintbrush',
 				items: [
-					{ value: 'windows-95', title: 'Windows 95' },
-					{ value: 'gnome2', title: 'GNOME 2' },
-					{ value: 'ubuntu-810', title: 'Ubuntu 8.10' },
-					{ value: 'classic-mac', title: 'Classic Mac' },
 					{ value: 'web-1', title: 'Web 1.0' },
-					{ value: 'geocities', title: 'Geocities' }
+					{ value: 'windows-95', title: 'Windows 95' },
+					{ value: 'geocities', title: 'Geocities' },
+					{ value: 'classic-mac', title: 'Classic Mac (System 7)' },
+					{ value: 'gnome2', title: 'GNOME 2' },
+					{ value: 'ubuntu-810', title: 'Ubuntu 8.10' }
 				]
 			}
 		}
@@ -68,7 +77,7 @@ const preview: Preview = {
 
 			return html`
 				<div class="w1c-story-shell">
-					<p class="w1c-story-note">${theme}</p>
+					<p class="w1c-story-note"><strong>Theme</strong>: ${themeLabels[theme]} (<code>${theme}</code>)</p>
 					${story()}
 				</div>
 			`;

@@ -1,5 +1,5 @@
-import { LitElement, css, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { LitElement, css, html, nothing } from 'lit';
+import { customElement, property, state } from 'lit/decorators.js';
 
 /**
  * Dense titlebar for retro windows and dialogs.
@@ -18,14 +18,30 @@ export class W1cTitlebar extends LitElement {
 	@property()
 	title = '';
 
+	@state()
+	private hasTitleSlotContent = false;
+
 	render() {
 		return html`
 			<header part="chrome titlebar">
 				<span part="icon" class="icon"><slot name="icon"></slot></span>
-				<span part="title" class="title"><slot>${this.title}</slot></span>
+				<span part="title" class="title">
+					<slot @slotchange=${this.handleTitleSlotChange}></slot>${this.hasTitleSlotContent ? nothing : this.title}
+				</span>
 				<span part="controls" class="controls"><slot name="controls"></slot></span>
 			</header>
 		`;
+	}
+
+	private handleTitleSlotChange(event: Event) {
+		const slot = event.currentTarget as HTMLSlotElement;
+		this.hasTitleSlotContent = slot.assignedNodes({ flatten: true }).some((node) => {
+			if (node.nodeType === Node.TEXT_NODE) {
+				return Boolean(node.textContent?.trim());
+			}
+
+			return node instanceof HTMLElement || node instanceof SVGElement;
+		});
 	}
 
 	static styles = css`
