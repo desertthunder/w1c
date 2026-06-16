@@ -290,6 +290,50 @@ describe('component events and native-control proxying', () => {
 		);
 		expect(resizeEnd).toHaveBeenCalledTimes(1);
 	});
+
+	it('normalizes string window geometry before moving and resizing', async () => {
+		installPointerCaptureStubs();
+
+		const element = await createElement('w1c-window');
+		const typed = element as unknown as {
+			movable: boolean;
+			resizable: boolean;
+			x: string;
+			y: string;
+			width: string;
+			height: string;
+			minWidth: string;
+			minHeight: string;
+		};
+		typed.movable = true;
+		typed.resizable = true;
+		typed.x = '24';
+		typed.y = '16';
+		typed.width = '420';
+		typed.height = '280';
+		typed.minWidth = '320';
+		typed.minHeight = '220';
+		await element.updateComplete;
+
+		const move = vi.fn();
+		const resize = vi.fn();
+		element.addEventListener('w1c-window-move', move);
+		element.addEventListener('w1c-window-resize', resize);
+
+		const titlebar = element.shadowRoot?.querySelector('w1c-titlebar');
+		titlebar?.dispatchEvent(pointerEvent('pointerdown', { clientX: 10, clientY: 20 }));
+		titlebar?.dispatchEvent(pointerEvent('pointermove', { clientX: 50, clientY: 60 }));
+		titlebar?.dispatchEvent(pointerEvent('pointerup', { clientX: 50, clientY: 60 }));
+
+		const resizeHandle = element.shadowRoot?.querySelector<HTMLElement>('.resize-handle');
+		resizeHandle?.dispatchEvent(pointerEvent('pointerdown', { clientX: 0, clientY: 0 }));
+		resizeHandle?.dispatchEvent(pointerEvent('pointermove', { clientX: 40, clientY: 50 }));
+
+		expect(move).toHaveBeenCalledWith(expect.objectContaining({ detail: expect.objectContaining({ x: 64, y: 56 }) }));
+		expect(resize).toHaveBeenCalledWith(
+			expect.objectContaining({ detail: expect.objectContaining({ width: 460, height: 330 }) })
+		);
+	});
 });
 
 describe('keyboard and focus behavior', () => {

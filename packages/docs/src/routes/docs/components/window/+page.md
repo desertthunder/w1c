@@ -61,6 +61,8 @@ import '@w1c/components/button';
 - `width`, `height`: current explicit size in pixels.
 - `min-width`, `min-height`, `max-width`, `max-height`: resize constraints.
 
+Numeric geometry accepts either number properties or string-backed attributes from framework templates.
+
 ## Events
 
 - `w1c-window-move-start`

@@ -1,4 +1,5 @@
 import { html } from 'lit';
+import { createRef, ref } from 'lit/directives/ref.js';
 import type { Meta, StoryObj } from '@storybook/web-components-vite';
 import '@w1c/components';
 import { moveResize, createResizeSession } from '@w1c/dnd';
@@ -112,6 +113,40 @@ export const DraggableAndResizable: Story = {
 			</w1c-window>
 		</div>
 	`
+};
+
+export const StringBackedGeometry: Story = {
+	render: () => {
+		const windowRef = createRef<
+			HTMLElement & { x: unknown; y: unknown; width: unknown; height: unknown; minWidth: unknown; minHeight: unknown }
+		>();
+
+		queueMicrotask(() => {
+			const element = windowRef.value;
+
+			if (!element) {
+				return;
+			}
+
+			element.x = '24';
+			element.y = '16';
+			element.width = '380';
+			element.height = '250';
+			element.minWidth = '300';
+			element.minHeight = '210';
+		});
+
+		return html`
+			<div class="story-frame window-stage">
+				<w1c-window ${ref(windowRef)} title="Framework template" movable resizable>
+					<span slot="icon" aria-hidden="true">F</span>
+					<h2>String-backed geometry</h2>
+					<p>This story simulates framework templates that assign numeric custom-element properties as strings.</p>
+					<w1c-statusbar slot="statusbar">Drag and resize should stay proportional</w1c-statusbar>
+				</w1c-window>
+			</div>
+		`;
+	}
 };
 
 export const DisabledMovement: Story = {

@@ -9,11 +9,9 @@ import {
 	moveDrag,
 	moveResize,
 	pointFromPointerEvent,
-	startPointerSession,
-	type DragSession,
-	type PointerSession,
-	type ResizeSession
+	startPointerSession
 } from '@w1c/dnd';
+import type { DragSession, PointerSession, ResizeSession } from '@w1c/dnd';
 import './statusbar';
 import './titlebar';
 import './toolbar';
@@ -128,14 +126,14 @@ export class W1cWindow extends LitElement {
 	}
 
 	private geometryStyle() {
-		const declarations = [`transform: translate(${this.x}px, ${this.y}px);`];
+		const declarations = [`transform: translate(${this.numberValue(this.x)}px, ${this.numberValue(this.y)}px);`];
 
 		if (this.width !== null) {
-			declarations.push(`width: ${this.width}px;`);
+			declarations.push(`width: ${this.numberValue(this.width)}px;`);
 		}
 
 		if (this.height !== null) {
-			declarations.push(`height: ${this.height}px;`);
+			declarations.push(`height: ${this.numberValue(this.height)}px;`);
 		}
 
 		return declarations.join(' ');
@@ -153,7 +151,10 @@ export class W1cWindow extends LitElement {
 		}
 
 		this.dragPointerSession = result.session;
-		this.dragSession = createDragSession(event.pointerId, result.point, { x: this.x, y: this.y });
+		this.dragSession = createDragSession(event.pointerId, result.point, {
+			x: this.numberValue(this.x),
+			y: this.numberValue(this.y)
+		});
 		this.moving = true;
 		this.dispatchGeometryEvent('w1c-window-move-start');
 	}
@@ -190,8 +191,8 @@ export class W1cWindow extends LitElement {
 		const bounds = this.getBoundingClientRect();
 		this.resizePointerSession = result.session;
 		this.resizeSession = createResizeSession(event.pointerId, result.point, {
-			width: this.width ?? bounds.width,
-			height: this.height ?? bounds.height
+			width: this.width === null ? bounds.width : this.numberValue(this.width, bounds.width),
+			height: this.height === null ? bounds.height : this.numberValue(this.height, bounds.height)
 		});
 		this.resizing = true;
 		this.dispatchGeometryEvent('w1c-window-resize-start');
@@ -203,10 +204,10 @@ export class W1cWindow extends LitElement {
 		}
 
 		const size = moveResize(this.resizeSession, pointFromPointerEvent(event), {
-			minWidth: this.minWidth,
-			minHeight: this.minHeight,
-			maxWidth: this.maxWidth ?? undefined,
-			maxHeight: this.maxHeight ?? undefined
+			minWidth: this.numberValue(this.minWidth),
+			minHeight: this.numberValue(this.minHeight),
+			maxWidth: this.maxWidth === null ? undefined : this.numberValue(this.maxWidth),
+			maxHeight: this.maxHeight === null ? undefined : this.numberValue(this.maxHeight)
 		});
 		this.width = size.width;
 		this.height = size.height;
@@ -242,9 +243,19 @@ export class W1cWindow extends LitElement {
 			new CustomEvent(type, {
 				bubbles: true,
 				composed: true,
-				detail: { x: this.x, y: this.y, width: this.width, height: this.height }
+				detail: {
+					x: this.numberValue(this.x),
+					y: this.numberValue(this.y),
+					width: this.width === null ? null : this.numberValue(this.width),
+					height: this.height === null ? null : this.numberValue(this.height)
+				}
 			})
 		);
+	}
+
+	private numberValue(value: number | string | null, fallback = 0) {
+		const number = Number(value);
+		return Number.isFinite(number) ? number : fallback;
 	}
 
 	static styles = css`
