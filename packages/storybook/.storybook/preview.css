@@ -3,7 +3,7 @@ body {
 	background-color: var(--w1c-desktop-background, var(--w1c-surface, #c0c0c0));
 	background-image: var(--w1c-desktop-background-image, none);
 	background-size: var(--w1c-desktop-background-size, auto);
-	font: var(--w1c-body-font, 13px/1.35 'MS Sans Serif', Tahoma, sans-serif);
+	font: var(--w1c-body-font, 14px/1.25 'MS Sans Serif', Tahoma, sans-serif);
 }
 
 .w1c-story-shell {

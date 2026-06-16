@@ -7,17 +7,18 @@ description: Use W1C icons, icon metadata, and asset base paths for copied icon 
 
 # Icons
 
-W1C ships one small icon set as TypeScript data. The icons are inline
+W1C ships one icon set as TypeScript data. The icons are inline
 SVG paths, so they do not need a network request or asset base path.
 
 ```ts
 import '@w1c/components/icon';
-import { W1C_ICON_METADATA, W1C_ICON_NAMES, W1C_ICONS } from '@w1c/components/icons';
+import { W1C_ICON_LICENSE_REVIEW, W1C_ICON_METADATA, W1C_ICON_NAMES, W1C_ICONS } from '@w1c/components/icons';
 import type { IconData } from '@w1c/components/icons';
 
 const folder: IconData = W1C_ICONS.folder;
 const names = W1C_ICON_NAMES;
 const source = W1C_ICON_METADATA.folder.sourceReferenceProject;
+const review = W1C_ICON_LICENSE_REVIEW.status;
 ```
 
 ```html
@@ -44,6 +45,19 @@ type IconData = {
 Use package-provided data or trusted local data. Do not pass user-authored SVG strings
 into `w1c-icon`.
 
+`body` contains the inner SVG markup, not the outer `<svg>` element. It may include
+multiple children, such as several `<path>` elements.
+
+Set `width`, `height`, `left`, or `top` when the source icon uses a viewBox other than
+`0 0 16 16`.
+
+Bundled icons with source-specific viewBoxes:
+
+- `danger`: `0 0 24 24`
+- `globe`: `0 0 24 24`
+- `pdf`: `0 0 15 15`
+- `web-browser`: `0 0 24 24`
+
 ## Metadata
 
 Each bundled icon has metadata for:
@@ -57,11 +71,24 @@ Each bundled icon has metadata for:
 - attribution text
 - intended size
 
-The first W1C icon set is original artwork under MIT metadata. Reference icons can guide
-style, but copied icon assets still need file-level license review before they are added
-to the package.
+The bundled W1C icon set is normalized as package SVG data. Windows-style icons come from
+Wikimedia Commons references. Other icon source families are: OpenMoji, Twemoji, FxEmoji,
+Bootstrap Icons, & Ubuntu Humanity.
 
-## Asset base paths
+### Sources
+
+- Wikimedia Commons Windows-style icon references: mixed per-file licenses.
+- OpenMoji: CC BY-SA 4.0.
+- Twemoji: CC BY 4.0.
+- FxEmoji: CC BY 4.0.
+- Bootstrap Icons: MIT.
+- Ubuntu Humanity icon theme: mixed GPL / CC-BY-SA theme assets.
+- Iconify icon data and icondata: data shape and attribution model references.
+- Ibex and Tempest local references: coverage reference only.
+
+Copied or source-derived icon assets still need file-level license review before they are added to the package.
+
+## Asset Paths
 
 Inline W1C icons do not need asset paths. Copied assets do: external icon files, SVG
 sprite sheets, tiled backgrounds, and images need predictable URLs in static HTML, CDN,

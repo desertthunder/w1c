@@ -69,6 +69,10 @@ export class W1cDataList extends LitElement {
 			border-block-end-color: var(--w1c-data-list-highlight, var(--w1c-control-highlight, #ffffff));
 			border-inline-end-color: var(--w1c-data-list-highlight, var(--w1c-control-highlight, #ffffff));
 			background: var(--w1c-data-list-background, var(--w1c-window-content-background, #ffffff));
+			box-shadow: var(
+				--w1c-data-list-right-edge,
+				inset -1px 0 0 var(--w1c-data-list-right-edge-color, var(--w1c-control-shadow, #808080))
+			);
 			overflow: hidden;
 		}
 
@@ -105,6 +109,7 @@ export class W1cDataList extends LitElement {
 			min-width: 0;
 			padding: var(--w1c-data-list-row-padding, 5px 6px);
 			border-block-end: var(--w1c-data-list-row-border, 1px solid rgb(0 0 0 / 0.12));
+			border-inline-end: var(--w1c-data-list-row-right-border, 1px solid var(--w1c-control-shadow, #808080));
 			color: inherit;
 			text-decoration: none;
 			background: var(--w1c-data-list-row-background, transparent);

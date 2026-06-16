@@ -58,6 +58,7 @@ export const COMPONENT_DOCS: DocLink[] = [
 	{ title: 'Toast', href: '/docs/components/toast/', description: 'Status, info, warning, and danger notice shell.' },
 	{ title: 'Data table', href: '/docs/components/data-table/', description: 'Dense ARIA table grid.' },
 	{ title: 'Data list', href: '/docs/components/data-list/', description: 'Dense record list surface.' },
+	{ title: 'Source viewer', href: '/docs/components/source-viewer/', description: 'Full source viewer shell.' },
 	{
 		title: 'Document browser',
 		href: '/docs/components/document-browser/',

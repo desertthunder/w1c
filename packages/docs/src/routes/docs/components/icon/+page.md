@@ -21,7 +21,7 @@ import '@w1c/components/icon';
 
 - `name`: bundled icon name.
 - `label`: accessible label. Leave empty for decorative icons.
-- `data`: trusted `IconData`, set as a JavaScript property.
+- `icon`: trusted `IconData`, set as a JavaScript property.
 
 ## Parts
 

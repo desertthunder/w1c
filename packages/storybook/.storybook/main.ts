@@ -7,6 +7,7 @@ const config: StorybookConfig = {
 	stories: ['../src/**/*.stories.@(js|mjs|ts)'],
 	addons: ['@storybook/addon-docs'],
 	framework: { name: '@storybook/web-components-vite', options: {} },
+	staticDirs: [{ from: '../../docs/src/lib/assets', to: '/' }],
 	viteFinal: (config) => {
 		return {
 			...config,

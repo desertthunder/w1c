@@ -22,6 +22,7 @@
 		"./menu-bar": "./src/menu-bar/index.ts",
 		"./menu-item": "./src/menu-item/index.ts",
 		"./panel": "./src/panel/index.ts",
+		"./source-viewer": "./src/source-viewer/index.ts",
 		"./statusbar": "./src/statusbar/index.ts",
 		"./tabs": "./src/tabs/index.ts",
 		"./taskbar": "./src/taskbar/index.ts",

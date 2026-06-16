@@ -79,6 +79,10 @@ export class W1cDataTable extends LitElement {
 			border-block-end-color: var(--w1c-data-table-highlight, var(--w1c-control-highlight, #ffffff));
 			border-inline-end-color: var(--w1c-data-table-highlight, var(--w1c-control-highlight, #ffffff));
 			background: var(--w1c-data-table-background, var(--w1c-window-content-background, #ffffff));
+			box-shadow: var(
+				--w1c-data-table-right-edge,
+				inset -1px 0 0 var(--w1c-data-table-right-edge-color, var(--w1c-control-shadow, #808080))
+			);
 		}
 
 		.table {
@@ -113,6 +117,7 @@ export class W1cDataTable extends LitElement {
 			min-width: 0;
 			padding: var(--w1c-data-table-cell-padding, 4px 6px);
 			border-block-end: var(--w1c-data-table-cell-border, 1px solid var(--w1c-control-shadow, #808080));
+			border-inline-end: var(--w1c-data-table-row-right-border, 1px solid var(--w1c-control-shadow, #808080));
 			background: var(--w1c-data-table-row-background, transparent);
 			text-align: start;
 			vertical-align: top;

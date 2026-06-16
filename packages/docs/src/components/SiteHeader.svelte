@@ -23,7 +23,7 @@
 <header class="site-header">
 	<a class="brand" href={resolve('/')} aria-label="W1C docs home">
 		<span class="brand-mark" aria-hidden="true">W1C</span>
-		<span class="brand-text">Web 1 Components</span>
+		<span class="brand-text">Web 1.0 Components</span>
 	</a>
 	<button
 		class="menu-toggle"

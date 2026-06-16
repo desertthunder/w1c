@@ -39,6 +39,7 @@ W1C components are framework-agnostic custom elements. Import the whole stable s
 
 - [`w1c-data-table`](/docs/components/data-table/): dense ARIA table grid for admin rows and file details.
 - [`w1c-data-list`](/docs/components/data-list/): dense record list for files, endpoints, and search rows.
+- [`w1c-source-viewer`](/docs/components/source-viewer/): full source viewer shell with toolbar, pathbar, source pane, and statusbar.
 - [`w1c-document-browser`](/docs/components/document-browser/): browser shell with toolbar, sidebar, content pane, and statusbar.
 - [`w1c-word-processor`](/docs/components/word-processor/): editor shell with toolbar, ruler, paper page, and details pane.
 - [`w1c-json-viewer`](/docs/components/json-viewer/): read-only formatted JSON/source viewer.

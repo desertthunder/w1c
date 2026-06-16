@@ -3,9 +3,9 @@ title: Typography | W1C Docs
 description: Fonts used by each W1C theme for headings, UI text, and code.
 ---
 
-<p class="doc-kicker">Typography</p>
+<p class="doc-kicker">Fonts</p>
 
-# Theme typography
+# Typography
 
 Each theme defines three font tokens:
 
@@ -26,4 +26,6 @@ The docs app loads `@w1c/fonts/all.css`, then maps the selected type choices ont
 | Web 1.0     | Times New Roman | Arial         | Courier New   |
 | Geocities   | Comic Relief    | Comic Neue    | Comic Neue    |
 
-Classic Mac heading and UI fonts are vendored from [system.css](https://github.com/sakofchit/system.css/tree/main/fonts). The other bundled faces come from Fontsource.
+Classic Mac heading and UI fonts are vendored from [system.css](https://github.com/sakofchit/system.css/tree/main/fonts).
+
+The other bundled faces come from Fontsource and are also available from Google Fonts.
