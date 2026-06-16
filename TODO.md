@@ -41,9 +41,9 @@ new layers.
 
 ## Phase 3: Component Test Coverage
 
-- [ ] Add a shared `packages/lib` Vitest DOM setup for Lit custom elements & the
+- [x] Add a shared `packages/lib` Vitest DOM setup for Lit custom elements & the
       vitest addon for storybook in `packages/storybook`
-- [ ] Add `packages/lib` tests for every public custom element registration.
+- [x] Add `packages/lib` tests for every public custom element registration.
 - [ ] Add `packages/lib` tests for reflected attributes and properties on each component.
 - [ ] Add `packages/lib` tests for shadow DOM roles, slots, CSS parts, default content, and
       named regions.

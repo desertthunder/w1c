@@ -5,7 +5,7 @@ const workspaceRoot = fileURLToPath(new URL('../../..', import.meta.url));
 
 const config: StorybookConfig = {
 	stories: ['../src/**/*.stories.@(js|mjs|ts)'],
-	addons: ['@storybook/addon-docs'],
+	addons: ['@storybook/addon-docs', '@storybook/addon-vitest'],
 	framework: { name: '@storybook/web-components-vite', options: {} },
 	staticDirs: [{ from: '../../docs/src/lib/assets', to: '/' }],
 	viteFinal: (config) => {
