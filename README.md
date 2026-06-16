@@ -2,58 +2,6 @@
 
 W1C is a retro OS and early-web interface inspired web component library.
 
-## Development
-
-### Workspace
-
-W1C is a pnpm workspace with a Lit component package, a public SvelteKit docs app, a
-Storybook workshop, and a small scaffolding CLI.
-
-```sh
-packages
-  ├── lib         # @w1c/components   Lit + Vite web component library
-  ├── fonts       # @w1c/fonts        Theme font CSS and vendored font assets
-  ├── dnd         # @w1c/dnd          Drag, resize, and geometry primitives
-  ├── cli         # @w1c/cli          Scaffolding/bootstrap CLI
-  ├── docs        # @w1c/docs         Public documentation app
-  └── storybook   # @w1c/storybook    Web Components Storybook app
-```
-
-### Tech Stack
-
-Web Components use TypeScript & Lit with Vite.
-
-The doc site is made with SvelteKit.
-
-The CLI uses bomb.sh libraries & tsdown.
-
-Testing is handled with Vitest & Playwright; code quality & formatting with ESLint & Prettier.
-
-### Pre-Reqs
-
-- Node.js
-- pnpm
-
-```sh
-pnpm install
-```
-
-### Local Dev
-
-You can filter by package name with `pnpm --filter @w1c/{name} ...`
-
-For example, to run the documentation or storybook projects:
-
-```sh
-pnpm --filter @w1c/docs dev
-```
-
-```sh
-pnpm --filter @w1c/storybook dev
-```
-
-`package.json` commands follow common conventions for `dev`, `test`, `build`, `check`, `format`
-
 ## Usage
 
 Register every stable component:
@@ -94,15 +42,13 @@ import '@w1c/fonts/all.css';
 |             |                 |               | Anonymous Pro | Fontsource                                            |
 | Web 1.0     | Times New Roman | Arial         | Courier New   | System Fonts[^1]                                      |
 
-## Further Reading
+## Development
 
-- [ROADMAP.md](./ROADMAP.md): project contract and implementation phases.
-- [RESEARCH.md](./RESEARCH.md): research notes on reference studies, web component
-  libraries, and Web 1.0 / Geocities aesthetics.
-- [ibex](https://tangled.org/desertthunder.dev/ibex)
-- [tempest](https://tangled.org/desertthunder.dev/tempest)
+See the [contributing guide](/CONTRIBUTING.md).
 
-## References
+## Further Reading/References
+
+### Other Web Component Libraries
 
 - [Bolt Design System](https://boltdesignsystem.com/)
 - [Web Awesome](https://webawesome.com/)
@@ -132,5 +78,10 @@ import '@w1c/fonts/all.css';
 - [Ubuntu Humanity icon theme](https://github.com/mk-pmb/ubuntu-icon-theme-humanity)
 - [Iconify icon data](https://iconify.design/docs/icons/icon-data.html)
 - [icondata](https://github.com/carloskiki/icondata)
+
+### My Other Experiments
+
+- [ibex](https://tangled.org/desertthunder.dev/ibex)
+- [tempest](https://tangled.org/desertthunder.dev/tempest)
 
 [^1]: if you have different defaults in your browser, these'll look different.
