@@ -297,6 +297,11 @@ The CLI is a convenience wrapper, not a required runtime dependency.
 
 Initial commands:
 
+- `w1c docs [topic]`: render bundled Markdown docs in the terminal. This should be the
+  first CLI command implemented. At build time, copy
+  `packages/docs/src/routes/docs/**/+page.md` into the CLI package as a preserved
+  route-shaped docs tree, strip Svelte-only page code, and keep `packages/docs` as the
+  only docs source of truth.
 - `w1c init`: add W1C imports and theme setup to an existing project.
 - `w1c add theme`: add one or more theme CSS imports.
 - `w1c add icons`: copy or configure icon assets.

@@ -123,6 +123,13 @@ new layers.
 
 ## CLI
 
+- [ ] Add `w1c docs` as the first CLI command to render bundled Markdown docs in the
+      terminal.
+- [ ] Generate the CLI docs bundle at build time by copying
+      `packages/docs/src/routes/docs/**/+page.md` into a preserved route-shaped docs tree
+      for `@w1c/cli`.
+- [ ] Keep docs source-of-truth in `packages/docs`; strip Svelte-only page code from the CLI
+      docs bundle instead of maintaining separate terminal docs.
 - [ ] Replace starter `my-element` output with real W1C component and theme setup.
 - [ ] Add `w1c init` to add W1C imports and theme setup to an existing project.
 - [ ] Add `w1c add theme` for one or more theme CSS imports.
