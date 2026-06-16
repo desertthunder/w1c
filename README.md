@@ -1,6 +1,6 @@
 ![w1c banner](./assets/banner.png)
 
-W1C is a retro OS and early-web interface inspired web components.
+W1C is a retro OS and early-web interface inspired web component library.
 
 ## Development
 
