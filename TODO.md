@@ -44,8 +44,8 @@ new layers.
 - [x] Add a shared `packages/lib` Vitest DOM setup for Lit custom elements & the
       vitest addon for storybook in `packages/storybook`
 - [x] Add `packages/lib` tests for every public custom element registration.
-- [ ] Add `packages/lib` tests for reflected attributes and properties on each component.
-- [ ] Add `packages/lib` tests for shadow DOM roles, slots, CSS parts, default content, and
+- [x] Add `packages/lib` tests for reflected attributes and properties on each component.
+- [x] Add `packages/lib` tests for shadow DOM roles, slots, CSS parts, default content, and
       named regions.
 - [ ] Add `packages/lib` tests for component events and native-control state proxying.
 - [ ] Add `packages/lib` tests for keyboard and focus behavior on interactive components.
