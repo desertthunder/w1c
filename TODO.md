@@ -31,7 +31,7 @@ new layers.
       `w1c-statusbar`, `w1c-desktop-icon`, `w1c-dialog`.
 - [x] Priority 2: `w1c-panel`, `w1c-taskbar`, `w1c-menu-bar`, `w1c-menu`, `w1c-menu-item`,
       `w1c-address-field`, `w1c-tabs`, `w1c-toast`.
-- [ ] Priority 3: `w1c-data-table`, `w1c-data-list`, `w1c-document-browser`,
+- [x] Priority 3: `w1c-data-table`, `w1c-data-list`, `w1c-document-browser`,
       `w1c-word-processor`, `w1c-json-viewer`, `w1c-divider`.
 - [ ] Geocities: `w1c-badge-88x31`, `w1c-visitor-counter`, `w1c-guestbook-panel`,
       `w1c-webring`, `w1c-under-construction`, `w1c-marquee`, `w1c-blink`,
