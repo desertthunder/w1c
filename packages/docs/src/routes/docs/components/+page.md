@@ -22,6 +22,12 @@ W1C components are framework-agnostic custom elements. Import the whole stable s
 
 - [`w1c-button`](/docs/components/button/): raised, sunken, and flat command control.
 - [`w1c-address-field`](/docs/components/address-field/): toolbar location field with input, prefix, and actions.
+- [`w1c-label`](/docs/components/label/): form label with required and disabled states.
+- [`w1c-input`](/docs/components/input/): native text input with W1C control chrome.
+- [`w1c-select`](/docs/components/select/): native select control with W1C control chrome.
+- [`w1c-textarea`](/docs/components/textarea/): native textarea with W1C control chrome.
+- [`w1c-checkbox`](/docs/components/checkbox/): labelled native checkbox control.
+- [`w1c-validation-message`](/docs/components/validation-message/): compact validation and helper message.
 - [`w1c-tabs`](/docs/components/tabs/): slotted tabs with keyboard selection.
 
 ## Desktop
@@ -53,6 +59,8 @@ W1C components are framework-agnostic custom elements. Import the whole stable s
 
 - [`w1c-data-table`](/docs/components/data-table/): dense ARIA table grid for admin rows and file details.
 - [`w1c-data-list`](/docs/components/data-list/): dense record list for files, endpoints, and search rows.
+- [`w1c-status-card`](/docs/components/status-card/): compact status summary card for admin and setup surfaces.
+- [`w1c-endpoint-row`](/docs/components/endpoint-row/): dense endpoint and status row for admin lists.
 - [`w1c-source-viewer`](/docs/components/source-viewer/): full source viewer shell with toolbar, pathbar, source pane, and statusbar.
 - [`w1c-document-browser`](/docs/components/document-browser/): browser shell with toolbar, sidebar, content pane, and statusbar.
 - [`w1c-word-processor`](/docs/components/word-processor/): editor shell with toolbar, ruler, paper page, and details pane.
@@ -62,6 +70,7 @@ W1C components are framework-agnostic custom elements. Import the whole stable s
 
 - [`w1c-dialog`](/docs/components/dialog/): dialog shell for alerts, confirmations, and small forms.
 - [`w1c-toast`](/docs/components/toast/): status, info, warning, and danger notification shell.
+- [`w1c-alert`](/docs/components/alert/): inline alert or flash notice.
 - [`w1c-icon`](/docs/components/icon/): inline SVG icon renderer for bundled W1C icon data.
 
 ## Import Paths

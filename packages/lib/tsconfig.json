@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"experimentalDecorators": true,
 		"useDefineForClassFields": false,
-		"types": ["vite/client"],
+		"types": ["vite/client", "node"],
 		"allowImportingTsExtensions": true,
 		"noEmit": true,
 		"erasableSyntaxOnly": true

@@ -1,4 +1,13 @@
+/**
+ * @module doc
+ *
+ * @description documentation manifest
+ */
+
+/** Documentation metadata */
 export type DocLink = { title: string; href: string; description: string; external?: boolean };
+
+/** Documentation category */
 export type DocGroup = { title: string; links: DocLink[] };
 
 export const NAV_LINKS: DocLink[] = [
@@ -37,11 +46,7 @@ export const DOC_MANIFEST: DocLink[] = [
 		description: 'See the heading, UI, and code fonts used by each theme.'
 	},
 	{ title: 'Icons', href: '/docs/icons/', description: 'Use W1C icon data, metadata, asset paths, and icon parts.' },
-	{
-		title: 'Inspiration',
-		href: '/docs/inspiration/',
-		description: 'Credit the sources behind W1C themes, icons, and early-web patterns.'
-	}
+	{ title: 'Inspiration', href: '/docs/inspiration/', description: 'Where the dev got this idea.' }
 ];
 
 export const COMPONENT_DOCS: DocLink[] = [
@@ -78,6 +83,16 @@ export const COMPONENT_DOCS: DocLink[] = [
 		description: 'Clickable sticker sheet with positioned hotspots.'
 	},
 	{ title: 'Button', href: '/docs/components/button/', description: 'Raised, sunken, and flat command controls.' },
+	{ title: 'Label', href: '/docs/components/label/', description: 'Form label with required and disabled states.' },
+	{ title: 'Input', href: '/docs/components/input/', description: 'Native text input with W1C control chrome.' },
+	{ title: 'Select', href: '/docs/components/select/', description: 'Native select control with W1C control chrome.' },
+	{ title: 'Textarea', href: '/docs/components/textarea/', description: 'Native textarea with W1C control chrome.' },
+	{ title: 'Checkbox', href: '/docs/components/checkbox/', description: 'Labelled native checkbox control.' },
+	{
+		title: 'Validation message',
+		href: '/docs/components/validation-message/',
+		description: 'Compact validation and helper message.'
+	},
 	{ title: 'Window', href: '/docs/components/window/', description: 'Window shell with chrome slots.' },
 	{ title: 'Titlebar', href: '/docs/components/titlebar/', description: 'Dense titlebar for windows and dialogs.' },
 	{ title: 'Toolbar', href: '/docs/components/toolbar/', description: 'Compact row for controls and fields.' },
@@ -92,8 +107,11 @@ export const COMPONENT_DOCS: DocLink[] = [
 	{ title: 'Address field', href: '/docs/components/address-field/', description: 'Toolbar location field.' },
 	{ title: 'Tabs', href: '/docs/components/tabs/', description: 'Slotted tabs with keyboard selection.' },
 	{ title: 'Toast', href: '/docs/components/toast/', description: 'Status, info, warning, and danger notice shell.' },
+	{ title: 'Alert', href: '/docs/components/alert/', description: 'Inline alert or flash notice.' },
 	{ title: 'Data table', href: '/docs/components/data-table/', description: 'Dense ARIA table grid.' },
 	{ title: 'Data list', href: '/docs/components/data-list/', description: 'Dense record list surface.' },
+	{ title: 'Status card', href: '/docs/components/status-card/', description: 'Compact status summary card.' },
+	{ title: 'Endpoint row', href: '/docs/components/endpoint-row/', description: 'Dense endpoint and status row.' },
 	{ title: 'Source viewer', href: '/docs/components/source-viewer/', description: 'Full source viewer shell.' },
 	{
 		title: 'Document browser',
@@ -118,9 +136,7 @@ const docsByHref = new Map(DOC_MANIFEST.map((doc) => [doc.href, doc]));
 function docs(...hrefs: string[]) {
 	return hrefs.map((href) => {
 		const doc = docsByHref.get(href);
-
 		if (!doc) throw new Error(`Missing doc manifest entry for ${href}`);
-
 		return doc;
 	});
 }

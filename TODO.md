@@ -36,7 +36,7 @@ new layers.
 - [x] Geocities: `w1c-badge-88x31`, `w1c-visitor-counter`, `w1c-guestbook-panel`,
       `w1c-webring`, `w1c-under-construction`, `w1c-marquee`, `w1c-blink`,
       `w1c-tiled-background`, `w1c-link-cluster`, `w1c-last-updated`, `w1c-image-map`.
-- [ ] Form primitives: label, input, select, textarea, checkbox, validation message,
+- [x] Form primitives: label, input, select, textarea, checkbox, validation message,
       flash/alert, status card, endpoint row.
 
 ## Phase 3: Component Test Coverage

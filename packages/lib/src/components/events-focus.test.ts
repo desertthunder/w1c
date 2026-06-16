@@ -71,6 +71,139 @@ describe('component events and native-control proxying', () => {
 		expect(element.shadowRoot?.querySelector('button')?.disabled).toBe(true);
 	});
 
+	it('proxies input native value, state, events, and focus', async () => {
+		const element = await createElement('w1c-input');
+		const typed = element as unknown as {
+			disabled: boolean;
+			readonly: boolean;
+			required: boolean;
+			invalid: boolean;
+			value: string;
+		};
+		const input = element.shadowRoot?.querySelector('input');
+		const inputListener = vi.fn();
+		const changeListener = vi.fn();
+
+		element.addEventListener('input', inputListener);
+		element.addEventListener('change', changeListener);
+		typed.disabled = true;
+		typed.readonly = true;
+		typed.required = true;
+		typed.invalid = true;
+		await element.updateComplete;
+
+		expect(input?.disabled).toBe(true);
+		expect(input?.readOnly).toBe(true);
+		expect(input?.required).toBe(true);
+		expect(input?.getAttribute('aria-invalid')).toBe('true');
+
+		typed.disabled = false;
+		await element.updateComplete;
+		input!.value = 'root@example.test';
+		input!.dispatchEvent(new Event('input', { bubbles: true, composed: true }));
+		input!.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
+		element.focus();
+
+		expect(typed.value).toBe('root@example.test');
+		expect(inputListener).toHaveBeenCalled();
+		expect(changeListener).toHaveBeenCalled();
+		expect(element.shadowRoot?.activeElement).toBe(input);
+	});
+
+	it('proxies textarea native value, state, events, and focus', async () => {
+		const element = await createElement('w1c-textarea');
+		const typed = element as unknown as {
+			disabled: boolean;
+			readonly: boolean;
+			required: boolean;
+			invalid: boolean;
+			value: string;
+		};
+		const textarea = element.shadowRoot?.querySelector('textarea');
+		const inputListener = vi.fn();
+		const changeListener = vi.fn();
+
+		element.addEventListener('input', inputListener);
+		element.addEventListener('change', changeListener);
+		typed.disabled = true;
+		typed.readonly = true;
+		typed.required = true;
+		typed.invalid = true;
+		await element.updateComplete;
+
+		expect(textarea?.disabled).toBe(true);
+		expect(textarea?.readOnly).toBe(true);
+		expect(textarea?.required).toBe(true);
+		expect(textarea?.getAttribute('aria-invalid')).toBe('true');
+
+		typed.disabled = false;
+		await element.updateComplete;
+		textarea!.value = 'Queued for review';
+		textarea!.dispatchEvent(new Event('input', { bubbles: true, composed: true }));
+		textarea!.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
+		element.focus();
+
+		expect(typed.value).toBe('Queued for review');
+		expect(inputListener).toHaveBeenCalled();
+		expect(changeListener).toHaveBeenCalled();
+		expect(element.shadowRoot?.activeElement).toBe(textarea);
+	});
+
+	it('proxies checkbox checked state, required state, change event, and focus', async () => {
+		const element = await createElement('w1c-checkbox');
+		const typed = element as unknown as { checked: boolean; disabled: boolean; required: boolean; invalid: boolean };
+		const checkbox = element.shadowRoot?.querySelector('input');
+		const changeListener = vi.fn();
+
+		element.addEventListener('change', changeListener);
+		typed.disabled = true;
+		typed.required = true;
+		typed.invalid = true;
+		await element.updateComplete;
+
+		expect(checkbox?.disabled).toBe(true);
+		expect(checkbox?.required).toBe(true);
+		expect(checkbox?.getAttribute('aria-invalid')).toBe('true');
+
+		typed.disabled = false;
+		await element.updateComplete;
+		checkbox!.checked = true;
+		checkbox!.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
+		element.focus();
+
+		expect(typed.checked).toBe(true);
+		expect(changeListener).toHaveBeenCalled();
+		expect(element.shadowRoot?.activeElement).toBe(checkbox);
+	});
+
+	it('proxies select value, state, change event, and focus', async () => {
+		const element = await createElement('w1c-select');
+		const typed = element as unknown as { value: string; disabled: boolean; required: boolean; invalid: boolean };
+		const select = element.shadowRoot?.querySelector('select');
+		const changeListener = vi.fn();
+
+		element.innerHTML = '<option value="low">Low</option><option value="high">High</option>';
+		element.addEventListener('change', changeListener);
+		typed.disabled = true;
+		typed.required = true;
+		typed.invalid = true;
+		await element.updateComplete;
+
+		expect(select?.disabled).toBe(true);
+		expect(select?.required).toBe(true);
+		expect(select?.getAttribute('aria-invalid')).toBe('true');
+
+		typed.disabled = false;
+		await element.updateComplete;
+		select!.value = 'high';
+		select!.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
+		element.focus();
+
+		expect(typed.value).toBe('high');
+		expect(changeListener).toHaveBeenCalled();
+		expect(element.shadowRoot?.activeElement).toBe(select);
+	});
+
 	it('emits menu item select only when enabled', async () => {
 		const element = await createElement('w1c-menu-item');
 		const listener = vi.fn();

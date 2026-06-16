@@ -12,9 +12,16 @@ const shadowDomCases = [
 		slots: ['label', 'prefix', 'actions'],
 		defaultText: ['Address']
 	},
+	{
+		tagName: 'w1c-alert',
+		parts: ['chrome', 'icon', 'content', 'title', 'actions'],
+		slots: ['', 'icon', 'actions'],
+		roles: ['status']
+	},
 	{ tagName: 'w1c-badge-88x31', parts: ['chrome', 'icon', 'label'], slots: ['', 'icon'] },
 	{ tagName: 'w1c-blink', parts: ['text'], slots: [''] },
 	{ tagName: 'w1c-button', parts: ['control', 'button'], slots: [''] },
+	{ tagName: 'w1c-checkbox', parts: ['label', 'control', 'checkbox', 'text'], slots: [''] },
 	{
 		tagName: 'w1c-data-list',
 		parts: ['chrome', 'header', 'list', 'footer'],
@@ -44,13 +51,21 @@ const shadowDomCases = [
 		defaultText: ['Ready']
 	},
 	{
+		tagName: 'w1c-endpoint-row',
+		parts: ['chrome', 'method', 'content', 'path', 'status', 'actions'],
+		slots: ['', 'actions'],
+		defaultText: ['GET', '/', 'Ready']
+	},
+	{
 		tagName: 'w1c-guestbook-panel',
 		parts: ['chrome', 'header', 'content', 'actions', 'footer'],
 		slots: ['', 'actions', 'footer']
 	},
 	{ tagName: 'w1c-icon', parts: ['icon'], roles: ['img'] },
 	{ tagName: 'w1c-image-map', parts: ['chrome', 'image', 'hotspots'], slots: [''] },
+	{ tagName: 'w1c-input', parts: ['control', 'input'] },
 	{ tagName: 'w1c-json-viewer', parts: ['chrome', 'toolbar', 'gutter', 'code'], slots: ['toolbar'], roles: ['region'] },
+	{ tagName: 'w1c-label', parts: ['label'], slots: [''] },
 	{ tagName: 'w1c-last-updated', parts: ['chrome', 'label', 'value'], slots: [''], defaultText: ['Last updated'] },
 	{ tagName: 'w1c-link-cluster', parts: ['chrome', 'heading', 'content'], slots: [''], defaultText: ['Links'] },
 	{ tagName: 'w1c-marquee', parts: ['chrome', 'track'], slots: [''], roles: ['marquee'] },
@@ -63,6 +78,7 @@ const shadowDomCases = [
 		roles: ['menuitem']
 	},
 	{ tagName: 'w1c-panel', parts: ['chrome', 'header', 'content', 'footer'], slots: ['', 'header', 'footer'] },
+	{ tagName: 'w1c-select', parts: ['control', 'select'], slots: [''] },
 	{
 		tagName: 'w1c-source-viewer',
 		parts: ['chrome', 'toolbar', 'pathbar', 'workspace', 'gutter', 'code', 'statusbar'],
@@ -70,9 +86,16 @@ const shadowDomCases = [
 		roles: ['group'],
 		defaultText: ['1 line']
 	},
+	{
+		tagName: 'w1c-status-card',
+		parts: ['chrome', 'icon', 'content', 'title', 'value', 'footer'],
+		slots: ['', 'icon', 'footer'],
+		defaultText: ['Status']
+	},
 	{ tagName: 'w1c-statusbar', parts: ['chrome', 'statusbar', 'content'], slots: [''] },
 	{ tagName: 'w1c-tabs', parts: ['chrome', 'tablist', 'panels'], slots: ['', 'tabs'], roles: ['tablist'] },
 	{ tagName: 'w1c-taskbar', parts: ['chrome', 'start', 'content', 'tray'], slots: ['', 'start', 'tray'] },
+	{ tagName: 'w1c-textarea', parts: ['control', 'textarea'] },
 	{
 		tagName: 'w1c-titlebar',
 		parts: ['chrome', 'titlebar', 'icon', 'title', 'controls'],
@@ -91,6 +114,13 @@ const shadowDomCases = [
 		parts: ['chrome', 'sign', 'icon', 'message', 'details'],
 		slots: ['', 'icon'],
 		roles: ['status']
+	},
+	{
+		tagName: 'w1c-validation-message',
+		parts: ['chrome', 'icon', 'content'],
+		slots: ['', 'icon'],
+		roles: ['alert'],
+		defaultText: ['x']
 	},
 	{
 		tagName: 'w1c-visitor-counter',
