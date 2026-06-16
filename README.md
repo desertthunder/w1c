@@ -30,6 +30,16 @@ Load every bundled theme font directly when a docs or preview app needs to switc
 import '@w1c/fonts/all.css';
 ```
 
+## CLI
+
+You can read the bundled docs in your terminal:
+
+```sh
+w1c docs
+w1c docs components/button
+w1c docs --list
+```
+
 ## Theme Typography
 
 | Theme       | Headings        | UI            | Code          | Source                                                |

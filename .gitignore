@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 storybook-static
+
+# Generated package artifacts
+packages/cli/generated/
+packages/cli/src/generated/

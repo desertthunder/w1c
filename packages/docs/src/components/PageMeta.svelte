@@ -1,8 +1,5 @@
 <script lang="ts">
-	type PageMetaProps = {
-		title: string;
-		description: string;
-	};
+	type PageMetaProps = { title: string; description: string };
 
 	let { title, description }: PageMetaProps = $props();
 

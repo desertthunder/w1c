@@ -1,12 +1,54 @@
 #!/usr/bin/env node
 import { confirm, intro, isCancel, outro, text } from '@clack/prompts';
+import chalk from 'chalk';
 import { execa } from 'execa';
 import fsExtra from 'fs-extra';
 import { resolve } from 'node:path';
 import { cac } from 'cac';
+import { CLI_DOCS } from './docs/data';
+import { renderMarkdown } from './docs/renderer';
 
 const { ensureDir, pathExists, writeFile } = fsExtra;
 const cli = cac('w1c');
+const docsBySlug = new Map(CLI_DOCS.map((doc) => [doc.slug, doc]));
+
+function normalizeDocTopic(topic: string | undefined) {
+	if (!topic) return 'getting-started';
+
+	const normalized = topic
+		.trim()
+		.replace(/^\/?docs\/?/, '')
+		.replace(/\/+$/, '');
+
+	return normalized || 'getting-started';
+}
+
+function listDocs() {
+	return CLI_DOCS.map((doc) => `${chalk.cyan(doc.slug.padEnd(34))} ${doc.description}`).join('\n');
+}
+
+cli
+	.command('docs [topic]', 'Render W1C docs in the terminal')
+	.option('--list', 'List bundled docs topics')
+	.option('--raw', 'Print the bundled Markdown without terminal formatting')
+	.action((topic: string | undefined, options: { list?: boolean; raw?: boolean }) => {
+		if (options.list || topic === 'list') {
+			console.log(listDocs());
+			return;
+		}
+
+		const slug = normalizeDocTopic(topic);
+		const doc = docsBySlug.get(slug);
+
+		if (!doc) {
+			console.error(chalk.red(`Unknown docs topic: ${slug}`));
+			console.error(`Run ${chalk.cyan('w1c docs --list')} to see available topics.`);
+			process.exitCode = 1;
+			return;
+		}
+
+		console.log(options.raw ? doc.content : renderMarkdown(doc.content));
+	});
 
 cli
 	.command('create [dir]', 'Create a small app that consumes @w1c/components')
