@@ -1,72 +1,60 @@
-# W1C
+![w1c banner](./assets/banner.png)
 
-Web 1.0 style web components for retro operating-system and early-web interfaces.
+W1C is a retro OS and early-web interface inspired web components.
+
+## Development
+
+### Workspace
 
 W1C is a pnpm workspace with a Lit component package, a public SvelteKit docs app, a
 Storybook workshop, and a small scaffolding CLI.
 
-## Workspace
-
-```text
-packages/
-  cli/          @w1c/cli scaffolding/bootstrap CLI
-  dnd/          @w1c/dnd drag, resize, and geometry primitives
-  docs/         @w1c/docs public SvelteKit documentation app
-  fonts/        @w1c/fonts theme font CSS and vendored font assets
-  lib/          @w1c/components Lit + Vite web component library
-  storybook/    @w1c/storybook Web Components Storybook app
+```sh
+packages
+  ├── lib         # @w1c/components   Lit + Vite web component library
+  ├── fonts       # @w1c/fonts        Theme font CSS and vendored font assets
+  ├── dnd         # @w1c/dnd          Drag, resize, and geometry primitives
+  ├── cli         # @w1c/cli          Scaffolding/bootstrap CLI
+  ├── docs        # @w1c/docs         Public documentation app
+  └── storybook   # @w1c/storybook    Web Components Storybook app
 ```
 
-## Requirements
+### Tech Stack
+
+Web Components use TypeScript & Lit with Vite.
+
+The doc site is made with SvelteKit.
+
+The CLI uses bomb.sh libraries & tsdown.
+
+Testing is handled with Vitest & Playwright; code quality & formatting with ESLint & Prettier.
+
+### Pre-Reqs
 
 - Node.js
 - pnpm
-
-This repo currently uses TypeScript, Lit, Vite, SvelteKit, Storybook for Web Components,
-Vitest, Playwright tooling, ESLint, Prettier, and tsdown.
-
-## Install
 
 ```sh
 pnpm install
 ```
 
-The workspace allows `esbuild` postinstall builds in `pnpm-workspace.yaml` because Vite
-and Storybook require it.
+### Local Dev
 
-## Development
+You can filter by package name with `pnpm --filter @w1c/{name} ...`
 
-Run the public docs app:
-
-```sh
-pnpm dev
-```
-
-Equivalent explicit command:
+For example, to run the documentation or storybook projects:
 
 ```sh
-pnpm dev:docs
+pnpm --filter @w1c/docs dev
 ```
-
-Run Storybook:
 
 ```sh
-pnpm dev:storybook
+pnpm --filter @w1c/storybook dev
 ```
 
-Run the Lit/Vite library demo:
+`package.json` commands follow common conventions for `dev`, `test`, `build`, `check`, `format`
 
-```sh
-pnpm dev:lib
-```
-
-Run the CLI in development:
-
-```sh
-pnpm --filter @w1c/cli dev -- --help
-```
-
-## Package Usage
+## Usage
 
 Register every stable component:
 
@@ -96,87 +84,15 @@ import '@w1c/fonts/all.css';
 
 ## Theme Typography
 
-| Theme       | Headings        | UI            | Code          | Source                                                                                   |
-| ----------- | --------------- | ------------- | ------------- | ---------------------------------------------------------------------------------------- |
-| Windows 95  | IBM Plex Serif  | IBM Plex Sans | IBM Plex Mono | Fontsource                                                                               |
-| GNOME 2     | Ubuntu          | Ubuntu        | Ubuntu Mono   | Fontsource                                                                               |
-| Ubuntu 8.10 | Ubuntu          | Ubuntu        | Ubuntu Mono   | Fontsource                                                                               |
-| Classic Mac | ChiKareGo2      | ChicagoFLF    | Anonymous Pro | [system.css fonts](https://github.com/sakofchit/system.css/tree/main/fonts) + Fontsource |
-| Web 1.0     | Times New Roman | Arial         | Courier New   | System fonts                                                                             |
-| Geocities   | Comic Relief    | Comic Neue    | Comic Neue    | Fontsource                                                                               |
-
-## Checks
-
-Type-check all packages:
-
-```sh
-pnpm check
-```
-
-Build all packages:
-
-```sh
-pnpm build
-```
-
-Run tests:
-
-```sh
-pnpm test
-```
-
-Format all packages:
-
-```sh
-pnpm format
-```
-
-## Package Commands
-
-Docs:
-
-```sh
-pnpm --filter @w1c/docs dev
-pnpm --filter @w1c/docs check
-pnpm --filter @w1c/docs build
-```
-
-Storybook:
-
-```sh
-pnpm --filter @w1c/storybook dev
-pnpm --filter @w1c/storybook check
-pnpm --filter @w1c/storybook build
-```
-
-Library:
-
-```sh
-pnpm --filter @w1c/components dev
-pnpm --filter @w1c/components check
-pnpm --filter @w1c/components build
-```
-
-Fonts:
-
-```sh
-pnpm --filter @w1c/fonts format
-```
-
-DnD:
-
-```sh
-pnpm --filter @w1c/dnd check
-pnpm --filter @w1c/dnd build
-```
-
-CLI:
-
-```sh
-pnpm --filter @w1c/cli check
-pnpm --filter @w1c/cli build
-node packages/cli/dist/index.mjs --help
-```
+| Theme       | Headings        | UI            | Code          | Source                                                |
+| ----------- | --------------- | ------------- | ------------- | ----------------------------------------------------- |
+| Windows 95  | IBM Plex Serif  | IBM Plex Sans | IBM Plex Mono | [Fontsource](https://fontsource.org/)                 |
+| GNOME 2     | Ubuntu          | Ubuntu        | Ubuntu Mono   | Fontsource                                            |
+| Ubuntu 8.10 | Ubuntu          | Ubuntu        | Ubuntu Mono   | Fontsource                                            |
+| Geocities   | Comic Relief    | Comic Neue    | Comic Neue    | Fontsource                                            |
+| Classic Mac | ChiKareGo2      | ChicagoFLF    |               | [system.css](https://github.com/sakofchit/system.css) |
+|             |                 |               | Anonymous Pro | Fontsource                                            |
+| Web 1.0     | Times New Roman | Arial         | Courier New   | System Fonts[^1]                                      |
 
 ## Further Reading
 
@@ -216,3 +132,5 @@ node packages/cli/dist/index.mjs --help
 - [Ubuntu Humanity icon theme](https://github.com/mk-pmb/ubuntu-icon-theme-humanity)
 - [Iconify icon data](https://iconify.design/docs/icons/icon-data.html)
 - [icondata](https://github.com/carloskiki/icondata)
+
+[^1]: if you have different defaults in your browser, these'll look different.

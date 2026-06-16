@@ -1,16 +1,12 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import PageMeta from './PageMeta.svelte';
 
 	let { children, title, description }: { children: Snippet; title?: string; description?: string } = $props();
 </script>
 
-<svelte:head>
-	{#if title}
-		<title>{title}</title>
-	{/if}
-	{#if description}
-		<meta name="description" content={description} />
-	{/if}
-</svelte:head>
+{#if title && description}
+	<PageMeta {title} {description} />
+{/if}
 
 {@render children()}

@@ -11,58 +11,45 @@ W1C is a web component library for people who want the old web's texture without
 bringing back its broken markup.
 
 The early personal web was full of static pages, visible links, tiled backgrounds,
-guestbooks, 88x31 badges, hand-made navigation, and sites that looked like one person
+guestbooks, badges, hand-made navigation, and sites that looked like one person
 had been there.
 
-GeoCities made that kind of web easy to publish at large scale. It
-organized personal pages into neighborhoods, gave ordinary people free space, and left
-behind a record of fan pages, memorials, school projects, clubs, experiments, jokes, and
-unfinished rooms.
-
-W1C treats that history as a design material. A badge should stay legible at 88x31.
-A marquee-inspired component should respect reduced motion. A table-era layout should
-be built with semantic HTML and CSS grid.
-
-We want to make the web feel authored again.
+GeoCities made that kind of web easy to publish at large scale. It organized personal
+pages into neighborhoods, gave ordinary people free space, and left behind a record of
+fan pages, memorials, school projects, clubs, experiments, jokes, and unfinished rooms.
+I want to help make the web feel authored again by using that history as design material.
 
 ## Why this exists
 
 Most component libraries assume a contemporary product interface that has smooth cards,
 neutral dashboards, flat forms, and a thin layer of brand color. W1C is for a different
-job.
+job. No shade to shadcn, but every app doesn't have to be "vercel-core."
 
 It should help you build:
 
 - Static docs and personal pages that look hand-built.
-- Windows 95, GNOME 2, classic Mac, Web 1.0, and GeoCities-inspired interfaces.
+- Small retro UI surfaces with slots, attributes, CSS custom properties & parts.
+- Windows 95, GNOME 2, classic Mac, Web 1.0, and GeoCities-inspired interfaces. For me
+  that means capturing that feeling of booting up a computer for the first time and
+  going to [yahooligans](https://en.wikipedia.org/wiki/Yahoo_Kids) or something.
 - Server-rendered pages that can import custom elements and CSS without a framework
   wrapper.
-- Small retro UI surfaces with slots, attributes, CSS custom properties, and CSS parts.
-
-You should just be able to write HTML, import a script, import a stylesheet, publish the
-page.
 
 ## Footprint
 
 W1C keeps the parts of the early web that still work:
 
-- Obvious navigation.
-- Small reusable graphics.
-- Local voice.
-- Link clusters.
-- Page metadata.
-- Dense desktop chrome.
-- Static HTML examples.
+- Obvious navigation
+- Small reusable graphics
+- Bold typography
+- Good old hypermedia
 
 It leaves the harmful parts behind:
 
-- Layout tables for non-tabular content.
-- Motion that ignores user preferences.
-- Inaccessible blinking text.
-- Mystery scripts required to read basic content.
-- Theme choices trapped inside one app.
+- Layout tables for non-tabular content
+- Inaccessible content
 
-## Inspiration
+## References
 
 The library draws from the wider web component ecosystem, and writing on Web 1.0.
 
@@ -77,4 +64,4 @@ The library draws from the wider web component ecosystem, and writing on Web 1.0
 
 ---
 
-W1C is meant to be a small toolkit for building new pages that remember how the web felt before every page tried to become an app.
+Made with ☕ by [Owais](https://desertthunder.dev)

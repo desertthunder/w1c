@@ -1,11 +1,13 @@
 <script lang="ts">
+	import PageMeta from '../components/PageMeta.svelte';
+
 	let { data } = $props();
+
+	const title = 'W1C Docs';
+	const description = 'Documentation for W1C, a retro web component library for modern pages.';
 </script>
 
-<svelte:head>
-	<title>W1C Docs</title>
-	<meta name="description" content="Documentation for W1C, a retro web component library for modern pages." />
-</svelte:head>
+<PageMeta {title} {description} />
 
 <section class="home">
 	<p class="kicker">Web components for the indie web.</p>

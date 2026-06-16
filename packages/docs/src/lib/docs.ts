@@ -17,13 +17,13 @@ export const NAV_LINKS: DocLink[] = [
 		description: 'Install W1C and render the first retro window.'
 	},
 	{ title: 'About', href: '/about/', description: 'Why W1C exists.' },
+	{ title: 'Components', href: '/docs/components/', description: 'Browse every W1C custom element.' },
 	{
 		title: 'Repo',
 		href: 'https://github.com/desertthunder',
 		description: 'View the project repository.',
 		external: true
-	},
-	{ title: 'Components', href: '/docs/components/', description: 'Browse every W1C custom element.' }
+	}
 ];
 
 export const DOC_MANIFEST: DocLink[] = [
