@@ -60,7 +60,11 @@ export class W1cToast extends LitElement {
 			display: block;
 			width: min(var(--w1c-toast-width, 360px), 100%);
 			color: var(--w1c-toast-text, var(--w1c-control-text, #111111));
-			font: var(--w1c-body-font, 13px/1.35 'MS Sans Serif', Tahoma, sans-serif);
+			font: var(
+				--w1c-body-font,
+				var(--w1c-font-size-2, 13px) / var(--w1c-line-normal, 1.35)
+					var(--w1c-font-ui, 'MS Sans Serif', Tahoma, sans-serif)
+			);
 		}
 
 		.chrome {
@@ -104,7 +108,14 @@ export class W1cToast extends LitElement {
 		.title {
 			display: block;
 			margin-block-end: var(--w1c-space-1, 4px);
-			font: var(--w1c-toast-title-font, var(--w1c-titlebar-font, inherit));
+			font: var(
+				--w1c-toast-title-font,
+				var(
+					--w1c-titlebar-font,
+					700 var(--w1c-font-size-2, 13px) / var(--w1c-line-tight, 1.2)
+						var(--w1c-font-heading, 'MS Sans Serif', Tahoma, sans-serif)
+				)
+			);
 		}
 
 		.close {

@@ -3,6 +3,10 @@ title: Icon | W1C Docs
 description: Render bundled W1C icon data with w1c-icon.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-icon</p>
 
 # Icons
@@ -12,6 +16,10 @@ Renders bundled W1C icon data, or trusted local `IconData`, as inline SVG.
 ```ts
 import '@w1c/components/icon';
 ```
+
+<ComponentPreview components={['icon']}>
+<w1c-icon name="folder" label="Folder"></w1c-icon>
+</ComponentPreview>
 
 ```html
 <w1c-icon name="folder" label="Folder"></w1c-icon>

@@ -3,8 +3,8 @@ import { mdsvex } from 'mdsvex';
 
 const markdownLayout = new URL('./src/components/MarkdownPage.svelte', import.meta.url).pathname;
 
-const escapeHtml = (value) =>
-	value
+function escapeHtml(value) {
+	return value
 		.replaceAll('&', '&amp;')
 		.replaceAll('<', '&lt;')
 		.replaceAll('>', '&gt;')
@@ -12,13 +12,13 @@ const escapeHtml = (value) =>
 		.replaceAll("'", '&#39;')
 		.replaceAll('{', '&#123;')
 		.replaceAll('}', '&#125;');
+}
 
-const highlightCode = (code, lang = 'text') => {
+function highlightCode(code, lang = 'text') {
 	const language = lang || 'text';
 	const escapedLanguage = escapeHtml(language);
-
 	return `<pre class="language-${escapedLanguage}"><code class="language-${escapedLanguage}">${escapeHtml(code)}</code></pre>`;
-};
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

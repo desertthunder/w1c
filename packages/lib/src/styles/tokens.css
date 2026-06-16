@@ -35,10 +35,6 @@
 		--w1c-font-size-4: 20px;
 		--w1c-line-tight: 1.125;
 		--w1c-line-normal: 1.25;
-		--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
-		--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
-		--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
-		--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 
 		--w1c-space-0: 0;
 		--w1c-space-1: 4px;

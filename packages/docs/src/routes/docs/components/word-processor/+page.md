@@ -3,6 +3,10 @@ title: Word Processor | W1C Docs
 description: Editor shell with toolbar, ruler, paper page, and details pane.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-word-processor</p>
 
 # Word Processor
@@ -11,7 +15,25 @@ description: Editor shell with toolbar, ruler, paper page, and details pane.
 
 ```ts
 import '@w1c/components/word-processor';
+import '@w1c/components/toolbar';
+import '@w1c/components/button';
+import '@w1c/components/divider';
 ```
+
+<ComponentPreview components={['word-processor', 'toolbar', 'button', 'divider']}>
+<w1c-word-processor show-details>
+<w1c-toolbar slot="toolbar">
+<w1c-button>B</w1c-button>
+<w1c-button><i>I</i></w1c-button>
+<w1c-divider orientation="vertical"></w1c-divider>
+<w1c-button>Print</w1c-button>
+</w1c-toolbar>
+
+<h2>Quarterly Notes</h2>
+<p>Paper content stays editable by the host app.</p>
+<pre slot="details">mode: draft</pre>
+</w1c-word-processor>
+</ComponentPreview>
 
 ```html
 <w1c-word-processor show-details>

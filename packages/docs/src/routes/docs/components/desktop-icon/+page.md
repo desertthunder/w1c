@@ -3,6 +3,10 @@ title: Desktop Icon | W1C Docs
 description: Desktop shortcut button or link with wrapped label.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-desktop-icon</p>
 
 # Desktop Icons
@@ -11,7 +15,15 @@ description: Desktop shortcut button or link with wrapped label.
 
 ```ts
 import '@w1c/components/desktop-icon';
+import '@w1c/components/icon';
 ```
+
+<ComponentPreview components={['desktop-icon', 'icon']}>
+<w1c-desktop-icon label="Home Folder" href="/home">
+<w1c-icon slot="icon" name="folder" label=""></w1c-icon>
+Home Folder
+</w1c-desktop-icon>
+</ComponentPreview>
 
 ```html
 <w1c-desktop-icon label="Home Folder" href="/home">

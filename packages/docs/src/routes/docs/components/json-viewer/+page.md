@@ -3,6 +3,12 @@ title: JSON Viewer | W1C Docs
 description: Read-only formatted JSON/source viewer.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+
+	const jsonText = '{"status":"ready"}';
+</script>
+
 <p class="doc-kicker">w1c-json-viewer</p>
 
 # JSON Viewer
@@ -13,13 +19,12 @@ description: Read-only formatted JSON/source viewer.
 import '@w1c/components/json-viewer';
 ```
 
+<ComponentPreview components={['json-viewer']}>
+<w1c-json-viewer text={jsonText} line-numbers></w1c-json-viewer>
+</ComponentPreview>
+
 ```html
 <w1c-json-viewer text='{"status":"ready"}' line-numbers></w1c-json-viewer>
-```
-
-```ts
-const viewer = document.querySelector('w1c-json-viewer');
-viewer.value = { status: 'ready', count: 3 };
 ```
 
 ## API

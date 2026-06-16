@@ -3,6 +3,10 @@ title: Document Browser | W1C Docs
 description: Browser shell with toolbar, sidebar, content pane, and statusbar.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-document-browser</p>
 
 # Browser
@@ -11,7 +15,20 @@ description: Browser shell with toolbar, sidebar, content pane, and statusbar.
 
 ```ts
 import '@w1c/components/document-browser';
+import '@w1c/components/statusbar';
 ```
+
+<ComponentPreview components={['document-browser', 'statusbar']}>
+<w1c-document-browser location="/docs/reference/">
+
+<nav slot="sidebar" aria-label="Bookmarks">
+<a href="#intro">Introduction</a>
+</nav>
+<h2 id="intro">Reference Manual</h2>
+<p>Document content stays ordinary HTML.</p>
+<w1c-statusbar slot="statusbar">1 bookmark</w1c-statusbar>
+</w1c-document-browser>
+</ComponentPreview>
 
 ```html
 <w1c-document-browser location="/docs/reference/">

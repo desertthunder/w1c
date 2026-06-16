@@ -3,6 +3,10 @@ title: Menu Item | W1C Docs
 description: Button or anchor command row for menus and menubars.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-menu-item</p>
 
 # Menu Item
@@ -12,6 +16,13 @@ description: Button or anchor command row for menus and menubars.
 ```ts
 import '@w1c/components/menu-item';
 ```
+
+<ComponentPreview components={['menu-item']}>
+<w1c-menu-item>
+Print
+<span slot="suffix">Ctrl+P</span>
+</w1c-menu-item>
+</ComponentPreview>
 
 ```html
 <w1c-menu-item>

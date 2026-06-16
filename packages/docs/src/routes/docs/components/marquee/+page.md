@@ -3,6 +3,10 @@ title: Marquee | W1C Docs
 description: Accessible marquee-inspired scrolling banner.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-marquee</p>
 
 # Marquee
@@ -12,6 +16,10 @@ Use `w1c-marquee` for short announcement text that evokes `<marquee>` without us
 ```ts
 import '@w1c/components/marquee';
 ```
+
+<ComponentPreview components={['marquee']}>
+<w1c-marquee speed="14" pause-on-hover>Welcome to my homepage.</w1c-marquee>
+</ComponentPreview>
 
 ```html
 <w1c-marquee speed="14" pause-on-hover>Welcome to my homepage.</w1c-marquee>

@@ -2,8 +2,7 @@
 	import { onMount } from 'svelte';
 	import type { Snippet } from 'svelte';
 	import type { DocGroup, DocLink } from '../lib/docs';
-	import { docsTheme, loadStoredDocsTheme, setDocsTheme } from '../lib/theme.svelte';
-	import { DOCS_THEMES } from '../lib/themes';
+	import { docsTheme, loadStoredDocsTheme, setDocsTheme } from '$lib/theme.svelte';
 	import DocsSidebar from '$components/DocsSidebar.svelte';
 	import SiteHeader from '$components/SiteHeader.svelte';
 
@@ -32,7 +31,6 @@
 	<a class="skip-link" href="#content">Skip to content</a>
 	<SiteHeader
 		links={topNavLinks}
-		themeOptions={DOCS_THEMES}
 		selectedTheme={docsTheme.selected}
 		{sidebarOpen}
 		onToggleSidebar={toggleSidebar}

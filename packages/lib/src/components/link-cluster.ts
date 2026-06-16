@@ -30,7 +30,10 @@ export class W1cLinkCluster extends LitElement {
 		:host {
 			display: block;
 			color: var(--w1c-link-cluster-text, var(--w1c-control-text, #000000));
-			font: var(--w1c-body-font, 14px/1.25 Arial, sans-serif);
+			font: var(
+				--w1c-body-font,
+				var(--w1c-font-size-2, 14px) / var(--w1c-line-normal, 1.25) var(--w1c-font-ui, Arial, sans-serif)
+			);
 		}
 
 		.chrome {

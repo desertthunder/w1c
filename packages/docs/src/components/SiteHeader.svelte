@@ -1,18 +1,16 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import type { DocLink } from '../lib/docs';
-	import type { DocsTheme } from '../lib/themes';
+	import { DOCS_THEMES } from '$lib/theme.svelte';
 
 	let {
 		links,
-		themeOptions,
 		selectedTheme,
 		sidebarOpen,
 		onToggleSidebar,
 		onThemeChange
 	}: {
 		links: DocLink[];
-		themeOptions: DocsTheme[];
 		selectedTheme: string;
 		sidebarOpen: boolean;
 		onToggleSidebar: () => void;
@@ -50,7 +48,7 @@
 		<label class="theme-picker">
 			<span>Theme</span>
 			<select value={selectedTheme} onchange={(event) => onThemeChange(event.currentTarget.value)}>
-				{#each themeOptions as option (option.id)}
+				{#each DOCS_THEMES as option (option.id)}
 					<option value={option.id}>{option.label}</option>
 				{/each}
 			</select>

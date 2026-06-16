@@ -3,6 +3,10 @@ title: Link Cluster | W1C Docs
 description: Directory-style cluster of hand-authored links.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-link-cluster</p>
 
 # Link Cluster
@@ -12,6 +16,16 @@ Use `w1c-link-cluster` for blogrolls, neighborhood links, site maps, and hand-au
 ```ts
 import '@w1c/components/link-cluster';
 ```
+
+<ComponentPreview components={['link-cluster']}>
+<w1c-link-cluster heading="Neighborhood Links" columns="two">
+
+<ul>
+<li><a href="/zines/">Zines</a></li>
+<li><a href="/buttons/">Button Wall</a></li>
+</ul>
+</w1c-link-cluster>
+</ComponentPreview>
 
 ```html
 <w1c-link-cluster heading="Neighborhood Links" columns="two">

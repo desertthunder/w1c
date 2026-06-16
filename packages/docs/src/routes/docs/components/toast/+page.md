@@ -3,6 +3,10 @@ title: Toast | W1C Docs
 description: Status, info, warning, and danger notification shell.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-toast</p>
 
 # Toast
@@ -11,7 +15,17 @@ Use `w1c-toast` for inline or floating notification content.
 
 ```ts
 import '@w1c/components/toast';
+import '@w1c/components/icon';
+import '@w1c/components/button';
 ```
+
+<ComponentPreview components={['toast', 'icon', 'button']}>
+<w1c-toast title="Upload" variant="status" closeable>
+<w1c-icon slot="icon" name="info" label=""></w1c-icon>
+File transfer completed.
+<w1c-button slot="actions">Open</w1c-button>
+</w1c-toast>
+</ComponentPreview>
 
 ```html
 <w1c-toast title="Upload" variant="status" closeable>

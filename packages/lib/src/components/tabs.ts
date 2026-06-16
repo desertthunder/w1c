@@ -150,7 +150,11 @@ export class W1cTabs extends LitElement {
 		:host {
 			display: block;
 			color: var(--w1c-tabs-text, var(--w1c-control-text, #111111));
-			font: var(--w1c-body-font, 13px/1.35 'MS Sans Serif', Tahoma, sans-serif);
+			font: var(
+				--w1c-body-font,
+				var(--w1c-font-size-2, 13px) / var(--w1c-line-normal, 1.35)
+					var(--w1c-font-ui, 'MS Sans Serif', Tahoma, sans-serif)
+			);
 		}
 
 		.chrome {

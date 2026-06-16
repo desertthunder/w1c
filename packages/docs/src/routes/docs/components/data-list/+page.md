@@ -3,6 +3,10 @@ title: Data List | W1C Docs
 description: Dense record list for files, endpoints, and search rows.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-data-list</p>
 
 # Data List
@@ -13,10 +17,25 @@ description: Dense record list for files, endpoints, and search rows.
 import '@w1c/components/data-list';
 ```
 
+<ComponentPreview components={['data-list']}>
+<w1c-data-list>
+<strong slot="header">Endpoints</strong>
+<button type="button">
+<span>/api/documents</span>
+<span>200 OK</span>
+</button>
+<a href="/api/search">
+<span>/api/search</span>
+<span>304 Cached</span>
+</a>
+<span slot="footer">2 routes</span>
+</w1c-data-list>
+</ComponentPreview>
+
 ```html
 <w1c-data-list>
 	<strong slot="header">Endpoints</strong>
-	<button type="button" aria-selected="true">
+	<button type="button">
 		<span>/api/documents</span>
 		<span>200 OK</span>
 	</button>

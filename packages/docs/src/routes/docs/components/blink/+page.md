@@ -3,6 +3,10 @@ title: Blink | W1C Docs
 description: Blink-inspired inline emphasis with reduced-motion fallback.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-blink</p>
 
 # Blink
@@ -12,6 +16,11 @@ Use `w1c-blink` sparingly for early-web emphasis. Keep the text meaningful when 
 ```ts
 import '@w1c/components/blink';
 ```
+
+<ComponentPreview components={['blink']}>
+
+<p><w1c-blink>New!</w1c-blink> Guestbook entries are open.</p>
+</ComponentPreview>
 
 ```html
 <p><w1c-blink>New!</w1c-blink> Guestbook entries are open.</p>

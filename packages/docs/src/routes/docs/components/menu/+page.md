@@ -3,6 +3,10 @@ title: Menu | W1C Docs
 description: Vertical menu surface for commands.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-menu</p>
 
 # Menu
@@ -11,7 +15,16 @@ description: Vertical menu surface for commands.
 
 ```ts
 import '@w1c/components/menu';
+import '@w1c/components/menu-item';
 ```
+
+<ComponentPreview components={['menu', 'menu-item']}>
+<w1c-menu label="File">
+<w1c-menu-item>New Window</w1c-menu-item>
+<w1c-menu-item checked>Show Toolbar</w1c-menu-item>
+<w1c-menu-item disabled>Publish</w1c-menu-item>
+</w1c-menu>
+</ComponentPreview>
 
 ```html
 <w1c-menu label="File">

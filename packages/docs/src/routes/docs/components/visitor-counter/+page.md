@@ -3,6 +3,10 @@ title: Visitor Counter | W1C Docs
 description: Odometer-style visitor counter with accessible text.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-visitor-counter</p>
 
 # Visitor Counter
@@ -12,6 +16,10 @@ Use `w1c-visitor-counter` for static page counters, demo statistics, and early-w
 ```ts
 import '@w1c/components/visitor-counter';
 ```
+
+<ComponentPreview components={['visitor-counter']}>
+<w1c-visitor-counter value="42069" digits="6" label="Visitors"></w1c-visitor-counter>
+</ComponentPreview>
 
 ```html
 <w1c-visitor-counter value="42069" digits="6" label="Visitors"></w1c-visitor-counter>

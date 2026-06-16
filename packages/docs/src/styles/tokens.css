@@ -52,10 +52,6 @@
 	--w1c-font-heading: var(--font-serif);
 	--w1c-font-ui: var(--font-sans);
 	--w1c-font-mono: var(--font-mono);
-	--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
-	--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
-	--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
-	--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 }
 
 [data-docs-theme='gnome2'],
@@ -66,10 +62,6 @@
 	--w1c-font-heading: var(--font-serif);
 	--w1c-font-ui: var(--font-sans);
 	--w1c-font-mono: var(--font-mono);
-	--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
-	--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
-	--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
-	--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 }
 
 [data-docs-theme='classic-mac'] {
@@ -79,10 +71,6 @@
 	--w1c-font-heading: var(--font-serif);
 	--w1c-font-ui: var(--font-sans);
 	--w1c-font-mono: var(--font-mono);
-	--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
-	--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
-	--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
-	--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 	--font-size-body: 20px;
 	--font-size-code: 1em;
 	--font-size-h1: clamp(3.5rem, 10vw, 7.5rem);
@@ -101,10 +89,6 @@
 	--w1c-font-heading: var(--font-serif);
 	--w1c-font-ui: var(--font-sans);
 	--w1c-font-mono: var(--font-mono);
-	--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
-	--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
-	--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
-	--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 }
 
 [data-docs-theme='geocities'] {
@@ -114,8 +98,4 @@
 	--w1c-font-heading: var(--font-serif);
 	--w1c-font-ui: var(--font-sans);
 	--w1c-font-mono: var(--font-mono);
-	--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
-	--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
-	--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
-	--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 }

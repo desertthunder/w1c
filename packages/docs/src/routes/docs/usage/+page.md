@@ -89,12 +89,15 @@ Theme files set W1C tokens for color, type, spacing, border, radius, shadow, z-i
 	--w1c-surface: #c0c0c0;
 	--w1c-active-titlebar: #000080;
 	--w1c-active-titlebar-text: #ffffff;
+	--w1c-font-ui: 'Chicago', 'MS Sans Serif', sans-serif;
 }
 
 w1c-window::part(content) {
 	background: white;
 }
 ```
+
+Set family tokens like `--w1c-font-ui`, `--w1c-font-heading`, and `--w1c-font-mono` for normal typography changes. Full shorthand tokens like `--w1c-control-font` are still available when you need to override size, weight, line-height, and family together.
 
 ## Keep app state outside the shell
 

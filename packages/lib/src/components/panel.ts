@@ -56,7 +56,11 @@ export class W1cPanel extends LitElement {
 		:host {
 			display: block;
 			color: var(--w1c-panel-text, var(--w1c-control-text, #111111));
-			font: var(--w1c-body-font, 13px/1.35 'MS Sans Serif', Tahoma, sans-serif);
+			font: var(
+				--w1c-body-font,
+				var(--w1c-font-size-2, 13px) / var(--w1c-line-normal, 1.35)
+					var(--w1c-font-ui, 'MS Sans Serif', Tahoma, sans-serif)
+			);
 		}
 
 		.chrome {
@@ -96,7 +100,14 @@ export class W1cPanel extends LitElement {
 
 		.header {
 			border-block-end: var(--w1c-panel-header-border, 1px solid var(--w1c-control-shadow, #808080));
-			font: var(--w1c-panel-header-font, var(--w1c-titlebar-font, inherit));
+			font: var(
+				--w1c-panel-header-font,
+				var(
+					--w1c-titlebar-font,
+					700 var(--w1c-font-size-2, 13px) / var(--w1c-line-tight, 1.2)
+						var(--w1c-font-heading, 'MS Sans Serif', Tahoma, sans-serif)
+				)
+			);
 		}
 
 		.footer {

@@ -49,7 +49,11 @@ export class W1cTitlebar extends LitElement {
 			display: block;
 			min-width: 0;
 			color: var(--w1c-titlebar-text, var(--w1c-active-titlebar-text, #ffffff));
-			font: var(--w1c-titlebar-font, 700 13px/1.2 'MS Sans Serif', Tahoma, sans-serif);
+			font: var(
+				--w1c-titlebar-font,
+				700 var(--w1c-font-size-2, 13px) / var(--w1c-line-tight, 1.2)
+					var(--w1c-font-heading, 'MS Sans Serif', Tahoma, sans-serif)
+			);
 		}
 
 		header {

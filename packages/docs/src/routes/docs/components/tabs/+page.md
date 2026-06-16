@@ -3,6 +3,10 @@ title: Tabs | W1C Docs
 description: Slotted tabs with keyboard selection.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-tabs</p>
 
 # Tabs
@@ -12,6 +16,20 @@ description: Slotted tabs with keyboard selection.
 ```ts
 import '@w1c/components/tabs';
 ```
+
+<ComponentPreview components={['tabs']}>
+<w1c-tabs selected="0">
+<button slot="tabs" type="button">General</button>
+<button slot="tabs" type="button">Security</button>
+
+<section>
+<p>General settings.</p>
+</section>
+<section>
+<p>Security settings.</p>
+</section>
+</w1c-tabs>
+</ComponentPreview>
 
 ```html
 <w1c-tabs selected="0">

@@ -3,6 +3,12 @@ title: Source Viewer | W1C Docs
 description: Full source viewer shell with toolbar, pathbar, source pane, and statusbar.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+
+	const sourceText = '{"status":"ready"}';
+</script>
+
 <p class="doc-kicker">Component</p>
 
 # `w1c-source-viewer`
@@ -11,7 +17,23 @@ description: Full source viewer shell with toolbar, pathbar, source pane, and st
 
 ```ts
 import '@w1c/components/source-viewer';
+import '@w1c/components/toolbar';
+import '@w1c/components/button';
+import '@w1c/components/divider';
+import '@w1c/components/statusbar';
 ```
+
+<ComponentPreview components={['source-viewer', 'toolbar', 'button', 'divider', 'statusbar']}>
+<w1c-source-viewer filename="record.json" text={sourceText} line-numbers>
+<w1c-toolbar slot="toolbar">
+<w1c-button>Copy</w1c-button>
+<w1c-button>Wrap</w1c-button>
+<w1c-divider orientation="vertical"></w1c-divider>
+<w1c-button>Save</w1c-button>
+</w1c-toolbar>
+<w1c-statusbar slot="statusbar">record.json - UTF-8</w1c-statusbar>
+</w1c-source-viewer>
+</ComponentPreview>
 
 ```html
 <w1c-source-viewer filename="record.json" text='{"status":"ready"}' line-numbers>

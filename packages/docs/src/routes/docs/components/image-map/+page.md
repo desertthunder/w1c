@@ -3,6 +3,10 @@ title: Image Map | W1C Docs
 description: Image-map-style sticker sheet with accessible slotted hotspots.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-image-map</p>
 
 # Image Map
@@ -12,6 +16,13 @@ Use `w1c-image-map` for clickable sticker sheets and image-map-style navigation 
 ```ts
 import '@w1c/components/image-map';
 ```
+
+<ComponentPreview components={['image-map']}>
+<w1c-image-map src="/map.png" alt="Homepage map" caption="Click a district.">
+<a href="/music/" style="--x: 8%; --y: 18%; --w: 28%; --h: 18%;">Music</a>
+<a href="/links/" style="--x: 56%; --y: 52%; --w: 32%; --h: 20%;">Links</a>
+</w1c-image-map>
+</ComponentPreview>
 
 ```html
 <w1c-image-map src="/map.png" alt="Homepage map" caption="Click a district.">

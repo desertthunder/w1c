@@ -68,7 +68,11 @@ ${lines.map((_, index) => index + 1).join('\n')}</pre
 			display: block;
 			min-width: min(100%, 280px);
 			color: var(--w1c-source-viewer-text, var(--w1c-control-text, #111111));
-			font: var(--w1c-body-font, 13px/1.35 'MS Sans Serif', Tahoma, sans-serif);
+			font: var(
+				--w1c-body-font,
+				var(--w1c-font-size-2, 13px) / var(--w1c-line-normal, 1.35)
+					var(--w1c-font-ui, 'MS Sans Serif', Tahoma, sans-serif)
+			);
 		}
 
 		.chrome {
@@ -95,7 +99,14 @@ ${lines.map((_, index) => index + 1).join('\n')}</pre
 			border-block-end: var(--w1c-source-viewer-pathbar-border, 1px solid var(--w1c-control-shadow, #808080));
 			background: var(--w1c-source-viewer-pathbar-background, var(--w1c-surface, #c0c0c0));
 			color: var(--w1c-source-viewer-pathbar-text, var(--w1c-control-text, #111111));
-			font: var(--w1c-source-viewer-pathbar-font, var(--w1c-control-font, inherit));
+			font: var(
+				--w1c-source-viewer-pathbar-font,
+				var(
+					--w1c-control-font,
+					var(--w1c-font-size-2, 13px) / var(--w1c-line-tight, 1.2)
+						var(--w1c-font-ui, 'MS Sans Serif', Tahoma, sans-serif)
+				)
+			);
 		}
 
 		.pathbar ::slotted(*),
