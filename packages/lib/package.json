@@ -66,8 +66,9 @@
 		"lit": "^3.3.2"
 	},
 	"devDependencies": {
-		"prettier": "^3.8.3",
+		"@types/node": "^25.9.3",
 		"happy-dom": "^20.10.4",
+		"prettier": "^3.8.3",
 		"typescript": "~6.0.2",
 		"vite": "^8.0.12",
 		"vitest": "^4.1.8"

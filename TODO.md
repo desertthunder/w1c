@@ -45,13 +45,13 @@ new layers.
       vitest addon for storybook in `packages/storybook`
 - [x] Add `packages/lib` tests for every public custom element registration.
 - [x] Add `packages/lib` tests for reflected attributes and properties on each component.
-- [x] Add `packages/lib` tests for shadow DOM roles, slots, CSS parts, default content, and
-      named regions.
-- [ ] Add `packages/lib` tests for component events and native-control state proxying.
-- [ ] Add `packages/lib` tests for keyboard and focus behavior on interactive components.
-- [ ] Add `packages/lib` tests for reduced-motion and accessibility helper behavior where
+- [x] Add `packages/lib` tests for shadow DOM roles, slots, CSS parts, default content,
+      and named regions.
+- [x] Add `packages/lib` tests for component events and native-control state proxying.
+- [x] Add `packages/lib` tests for keyboard and focus behavior on interactive components.
+- [x] Add `packages/lib` tests for reduced-motion and accessibility helper behavior where
       components expose it.
-- [ ] Add `packages/lib` tests for icon lookup, asset base-path resolution, and every
+- [x] Add `packages/lib` tests for icon lookup, asset base-path resolution, and every
       documented package export path.
 - [ ] Add Storybook state stories for default, disabled, focused, long-label,
       narrow-viewport, high-density, reduced-motion, slotted content, and theme variants.
@@ -59,11 +59,11 @@ new layers.
       handles, and future resize behavior.
 - [ ] Add visual smoke coverage across GNOME 2/Ubuntu, Windows 95, classic Mac, Web 1.0,
       and Geocities themes.
-- [ ] Add a new-component story coverage checklist: docs page, default story, state
-      stories, theme coverage, and interaction coverage when applicable.
-- [ ] Require `pnpm --filter @w1c/components test`,
-      `pnpm --filter @w1c/storybook test`, `pnpm test`, `pnpm check`, and `pnpm build`
-      before a release branch is cut.
+- [ ] Add a new-component story coverage checklist in `packages/storybook/README.md`
+  - docs page
+  - default story, state stories
+  - theme coverage
+  - interaction coverage (when applicable)
 
 ## DnD Package
 
