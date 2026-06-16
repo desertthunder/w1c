@@ -63,5 +63,30 @@
 		--w1c-toast-info: #0000ee;
 		--w1c-toast-warning: #cc6600;
 		--w1c-toast-danger: #ff0000;
+		--w1c-badge-background: linear-gradient(#ffffff 0 48%, #ffeb66 48% 100%);
+		--w1c-badge-icon-background: #660099;
+		--w1c-badge-icon-text: #ffffff;
+		--w1c-badge-text: #000000;
+		--w1c-badge-warning-background: repeating-linear-gradient(45deg, #ffff00 0 5px, #000000 5px 10px);
+		--w1c-counter-background: #000000;
+		--w1c-counter-text: #00ff66;
+		--w1c-counter-label-text: #ffff00;
+		--w1c-guestbook-border: 4px ridge #ff66cc;
+		--w1c-guestbook-shadow: 5px 5px 0 #00ffff;
+		--w1c-guestbook-header-background: repeating-linear-gradient(90deg, #ffff00 0 12px, #ff66cc 12px 24px);
+		--w1c-webring-border: 3px double #0000ee;
+		--w1c-webring-background: #ffffcc;
+		--w1c-webring-title-text: #660099;
+		--w1c-construction-stripes: repeating-linear-gradient(45deg, #ffff00 0 10px, #000000 10px 20px);
+		--w1c-marquee-background: #000000;
+		--w1c-marquee-text: #ffff00;
+		--w1c-blink-text: #ff0000;
+		--w1c-tiled-color: #000066;
+		--w1c-tiled-image: radial-gradient(circle at 2px 2px, #ffffff 1px, transparent 1.5px);
+		--w1c-link-cluster-border: 3px ridge #00ffff;
+		--w1c-link-cluster-heading-background: #ff66cc;
+		--w1c-last-updated-border: 2px dotted #ff66cc;
+		--w1c-image-map-border: 4px ridge #ffff00;
+		--w1c-image-map-hotspot-background: rgb(0 0 238 / 0.72);
 	}
 }

@@ -92,6 +92,9 @@ Required Geocities components:
 - `w1c-last-updated`
 - `w1c-image-map`
 
+Implementation status: the Geocities component set is implemented in `@w1c/components`
+with docs pages and a Storybook example page.
+
 Acceptance checks:
 
 - The Geocities theme can make a static HTML page look intentionally hand-built without

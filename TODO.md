@@ -33,10 +33,10 @@ new layers.
       `w1c-address-field`, `w1c-tabs`, `w1c-toast`.
 - [x] Priority 3: `w1c-data-table`, `w1c-data-list`, `w1c-document-browser`,
       `w1c-word-processor`, `w1c-json-viewer`, `w1c-divider`.
-- [ ] Geocities: `w1c-badge-88x31`, `w1c-visitor-counter`, `w1c-guestbook-panel`,
+- [x] Geocities: `w1c-badge-88x31`, `w1c-visitor-counter`, `w1c-guestbook-panel`,
       `w1c-webring`, `w1c-under-construction`, `w1c-marquee`, `w1c-blink`,
       `w1c-tiled-background`, `w1c-link-cluster`, `w1c-last-updated`, `w1c-image-map`.
-- [ ] Form/admin primitives: label, input, select, textarea, checkbox, validation message,
+- [ ] Form primitives: label, input, select, textarea, checkbox, validation message,
       flash/alert, status card, endpoint row.
 
 ## Phase 3: Component Test Coverage
@@ -117,7 +117,7 @@ new layers.
 - [ ] Add icon gallery stories for the W1C icon set, including `IconData` rendering examples.
 - [ ] Add reference examples for GNOME 2/Ubuntu and Windows 95 screens without depending on
       the local reference apps.
-- [ ] Add Geocities examples for badges, counters, guestbooks, webrings, tiled backgrounds,
+- [x] Add Geocities examples for badges, counters, guestbooks, webrings, tiled backgrounds,
       and under-construction patterns.
 - [ ] Add keyboard/focus, disabled, long-label, narrow-viewport, high-density, and
       reduced-motion stories.

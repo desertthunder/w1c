@@ -64,10 +64,32 @@
 		border: 3px double var(--color-rule);
 		box-shadow: 6px 6px 0 var(--color-shadow);
 		text-decoration: none;
+		transition:
+			background-color 140ms ease-out,
+			box-shadow 140ms ease-out,
+			color 140ms ease-out,
+			transform 140ms ease-out;
 	}
 
 	.doc-cards a:visited {
 		color: var(--color-ink);
+	}
+
+	.doc-cards a:hover {
+		color: var(--color-ink);
+		background: var(--color-badge);
+		box-shadow: 9px 9px 0 var(--color-shadow);
+		transform: translate(-3px, -3px);
+	}
+
+	.doc-cards a:active {
+		box-shadow: 2px 2px 0 var(--color-shadow);
+		transform: translate(3px, 3px) scale(0.96);
+	}
+
+	.doc-cards a:focus-visible {
+		outline: 3px solid var(--color-link);
+		outline-offset: 4px;
 	}
 
 	.doc-cards span {
@@ -79,5 +101,16 @@
 	.doc-cards small {
 		font-size: 1rem;
 		line-height: 1.4;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.doc-cards a {
+			transition: none;
+		}
+
+		.doc-cards a:hover,
+		.doc-cards a:active {
+			transform: none;
+		}
 	}
 </style>

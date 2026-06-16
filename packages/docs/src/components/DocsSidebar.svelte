@@ -69,15 +69,48 @@
 		border: 2px solid var(--color-rule);
 		box-shadow: 3px 3px 0 var(--color-shadow);
 		text-decoration: none;
+		transition:
+			background-color 120ms ease-out,
+			box-shadow 120ms ease-out,
+			color 120ms ease-out,
+			transform 120ms ease-out;
 	}
 
 	nav a:visited {
 		color: var(--color-ink);
 	}
 
+	nav a:hover {
+		color: var(--color-ink);
+		background: var(--color-badge);
+		box-shadow: 5px 5px 0 var(--color-shadow);
+		transform: translate(-2px, -2px);
+	}
+
+	nav a:active {
+		box-shadow: 1px 1px 0 var(--color-shadow);
+		transform: translate(2px, 2px) scale(0.96);
+	}
+
+	nav a:focus-visible {
+		outline: 3px solid var(--color-link);
+		outline-offset: 3px;
+	}
+
 	small {
 		font-size: 0.8rem;
 		line-height: 1.35;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		nav a {
+			transition: none;
+		}
+
+		nav a:hover,
+		nav a:active {
+			transform: none;
+		}
 	}
 
 	@media (max-width: 820px) {

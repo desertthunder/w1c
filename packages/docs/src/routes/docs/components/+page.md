@@ -29,6 +29,20 @@ W1C components are framework-agnostic custom elements. Import the whole stable s
 - [`w1c-desktop-icon`](/docs/components/desktop-icon/): desktop shortcut as a button or link.
 - [`w1c-taskbar`](/docs/components/taskbar/): taskbar or GNOME-style panel row.
 
+## Geocities
+
+- [`w1c-badge-88x31`](/docs/components/badge-88x31/): native-size early-web badge.
+- [`w1c-visitor-counter`](/docs/components/visitor-counter/): odometer-style visitor count.
+- [`w1c-guestbook-panel`](/docs/components/guestbook-panel/): guestbook entries and sign links.
+- [`w1c-webring`](/docs/components/webring/): previous, home, random, and next ring navigation.
+- [`w1c-under-construction`](/docs/components/under-construction/): hazard-stripe unfinished page notice.
+- [`w1c-marquee`](/docs/components/marquee/): reduced-motion friendly marquee banner.
+- [`w1c-blink`](/docs/components/blink/): reduced-motion friendly inline blink emphasis.
+- [`w1c-tiled-background`](/docs/components/tiled-background/): repeated image or CSS background surface.
+- [`w1c-link-cluster`](/docs/components/link-cluster/): directory-style link grouping.
+- [`w1c-last-updated`](/docs/components/last-updated/): static page update stamp.
+- [`w1c-image-map`](/docs/components/image-map/): clickable sticker sheet with positioned hotspots.
+
 ## Menus
 
 - [`w1c-menu-bar`](/docs/components/menu-bar/): horizontal app menu surface.
@@ -56,6 +70,7 @@ W1C components are framework-agnostic custom elements. Import the whole stable s
 import '@w1c/components';
 
 import '@w1c/components/window';
+import '@w1c/components/badge-88x31';
 import '@w1c/components/data-table';
 import '@w1c/components/json-viewer';
 ```

@@ -41,6 +41,37 @@ export const DOC_MANIFEST: DocLink[] = [
 
 export const COMPONENT_DOCS: DocLink[] = [
 	{ title: 'Icon', href: '/docs/components/icon/', description: 'Render bundled W1C icon data.' },
+	{ title: 'Badge 88x31', href: '/docs/components/badge-88x31/', description: 'Native-size early-web badge.' },
+	{ title: 'Visitor counter', href: '/docs/components/visitor-counter/', description: 'Odometer-style visitor count.' },
+	{
+		title: 'Guestbook panel',
+		href: '/docs/components/guestbook-panel/',
+		description: 'Guestbook entries and sign links.'
+	},
+	{
+		title: 'Webring',
+		href: '/docs/components/webring/',
+		description: 'Previous, home, random, and next ring navigation.'
+	},
+	{
+		title: 'Under construction',
+		href: '/docs/components/under-construction/',
+		description: 'Hazard-stripe unfinished page notice.'
+	},
+	{ title: 'Marquee', href: '/docs/components/marquee/', description: 'Reduced-motion friendly marquee banner.' },
+	{ title: 'Blink', href: '/docs/components/blink/', description: 'Reduced-motion friendly inline blink emphasis.' },
+	{
+		title: 'Tiled background',
+		href: '/docs/components/tiled-background/',
+		description: 'Repeated image or CSS background surface.'
+	},
+	{ title: 'Link cluster', href: '/docs/components/link-cluster/', description: 'Directory-style link grouping.' },
+	{ title: 'Last updated', href: '/docs/components/last-updated/', description: 'Static page update stamp.' },
+	{
+		title: 'Image map',
+		href: '/docs/components/image-map/',
+		description: 'Clickable sticker sheet with positioned hotspots.'
+	},
 	{ title: 'Button', href: '/docs/components/button/', description: 'Raised, sunken, and flat command controls.' },
 	{ title: 'Window', href: '/docs/components/window/', description: 'Window shell with chrome slots.' },
 	{ title: 'Titlebar', href: '/docs/components/titlebar/', description: 'Dense titlebar for windows and dialogs.' },
