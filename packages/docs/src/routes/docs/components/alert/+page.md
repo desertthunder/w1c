@@ -3,6 +3,10 @@ title: Alert | W1C Docs
 description: Inline alert or flash notice.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-alert</p>
 
 # Alert
@@ -11,7 +15,15 @@ Use `w1c-alert` for inline status, warning, success, and danger notices.
 
 ```ts
 import '@w1c/components/alert';
+import '@w1c/components/button';
 ```
+
+<ComponentPreview components={['alert', 'button']}>
+<w1c-alert title="Deployment" variant="warning">
+Configuration saved, but one endpoint still needs credentials.
+<w1c-button slot="actions">Review</w1c-button>
+</w1c-alert>
+</ComponentPreview>
 
 ```html
 <w1c-alert title="Deployment" variant="warning">

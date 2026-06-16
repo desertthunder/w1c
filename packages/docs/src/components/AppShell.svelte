@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import type { Snippet } from 'svelte';
 	import type { DocGroup, DocLink } from '../lib/docs';
-	import { DEFAULT_DOCS_THEME, DOCS_THEMES } from '../lib/themes';
-	import DocsSidebar from './DocsSidebar.svelte';
-	import SiteHeader from './SiteHeader.svelte';
+	import { docsTheme, loadStoredDocsTheme, setDocsTheme } from '../lib/theme.svelte';
+	import { DOCS_THEMES } from '../lib/themes';
+	import DocsSidebar from '$components/DocsSidebar.svelte';
+	import SiteHeader from '$components/SiteHeader.svelte';
 
 	let {
 		children,
@@ -14,7 +14,6 @@
 	}: { children: Snippet; primaryDocGroups: DocGroup[]; topNavLinks: DocLink[] } = $props();
 
 	let sidebarOpen = $state(false);
-	let selectedTheme = $state(DEFAULT_DOCS_THEME);
 
 	function closeSidebar() {
 		sidebarOpen = false;
@@ -24,28 +23,20 @@
 		sidebarOpen = !sidebarOpen;
 	}
 
-	function setTheme(theme: string) {
-		selectedTheme = DOCS_THEMES.some((option) => option.id === theme) ? theme : DEFAULT_DOCS_THEME;
-
-		if (browser) {
-			localStorage.setItem('w1c-docs-theme', selectedTheme);
-		}
-	}
-
 	onMount(() => {
-		setTheme(localStorage.getItem('w1c-docs-theme') ?? DEFAULT_DOCS_THEME);
+		loadStoredDocsTheme();
 	});
 </script>
 
-<div class="site-shell" data-docs-theme={selectedTheme}>
+<div class="site-shell" data-docs-theme={docsTheme.selected}>
 	<a class="skip-link" href="#content">Skip to content</a>
 	<SiteHeader
 		links={topNavLinks}
 		themeOptions={DOCS_THEMES}
-		{selectedTheme}
+		selectedTheme={docsTheme.selected}
 		{sidebarOpen}
 		onToggleSidebar={toggleSidebar}
-		onThemeChange={setTheme} />
+		onThemeChange={setDocsTheme} />
 
 	<div class="page-grid">
 		{#if sidebarOpen}

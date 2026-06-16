@@ -49,6 +49,13 @@
 	--font-serif: 'IBM Plex Serif', Georgia, serif;
 	--font-sans: 'IBM Plex Sans Variable', 'IBM Plex Sans', Tahoma, sans-serif;
 	--font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+	--w1c-font-heading: var(--font-serif);
+	--w1c-font-ui: var(--font-sans);
+	--w1c-font-mono: var(--font-mono);
+	--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
+	--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
+	--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
+	--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 }
 
 [data-docs-theme='gnome2'],
@@ -56,12 +63,26 @@
 	--font-serif: Ubuntu, 'DejaVu Sans', Arial, sans-serif;
 	--font-sans: Ubuntu, 'DejaVu Sans', Arial, sans-serif;
 	--font-mono: 'Ubuntu Mono', 'DejaVu Sans Mono', 'Courier New', monospace;
+	--w1c-font-heading: var(--font-serif);
+	--w1c-font-ui: var(--font-sans);
+	--w1c-font-mono: var(--font-mono);
+	--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
+	--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
+	--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
+	--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 }
 
 [data-docs-theme='classic-mac'] {
 	--font-serif: 'ChiKareGo2', Chicago, 'Charcoal CY', Geneva, sans-serif;
 	--font-sans: 'ChicagoFLF', Chicago, 'Charcoal CY', Geneva, sans-serif;
 	--font-mono: 'Anonymous Pro', Monaco, 'Courier New', monospace;
+	--w1c-font-heading: var(--font-serif);
+	--w1c-font-ui: var(--font-sans);
+	--w1c-font-mono: var(--font-mono);
+	--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
+	--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
+	--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
+	--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 	--font-size-body: 20px;
 	--font-size-code: 1em;
 	--font-size-h1: clamp(3.5rem, 10vw, 7.5rem);
@@ -77,10 +98,24 @@
 	--font-serif: 'Times New Roman', Times, serif;
 	--font-sans: Arial, Helvetica, sans-serif;
 	--font-mono: 'Courier New', monospace;
+	--w1c-font-heading: var(--font-serif);
+	--w1c-font-ui: var(--font-sans);
+	--w1c-font-mono: var(--font-mono);
+	--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
+	--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
+	--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
+	--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 }
 
 [data-docs-theme='geocities'] {
 	--font-serif: 'Comic Relief', 'Comic Neue', Comic Sans MS, cursive;
 	--font-sans: 'Comic Neue', Comic Sans MS, cursive;
 	--font-mono: 'Comic Neue', 'Courier New', monospace;
+	--w1c-font-heading: var(--font-serif);
+	--w1c-font-ui: var(--font-sans);
+	--w1c-font-mono: var(--font-mono);
+	--w1c-body-font: var(--w1c-font-size-2) / var(--w1c-line-normal) var(--w1c-font-ui);
+	--w1c-control-font: var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-ui);
+	--w1c-titlebar-font: 700 var(--w1c-font-size-2) / var(--w1c-line-tight) var(--w1c-font-heading);
+	--w1c-statusbar-font: var(--w1c-font-size-1) / var(--w1c-line-tight) var(--w1c-font-ui);
 }

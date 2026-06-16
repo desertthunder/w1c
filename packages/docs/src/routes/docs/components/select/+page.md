@@ -3,6 +3,10 @@ title: Select | W1C Docs
 description: Native select control with W1C control chrome.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-select</p>
 
 # Select
@@ -12,6 +16,15 @@ Use `w1c-select` for compact option lists.
 ```ts
 import '@w1c/components/select';
 ```
+
+<ComponentPreview components={['select']}>
+<w1c-select name="priority" value="normal">
+
+<option value="low">Low</option>
+<option value="normal">Normal</option>
+<option value="high">High</option>
+</w1c-select>
+</ComponentPreview>
 
 ```html
 <w1c-select name="priority" value="normal">

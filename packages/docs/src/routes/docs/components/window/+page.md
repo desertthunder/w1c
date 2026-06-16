@@ -3,6 +3,10 @@ title: Window | W1C Docs
 description: Window shell with titlebar, toolbar, content, statusbar, and optional drag/resize behavior.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-window</p>
 
 # Window
@@ -12,7 +16,24 @@ into framework-neutral drag and resize behavior from `@w1c/dnd`.
 
 ```ts
 import '@w1c/components/window';
+import '@w1c/components/button';
 ```
+
+<ComponentPreview components={['window', 'button', 'toolbar', 'statusbar']}>
+<w1c-window title="Documents" movable resizable x="24" y="16" width="420" height="280" min-width="320" min-height="220">
+<span slot="icon" aria-hidden="true">W</span>
+
+<div slot="controls">
+<w1c-button aria-label="Close">x</w1c-button>
+</div>
+<w1c-toolbar slot="toolbar">
+<w1c-button>Back</w1c-button>
+<w1c-button>Forward</w1c-button>
+</w1c-toolbar>
+<p>Window content stays ordinary HTML.</p>
+<w1c-statusbar slot="statusbar">3 objects</w1c-statusbar>
+</w1c-window>
+</ComponentPreview>
 
 ```html
 <w1c-window title="Documents" movable resizable x="24" y="16" width="420" height="280" min-width="320" min-height="220">

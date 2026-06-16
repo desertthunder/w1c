@@ -3,6 +3,10 @@ title: Dialog | W1C Docs
 description: Dialog shell for alerts, confirmations, and small forms.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-dialog</p>
 
 # Dialog
@@ -11,7 +15,21 @@ description: Dialog shell for alerts, confirmations, and small forms.
 
 ```ts
 import '@w1c/components/dialog';
+import '@w1c/components/icon';
+import '@w1c/components/button';
 ```
+
+<ComponentPreview components={['dialog', 'icon', 'button']}>
+<w1c-dialog title="Confirm Move" variant="alert">
+<w1c-icon slot="icon" name="info" label="Information"></w1c-icon>
+
+<p>The selected file will be moved.</p>
+<div slot="actions">
+<w1c-button>Cancel</w1c-button>
+<w1c-button>Move</w1c-button>
+</div>
+</w1c-dialog>
+</ComponentPreview>
 
 ```html
 <w1c-dialog title="Confirm Move" variant="alert">

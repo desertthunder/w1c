@@ -3,6 +3,10 @@ title: Button | W1C Docs
 description: Raised, sunken, and flat button styles with w1c-button.
 ---
 
+<script>
+	import ComponentPreview from '$components/ComponentPreview.svelte';
+</script>
+
 <p class="doc-kicker">w1c-button</p>
 
 # Button
@@ -12,6 +16,12 @@ Use `w1c-button` for retro command buttons while keeping native button behavior.
 ```ts
 import '@w1c/components/button';
 ```
+
+<ComponentPreview components={['button']}>
+<w1c-button>OK</w1c-button>
+<w1c-button variant="sunken">Pressed</w1c-button>
+<w1c-button variant="flat">Flat</w1c-button>
+</ComponentPreview>
 
 ```html
 <w1c-button>OK</w1c-button>

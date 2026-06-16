@@ -30,7 +30,7 @@ const config = {
 		}
 	},
 	extensions: ['.svelte', '.svx', '.md'],
-	kit: { adapter: adapter() },
+	kit: { adapter: adapter(), alias: { $components: './src/components', '$components/*': './src/components/*' } },
 	preprocess: [
 		mdsvex({ extensions: ['.svx', '.md'], layout: markdownLayout, highlight: { highlighter: highlightCode } })
 	]
