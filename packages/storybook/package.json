@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@w1c/components": "workspace:*",
+		"@w1c/dnd": "workspace:*",
 		"lit": "^3.3.2"
 	},
 	"devDependencies": {

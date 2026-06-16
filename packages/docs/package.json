@@ -19,6 +19,7 @@
 	},
 	"dependencies": {
 		"@w1c/components": "workspace:*",
+		"@w1c/dnd": "workspace:*",
 		"@w1c/fonts": "workspace:*"
 	},
 	"devDependencies": {

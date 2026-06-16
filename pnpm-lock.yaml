@@ -66,6 +66,9 @@ importers:
       '@w1c/components':
         specifier: workspace:*
         version: link:../lib
+      '@w1c/dnd':
+        specifier: workspace:*
+        version: link:../dnd
       '@w1c/fonts':
         specifier: workspace:*
         version: link:../fonts
@@ -170,6 +173,9 @@ importers:
 
   packages/lib:
     dependencies:
+      '@w1c/dnd':
+        specifier: workspace:*
+        version: link:../dnd
       '@w1c/fonts':
         specifier: workspace:*
         version: link:../fonts
@@ -195,6 +201,9 @@ importers:
       '@w1c/components':
         specifier: workspace:*
         version: link:../lib
+      '@w1c/dnd':
+        specifier: workspace:*
+        version: link:../dnd
       lit:
         specifier: ^3.3.2
         version: 3.3.3

@@ -96,8 +96,10 @@ w1c-window::part(content) {
 }
 ```
 
-## Keep behavior outside the shell
+## Keep app state outside the shell
 
-`w1c-window` is a presentational shell today. Dragging and resizing belong to `@w1c/dnd`, which will keep pointer math out of the component package.
+`w1c-window` can opt into drag and resize behavior with `movable` and `resizable`. The pointer
+math lives in `@w1c/dnd`; your app still owns persistence, z-index, focus state, and maximized
+state. See [DnD](/docs/dnd/) for the standalone helpers.
 
 `w1c-dialog` sets dialog roles but does not trap focus or make the page modal. Applications own focus movement, inert background state, close behavior, and any persistence.

@@ -61,6 +61,7 @@
 		"format": "prettier --write . --ignore-path ../../.prettierignore"
 	},
 	"dependencies": {
+		"@w1c/dnd": "workspace:*",
 		"@w1c/fonts": "workspace:*",
 		"lit": "^3.3.2"
 	},

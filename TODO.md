@@ -67,20 +67,20 @@ new layers.
 
 ## DnD Package
 
-- [ ] Port the drag and resize behavior from
-      `/intrepid_ibex/src/lib/components/AppWindow.svelte` into `@w1c/dnd`.
-- [ ] Keep `@w1c/dnd` dependency-free and framework-neutral.
-- [ ] Add pure geometry helpers for drag sessions, resize sessions, pointer deltas, and min/max
+- [x] Port the drag and resize behavior from [Ibex](https://tangled.org/desertthunder.dev/ibex)
+      into `@w1c/dnd`.
+- [x] Keep `@w1c/dnd` dependency-free and framework-neutral.
+- [x] Add pure geometry helpers for drag sessions, resize sessions, pointer deltas, and min/max
       size constraints.
-- [ ] Add DOM pointer helpers for primary-button start, pointer capture, pointer-id matching,
+- [x] Add DOM pointer helpers for primary-button start, pointer capture, pointer-id matching,
       release on pointer up, and release on pointer cancel.
-- [ ] Expose active drag/resize state so components can set cursors, `user-select: none`, and
+- [x] Expose active drag/resize state so components can set cursors, `user-select: none`, and
       visual state classes.
-- [ ] Keep persistence, z-index, maximized state, and focus callbacks in consuming components.
-- [ ] Add unit tests for drag movement, resize constraints, pointer-id guarding, and cancel/end
+- [x] Keep persistence, z-index, maximized state, and focus callbacks in consuming components.
+- [x] Add unit tests for drag movement, resize constraints, pointer-id guarding, and cancel/end
       cleanup.
-- [ ] Use `@w1c/dnd` in `w1c-window` instead of reimplementing drag or resize math.
-- [ ] Add docs and Storybook examples for draggable windows, resizable windows, disabled
+- [x] Use `@w1c/dnd` in `w1c-window` instead of reimplementing drag or resize math.
+- [x] Add docs and Storybook examples for draggable windows, resizable windows, disabled
       movement, disabled resize, constrained size, cancel behavior, and touch input.
 
 ## Docs

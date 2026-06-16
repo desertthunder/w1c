@@ -25,6 +25,11 @@ export const DOC_MANIFEST: DocLink[] = [
 		href: '/docs/usage/',
 		description: 'Register components, cherry-pick imports, and apply theme CSS.'
 	},
+	{
+		title: 'Drag & Drop',
+		href: '/docs/dnd/',
+		description: 'Add DnD with framework-neutral drag, resize, pointer session, and geometry helpers.'
+	},
 	{ title: 'Components', href: '/docs/components/', description: 'Index of W1C custom elements.' },
 	{
 		title: 'Typography',
@@ -126,7 +131,14 @@ export const DOC_GROUPS: DocGroup[] = [
 	{ title: 'Overview', links: docs('/docs/getting-started/') },
 	{
 		title: 'Manual',
-		links: docs('/docs/installation/', '/docs/usage/', '/docs/typography/', '/docs/icons/', '/docs/components/')
+		links: docs(
+			'/docs/installation/',
+			'/docs/usage/',
+			'/docs/dnd/',
+			'/docs/typography/',
+			'/docs/icons/',
+			'/docs/components/'
+		)
 	},
 	{ title: 'Components', links: COMPONENT_DOCS },
 	{ title: 'Meta', links: docs('/docs/inspiration/') }
