@@ -6,7 +6,7 @@
 		"types": ["vite/client", "node"],
 		"allowImportingTsExtensions": true,
 		"noEmit": true,
-		"erasableSyntaxOnly": true
+		"erasableSyntaxOnly": false
 	},
 	"include": ["src"]
 }

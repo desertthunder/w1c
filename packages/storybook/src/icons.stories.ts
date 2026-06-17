@@ -12,7 +12,7 @@ const meta = {
 		<style>
 			.icon-grid {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 				gap: var(--w1c-space-2, 8px);
 				width: min(680px, 100%);
 			}
@@ -20,7 +20,7 @@ const meta = {
 			.icon-swatch {
 				display: grid;
 				grid-template-columns: auto minmax(0, 1fr);
-				align-items: center;
+				align-items: start;
 				gap: var(--w1c-space-2, 8px);
 				padding: var(--w1c-space-2, 8px);
 				border: 1px solid var(--w1c-control-shadow, #808080);
@@ -33,11 +33,22 @@ const meta = {
 				--w1c-icon-size: 24px;
 			}
 
-			.icon-swatch span {
+			.icon-swatch strong,
+			.icon-swatch small {
 				min-width: 0;
 				overflow: hidden;
 				text-overflow: ellipsis;
 				white-space: nowrap;
+			}
+
+			.icon-swatch span {
+				display: grid;
+				min-width: 0;
+				gap: 2px;
+			}
+
+			.icon-swatch small {
+				color: color-mix(in srgb, var(--w1c-control-text, #111111), transparent 24%);
 			}
 		</style>
 		<div class="icon-grid">
@@ -47,7 +58,11 @@ const meta = {
 				return html`
 					<div class="icon-swatch" title=${`${metadata.category}: ${metadata.name}`}>
 						<w1c-icon name=${name} label=${metadata.name}></w1c-icon>
-						<span>${metadata.name}</span>
+						<span>
+							<strong>${metadata.name}</strong>
+							<small>${metadata.sourceReferenceProject}</small>
+							<small>${metadata.license}</small>
+						</span>
 					</div>
 				`;
 			})}

@@ -50,8 +50,8 @@ Reference notes:
   as a "system of systems."
 - Reasonable Colors and Uchu inform practical, readable color token scales without
   requiring a token build pipeline at the start.
-- OpenMoji, Twemoji, FxEmoji, Bootstrap Icons, and Ubuntu Humanity provide source material
-  for one W1C icon set, subject to license and redistribution checks.
+- Wikimedia Commons Microsoft icon references and Bootstrap Icons provide the attribution
+  buckets for the W1C icon set.
 
 ## Web 1.0 And Geocities Contract
 
@@ -139,10 +139,8 @@ Useful W1C icon set coverage:
 - App icons: browser, mail, terminal, file manager, text editor, feed reader.
 - Places/devices/status: home, folder, trash, computer, volume, wireless.
 - Mime icons: text document and PDF.
-- Colorful Web 1.0 or Geocities artwork, sourced from OpenMoji, Twemoji, or FxEmoji when
-  licenses permit.
-- Restrained UI action symbols, sourced from Bootstrap Icons when no better W1C-specific
-  source exists.
+- Restrained UI action symbols, referenced from Bootstrap Icons when no better
+  W1C-specific source exists.
 
 Design checks:
 
@@ -178,8 +176,9 @@ Useful W1C icon set coverage:
 - Formatting: bold, italic, underline, align-left, highlight, list.
 - Objects/status: computer, browser, page, doc, database, home, warning, danger, info,
   GitHub, AT symbol.
-- Bootstrap Icons can source neutral action, formatting, and object symbols when no
-  Windows 95-specific source is available.
+- Bootstrap Icons can source neutral action, formatting, and object symbols.
+- Wikimedia Commons Microsoft icon references can inform Windows-style file, app,
+  desktop, and window icons.
 
 Design checks:
 
@@ -350,8 +349,8 @@ Goal: make existing local app styling portable before adding many components.
 - Add one W1C icon set, icon asset packaging, and a base-path helper.
 - Add `IconData` as a primitive type/export for single-icon data, compatible with
   Iconify-style icon data.
-- Source initial W1C icons from OpenMoji, Twemoji, FxEmoji, Bootstrap Icons, and Ubuntu
-  Humanity only where license and redistribution checks pass.
+- Attribute initial W1C icons to Wikimedia Commons Microsoft icon references or Bootstrap
+  Icons.
 - Add icon metadata for name, category, source/reference project, source icon name, source
   URL, license, attribution text, and intended size.
 - Document icon licensing/source assumptions and attribution rules before publishing.

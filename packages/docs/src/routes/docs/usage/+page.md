@@ -7,7 +7,10 @@ description: Use W1C components with slots, attributes, CSS custom properties, a
 
 # Using W1C
 
-W1C components are custom elements. They expose small attributes, named slots, CSS custom properties, and CSS parts instead of framework adapters.
+W1C components are custom elements.
+
+They expose small attributes, named slots, CSS custom properties, and CSS parts instead
+of framework adapters.
 
 ## Register components
 
@@ -42,7 +45,10 @@ const license = W1C_ICON_METADATA.folder.license;
 <w1c-icon name="folder" label="Folder"></w1c-icon>
 ```
 
-Icon metadata includes name, category, source/reference project, source icon name, source URL, license, attribution text, and intended size. See the [Icons](/docs/icons/) page for the asset base-path API and icon styling notes.
+Icon metadata includes name, category, source/reference project, source icon name,
+source URL, license, attribution text, and intended size. See the [Icons](/docs/icons/)
+page for the asset base-path API and icon styling notes, and the
+[Icon Catalog](/docs/icons/catalog/) for attributions.
 
 ## Compose with slots
 

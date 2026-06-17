@@ -63,4 +63,24 @@
 		border: 2px solid var(--color-rule);
 		box-shadow: 3px 3px 0 var(--color-shadow);
 	}
+
+	.doc-page :global(.footnotes) {
+		margin-block-start: var(--space-7);
+		padding-block-start: var(--space-4);
+		border-block-start: 3px double var(--color-rule);
+		font-size: 0.9rem;
+	}
+
+	.doc-page :global(.footnotes h2) {
+		margin-block-start: 0;
+	}
+
+	.doc-page :global(.footnotes li) {
+		max-width: var(--measure);
+	}
+
+	.doc-page :global(sup a) {
+		font-family: var(--font-mono);
+		font-size: 0.72em;
+	}
 </style>

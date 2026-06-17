@@ -20,7 +20,7 @@ export const NAV_LINKS: DocLink[] = [
 	{ title: 'Components', href: '/docs/components/', description: 'Browse every W1C custom element.' },
 	{
 		title: 'Repo',
-		href: 'https://github.com/desertthunder',
+		href: 'https://github.com/desertthunder/w1c',
 		description: 'View the project repository.',
 		external: true
 	}
@@ -28,7 +28,7 @@ export const NAV_LINKS: DocLink[] = [
 
 export const DOC_MANIFEST: DocLink[] = [
 	{ title: 'Getting started', href: '/docs/getting-started/', description: 'Build your first retro UI.' },
-	{ title: 'Installation', href: '/docs/installation/', description: 'Check release status and package imports.' },
+	{ title: 'Installation', href: '/docs/installation/', description: 'Add W1C to your project.' },
 	{
 		title: 'Usage',
 		href: '/docs/usage/',
@@ -45,8 +45,26 @@ export const DOC_MANIFEST: DocLink[] = [
 		href: '/docs/typography/',
 		description: 'See the heading, UI, and code fonts used by each theme.'
 	},
-	{ title: 'Icons', href: '/docs/icons/', description: 'Use W1C icon data, metadata, asset paths, and icon parts.' },
-	{ title: 'Inspiration', href: '/docs/inspiration/', description: 'Where the dev got this idea.' }
+	{ title: 'Themes', href: '/docs/themes/', description: 'Compare every W1C theme.' },
+	{ title: 'GNOME 2', href: '/docs/themes/gnome2/', description: 'Tan GNOME 2 theme.' },
+	{ title: 'Ubuntu 8.10', href: '/docs/themes/ubuntu-810/', description: 'Human-brown Ubuntu 8.10 theme.' },
+	{ title: 'Windows 95', href: '/docs/themes/windows-95/', description: 'Classic Windows 95 inspired theme.' },
+	{
+		title: 'Classic Mac',
+		href: '/docs/themes/classic-mac/',
+		description: 'Black-and-white (System 7 inspired) mono theme.'
+	},
+	{ title: 'Web 1.0', href: '/docs/themes/web-1/', description: 'Early browser and plain HTML theme.' },
+	{ title: 'Geocities', href: '/docs/themes/geocities/', description: 'High-color personal homepage theme.' },
+	{ title: 'Icons', href: '/docs/icons/', description: 'Using W1C icon data.' },
+	// TODO: move Icon Catalog to components
+	{
+		title: 'Icon Catalog',
+		href: '/docs/icons/catalog/',
+		description: 'Browse every bundled W1C icon with source and license attribution.'
+	},
+	{ title: 'Inspiration', href: '/docs/inspiration/', description: 'Where the dev got this idea.' },
+	{ title: 'References', href: '/docs/references/', description: 'Source links behind W1C.' }
 ];
 
 export const COMPONENT_DOCS: DocLink[] = [
@@ -202,6 +220,7 @@ export const COMPONENT_DOC_GROUPS: DocGroup[] = [
 		)
 	},
 	{
+		// TODO: Icon catalog should be here
 		title: 'Feedback and icons',
 		links: componentDocs(
 			'/docs/components/dialog/',
@@ -225,18 +244,24 @@ function docs(...hrefs: string[]) {
 export const FEATURED_DOCS: DocLink[] = docs('/docs/getting-started/', '/docs/components/', '/docs/icons/');
 
 export const DOC_GROUPS: DocGroup[] = [
-	{ title: 'Overview', links: docs('/docs/getting-started/') },
+	{ title: 'Overview', links: docs('/docs/getting-started/', '/docs/installation/', '/docs/usage/') },
 	{
 		title: 'Manual',
+		links: docs('/docs/dnd/', '/docs/typography/', '/docs/themes/', '/docs/icons/', '/docs/components/')
+	},
+	{
+		title: 'Themes',
 		links: docs(
-			'/docs/installation/',
-			'/docs/usage/',
-			'/docs/dnd/',
-			'/docs/typography/',
-			'/docs/icons/',
-			'/docs/components/'
+			'/docs/themes/gnome2/',
+			'/docs/themes/ubuntu-810/',
+			'/docs/themes/windows-95/',
+			'/docs/themes/classic-mac/',
+			'/docs/themes/web-1/',
+			'/docs/themes/geocities/'
 		)
 	},
+	// TODO: this group is unnecessary
+	{ title: 'Icons', links: docs('/docs/icons/', '/docs/icons/catalog/') },
 	{ title: 'Components', groups: COMPONENT_DOC_GROUPS },
-	{ title: 'Meta', links: docs('/docs/inspiration/') }
+	{ title: 'Meta', links: docs('/docs/inspiration/', '/docs/references/') }
 ];

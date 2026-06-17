@@ -1,8 +1,6 @@
 # TODO
 
-Keep this list aligned with [ROADMAP.md](./ROADMAP.md) and
-[RESEARCH.md](./RESEARCH.md). Prefer the smallest useful implementation before adding
-new layers.
+Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
 
 ## Library Package
 
@@ -99,7 +97,7 @@ new layers.
 - [ ] Add migration notes for app-local CSS variables/components to W1C tokens/components.
 - [ ] Add accessibility guidance for slots, labels, keyboard behavior, dialogs, menus, focus,
       and reduced motion.
-- [ ] Document Web 1.0 / Geocities guardrails from [RESEARCH.md](./RESEARCH.md): semantic
+- [ ] Document Web 1.0 / Geocities guardrails from: semantic
       HTML, reduced motion, accessible marquee/blink alternatives, and no-build examples.
 
 ## Storybook

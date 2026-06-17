@@ -51,6 +51,7 @@ w1c docs --list
 | Ubuntu 8.10 | Ubuntu          | Ubuntu        | Ubuntu Mono   | Fontsource                                            |
 | Geocities   | Comic Relief    | Comic Neue    | Comic Neue    | Fontsource                                            |
 | Classic Mac | ChiKareGo2      | ChicagoFLF    |               | [system.css](https://github.com/sakofchit/system.css) |
+| Classic Mac | ChiKareGo2      | ChicagoFLF    |               | [AjaxIronside](https://ajaxironside.github.io/)       |
 |             |                 |               | Anonymous Pro | Fontsource                                            |
 | Web 1.0     | Times New Roman | Arial         | Courier New   | System Fonts[^1]                                      |
 
@@ -83,13 +84,8 @@ See the [contributing guide](/CONTRIBUTING.md).
 
 ### Icons
 
-- [OpenMoji icon set](https://icon-sets.iconify.design/openmoji/)
-- [Twemoji icon set](https://icon-sets.iconify.design/twemoji/)
-- [FxEmoji icon set](https://icon-sets.iconify.design/fxemoji/)
+- [Wikimedia Commons Microsoft icon references](https://commons.wikimedia.org/wiki/Category:Microsoft_icons)
 - [Bootstrap Icons](https://icons.getbootstrap.com/)
-- [Ubuntu Humanity icon theme](https://github.com/mk-pmb/ubuntu-icon-theme-humanity)
-- [Iconify icon data](https://iconify.design/docs/icons/icon-data.html)
-- [icondata](https://github.com/carloskiki/icondata)
 
 ### My Other Experiments
 

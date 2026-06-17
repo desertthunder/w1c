@@ -8,7 +8,7 @@ description: Use W1C icons, icon metadata, and asset base paths for copied icon 
 # Icons
 
 W1C ships one icon set as TypeScript data. The icons are inline
-SVG paths, so they do not need a network request or asset base path.
+SVG paths, so they do not need a network request or static asset loading.
 
 ```ts
 import '@w1c/components/icon';
@@ -72,21 +72,16 @@ Each bundled icon has metadata for:
 - intended size
 
 The bundled W1C icon set is normalized as package SVG data. Windows-style icons come from
-Wikimedia Commons references. Other icon source families are: OpenMoji, Twemoji, FxEmoji,
-Bootstrap Icons, & Ubuntu Humanity.
+Wikimedia Commons Microsoft icon references. Some neutral interface symbols reference
+Bootstrap Icons.
 
 ### Sources
 
-- Wikimedia Commons Windows-style icon references: mixed per-file licenses.
-- OpenMoji: CC BY-SA 4.0.
-- Twemoji: CC BY 4.0.
-- FxEmoji: CC BY 4.0.
+- Wikimedia Commons Microsoft icon references: mixed per-file licenses.
 - Bootstrap Icons: MIT.
-- Ubuntu Humanity icon theme: mixed GPL / CC-BY-SA theme assets.
-- Iconify icon data and icondata: data shape and attribution model references.
-- Ibex and Tempest local references: coverage reference only.
 
-Copied or source-derived icon assets still need file-level license review before they are added to the package.
+The [Icon Catalog](/docs/icons/catalog/) lists source and license attribution for each
+bundled icon.
 
 ## Asset Paths
 

@@ -23,7 +23,7 @@
 	}
 
 	function groupStartsOpen(group: DocGroup) {
-		return group.title !== 'Components' || groupContainsPath(group, page.url.pathname);
+		return group.title === 'Overview' || group.title === 'Meta';
 	}
 </script>
 

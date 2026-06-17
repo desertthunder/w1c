@@ -1,24 +1,44 @@
 import type { IconData, IconMetadata } from './types';
 
-const w1cSourceUrl = 'https://github.com/desertthunder';
-const w1cAttribution = [
-	'W1C-normalized icon data.',
-	'Windows-style icons are based on Wikimedia Commons references;',
-	'other icon coverage sources are in the project README.md.'
-].join(' ');
+enum SourceURL {
+	wikimedia = 'https://commons.wikimedia.org/wiki/Category:Microsoft_icons',
+	bootstrap = 'https://icons.getbootstrap.com/'
+}
+
+enum Attribution {
+	wikimedia = 'W1C-normalized icon data. Visual design references Wikimedia Commons Microsoft icon examples.',
+	bootstrap = 'W1C-normalized icon data. Some interface symbols reference Bootstrap Icons.'
+}
 
 const icon = (body: string, width = 16, height = 16): IconData => ({ width, height, body });
 
-const metadata = (name: string, category: string): IconMetadata => ({
+const metadata = (
+	name: string,
+	category: string,
+	sourceReferenceProject = 'Wikimedia Commons Microsoft icon references',
+	sourceUrl = SourceURL.wikimedia,
+	license = 'W1C icon data: MIT; reference material: mixed Wikimedia Commons file licenses',
+	attribution = Attribution.wikimedia
+): IconMetadata => ({
 	name,
 	category,
-	sourceReferenceProject: 'W1C',
+	sourceReferenceProject,
 	sourceIconName: name,
-	sourceUrl: w1cSourceUrl,
-	license: 'MIT',
-	attribution: w1cAttribution,
+	sourceUrl,
+	license,
+	attribution,
 	intendedSize: 16
 });
+
+const bootstrapMetadata = (name: string, category: string) =>
+	metadata(
+		name,
+		category,
+		'Bootstrap Icons',
+		SourceURL.bootstrap,
+		'W1C icon data: MIT; Bootstrap Icons: MIT',
+		Attribution.bootstrap
+	);
 
 export type W1cIconName = keyof typeof W1C_ICONS;
 
@@ -107,99 +127,64 @@ export const W1C_ICONS = {
 export const W1C_ICON_NAMES = Object.keys(W1C_ICONS) as W1cIconName[];
 
 export const W1C_ICON_METADATA = {
-	'align-left': metadata('align-left', 'formatting'),
-	at: metadata('at', 'identity'),
-	back: metadata('back', 'action'),
-	bold: metadata('bold', 'formatting'),
+	'align-left': bootstrapMetadata('align-left', 'formatting'),
+	at: bootstrapMetadata('at', 'identity'),
+	back: bootstrapMetadata('back', 'action'),
+	bold: bootstrapMetadata('bold', 'formatting'),
 	browser: metadata('browser', 'app'),
-	close: metadata('close', 'window-control'),
+	close: bootstrapMetadata('close', 'window-control'),
 	computer: metadata('computer', 'device'),
-	danger: metadata('danger', 'status'),
-	database: metadata('database', 'object'),
+	danger: bootstrapMetadata('danger', 'status'),
+	database: bootstrapMetadata('database', 'object'),
 	document: metadata('document', 'file'),
 	'file-manager': metadata('file-manager', 'app'),
 	folder: metadata('folder', 'file'),
-	forward: metadata('forward', 'action'),
-	github: metadata('github', 'brand'),
-	globe: metadata('globe', 'network'),
-	highlight: metadata('highlight', 'formatting'),
-	home: metadata('home', 'place'),
-	image: metadata('image', 'media'),
-	info: metadata('info', 'status'),
-	italic: metadata('italic', 'formatting'),
-	list: metadata('list', 'formatting'),
-	mail: metadata('mail', 'app'),
+	forward: bootstrapMetadata('forward', 'action'),
+	github: bootstrapMetadata('github', 'brand'),
+	globe: bootstrapMetadata('globe', 'network'),
+	highlight: bootstrapMetadata('highlight', 'formatting'),
+	home: bootstrapMetadata('home', 'place'),
+	image: bootstrapMetadata('image', 'media'),
+	info: bootstrapMetadata('info', 'status'),
+	italic: bootstrapMetadata('italic', 'formatting'),
+	list: bootstrapMetadata('list', 'formatting'),
+	mail: bootstrapMetadata('mail', 'app'),
 	maximize: metadata('maximize', 'window-control'),
 	minimize: metadata('minimize', 'window-control'),
 	page: metadata('page', 'file'),
-	palette: metadata('palette', 'tool'),
-	pdf: metadata('pdf', 'file'),
-	print: metadata('print', 'action'),
-	refresh: metadata('refresh', 'action'),
-	search: metadata('search', 'action'),
-	stop: metadata('stop', 'action'),
+	palette: bootstrapMetadata('palette', 'tool'),
+	pdf: bootstrapMetadata('pdf', 'file'),
+	print: bootstrapMetadata('print', 'action'),
+	refresh: bootstrapMetadata('refresh', 'action'),
+	search: bootstrapMetadata('search', 'action'),
+	stop: bootstrapMetadata('stop', 'action'),
 	terminal: metadata('terminal', 'app'),
 	'text-editor': metadata('text-editor', 'app'),
 	trash: metadata('trash', 'place'),
-	underline: metadata('underline', 'formatting'),
-	volume: metadata('volume', 'status'),
-	warning: metadata('warning', 'status'),
+	underline: bootstrapMetadata('underline', 'formatting'),
+	volume: bootstrapMetadata('volume', 'status'),
+	warning: bootstrapMetadata('warning', 'status'),
 	'web-browser': metadata('web-browser', 'app'),
-	wireless: metadata('wireless', 'status')
+	wireless: bootstrapMetadata('wireless', 'status')
 } as const satisfies Record<W1cIconName, IconMetadata>;
 
 export const W1C_ICON_LICENSE_REVIEW = {
-	status: 'source-derived metadata review',
-	license: 'mixed source licenses; verify per icon before redistribution outside this package',
-	notes: w1cAttribution,
+	status: 'catalog attribution attached per icon',
+	license: 'W1C icon data is MIT; Bootstrap Icons are MIT; Wikimedia references have mixed per-file licenses',
+	notes:
+		'The W1C icon set uses original normalized SVG data with two attribution buckets: Wikimedia Commons Microsoft icon references and Bootstrap Icons.',
 	references: [
 		{
-			name: 'Wikimedia Commons Windows-style icon references',
-			url: 'https://commons.wikimedia.org/',
+			name: 'Wikimedia Commons Microsoft icon references',
+			url: SourceURL.wikimedia,
 			license: 'mixed Wikimedia Commons file licenses',
-			usage: 'Windows-style icon source references'
-		},
-		{
-			name: 'OpenMoji',
-			url: 'https://icon-sets.iconify.design/openmoji/',
-			license: 'CC BY-SA 4.0',
-			usage: 'README.md source reference'
-		},
-		{
-			name: 'Twemoji',
-			url: 'https://icon-sets.iconify.design/twemoji/',
-			license: 'CC BY 4.0',
-			usage: 'README.md source reference'
-		},
-		{
-			name: 'FxEmoji',
-			url: 'https://icon-sets.iconify.design/fxemoji/',
-			license: 'CC BY 4.0',
-			usage: 'README.md source reference'
+			usage: 'Visual design inspiration for Microsoft-style file, app, desktop, and window icons'
 		},
 		{
 			name: 'Bootstrap Icons',
-			url: 'https://github.com/twbs/icons',
+			url: SourceURL.bootstrap,
 			license: 'MIT',
-			usage: 'README.md source reference'
-		},
-		{
-			name: 'Ubuntu Humanity icon theme',
-			url: 'https://github.com/mk-pmb/ubuntu-icon-theme-humanity',
-			license: 'GPL-2.0-or-later / CC-BY-SA-3.0 mixed theme assets',
-			usage: 'README.md source reference'
-		},
-		{
-			name: 'Iconify icon data',
-			url: 'https://iconify.design/docs/icons/icon-data.html',
-			license: 'metadata shape reference; icon licenses remain source-set specific',
-			usage: 'README.md data model reference'
-		},
-		{
-			name: 'icondata',
-			url: 'https://github.com/carloskiki/icondata',
-			license: 'metadata pattern reference; icon licenses remain source-set specific',
-			usage: 'README.md attribution model reference'
+			usage: 'Reference for neutral action, formatting, status, and object symbols'
 		}
 	]
 } as const;
