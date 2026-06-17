@@ -1,6 +1,6 @@
 ---
 title: Getting started | W1C Docs
-description: Install W1C and render the first retro custom element.
+description: Preview the W1C package API and render the first retro custom element.
 ---
 
 <p class="doc-kicker">Getting started</p>
@@ -13,11 +13,9 @@ W1C is a Lit web component package for retro operating-system and early-web UI. 
 W1C components use the <code>w1c-</code> prefix and work anywhere custom elements, ESM, CSS, and static assets are available.
 </div>
 
-## Quick install
+## Release status
 
-```sh
-pnpm add @w1c/components
-```
+W1C is not released yet. The examples below show the intended package API.
 
 ## First window
 
@@ -42,7 +40,7 @@ import '@w1c/components';
 ## What to read next
 
 <ol class="steps">
-	<li><a href="/docs/installation/">Install W1C</a> in a bundler, static page, or server-rendered site.</li>
+	<li><a href="/docs/installation/">Check release status</a> before using W1C in another project.</li>
 	<li><a href="/docs/usage/">Use W1C components</a> with slots, attributes, and direct imports.</li>
 	<li><a href="/docs/components/">Browse the component catalog</a> for slots, parts, and theme notes.</li>
 </ol>

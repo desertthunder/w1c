@@ -4,6 +4,8 @@ W1C is a retro OS and early-web interface inspired web component library.
 
 ## Usage
 
+W1C is not released yet. The imports below show the intended package API.
+
 Register every stable component:
 
 ```ts

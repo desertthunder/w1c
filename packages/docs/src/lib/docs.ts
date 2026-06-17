@@ -14,7 +14,7 @@ export const NAV_LINKS: DocLink[] = [
 	{
 		title: 'Getting Started',
 		href: '/docs/getting-started/',
-		description: 'Install W1C and render the first retro window.'
+		description: 'Preview the W1C API and render the first retro window.'
 	},
 	{ title: 'About', href: '/about/', description: 'Why W1C exists.' },
 	{ title: 'Components', href: '/docs/components/', description: 'Browse every W1C custom element.' },
@@ -28,7 +28,7 @@ export const NAV_LINKS: DocLink[] = [
 
 export const DOC_MANIFEST: DocLink[] = [
 	{ title: 'Getting started', href: '/docs/getting-started/', description: 'Build your first retro UI.' },
-	{ title: 'Installation', href: '/docs/installation/', description: 'Add W1C to your project.' },
+	{ title: 'Installation', href: '/docs/installation/', description: 'Check release status and package imports.' },
 	{
 		title: 'Usage',
 		href: '/docs/usage/',

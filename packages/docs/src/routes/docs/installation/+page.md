@@ -1,19 +1,16 @@
 ---
 title: Installation | W1C Docs
-description: Install W1C with npm, bundlers, static HTML, and server-rendered pages.
+description: Check W1C release status and preview the intended package imports.
 ---
 
 <p class="doc-kicker">Installation</p>
 
-# Install W1C
+# Installation
 
-Use W1C as a package when your project has a build step. Use browser ESM imports when you are proving a static page or server-rendered template.
+W1C is not released yet. Do not treat the package names below as installable npm
+packages until a release is published.
 
-## npm
-
-```sh
-pnpm add @w1c/components
-```
+## Intended package API
 
 Register every stable component from the package root:
 
@@ -37,7 +34,8 @@ import '@w1c/components/button';
 <w1c-button>Start</w1c-button>
 ```
 
-The static asset path is only a placeholder until the package has a published CDN or copied asset layout. Keep the import explicit so your page still shows which theme and component bundle it needs.
+The static asset path is a placeholder until W1C has a published asset layout.
+Keep the imports explicit so the page shows which theme and component bundle it needs.
 
 ## Server-rendered HTML
 

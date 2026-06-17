@@ -99,11 +99,6 @@ new layers.
 - [ ] Add migration notes for app-local CSS variables/components to W1C tokens/components.
 - [ ] Add accessibility guidance for slots, labels, keyboard behavior, dialogs, menus, focus,
       and reduced motion.
-- [ ] Add changelog page.
-- [ ] Document Windows 95 reference patterns from
-      [tempest](https://tangled.org/desertthunder.dev/tempest).
-- [ ] Document GNOME 2 / Ubuntu reference patterns from
-      [ibex](https://tangled.org/desertthunder.dev/ibex).
 - [ ] Document Web 1.0 / Geocities guardrails from [RESEARCH.md](./RESEARCH.md): semantic
       HTML, reduced motion, accessible marquee/blink alternatives, and no-build examples.
 
@@ -123,12 +118,12 @@ new layers.
 
 ## CLI
 
-- [ ] Add `w1c docs` as the first CLI command to render bundled Markdown docs in the
+- [x] Add `w1c docs` as the first CLI command to render bundled Markdown docs in the
       terminal.
-- [ ] Generate the CLI docs bundle at build time by copying
+- [x] Generate the CLI docs bundle at build time by copying
       `packages/docs/src/routes/docs/**/+page.md` into a preserved route-shaped docs tree
       for `@w1c/cli`.
-- [ ] Keep docs source-of-truth in `packages/docs`; strip Svelte-only page code from the CLI
+- [x] Keep docs source-of-truth in `packages/docs`; strip Svelte-only page code from the CLI
       docs bundle instead of maintaining separate terminal docs.
 - [ ] Replace starter `my-element` output with real W1C component and theme setup.
 - [ ] Add `w1c init` to add W1C imports and theme setup to an existing project.

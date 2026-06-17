@@ -12,9 +12,13 @@
 		"build": "pnpm -r build",
 		"check": "pnpm -r check",
 		"test": "pnpm -r test",
-		"format": "pnpm -r format"
+		"format": "pnpm -r format",
+		"changeset": "changeset",
+		"version-packages": "changeset version",
+		"release": "pnpm build && changeset publish"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^2.31.0",
 		"prettier-plugin-svelte": "^4.1.0"
 	}
 }

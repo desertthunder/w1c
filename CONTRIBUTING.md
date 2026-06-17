@@ -34,6 +34,8 @@ Testing is handled with Vitest & Playwright; code quality & formatting with ESLi
 - Node.js
 - pnpm
 
+Install workspace deps:
+
 ```sh
 pnpm install
 ```
@@ -53,3 +55,72 @@ pnpm --filter @w1c/storybook dev
 ```
 
 `package.json` commands follow common conventions for `dev`, `test`, `build`, `check`, `format`
+
+## Changes
+
+This project uses [Changesets](https://github.com/changesets/changesets) to track
+package changes before a release. Add a changeset when a change affects code that
+someone can import, install, or use from one of the package entrypoints.
+
+The tracked packages are:
+
+- `@w1c/components`
+- `@w1c/dnd`
+- `@w1c/fonts`
+- `@w1c/cli`
+
+Do not add changesets for `@w1c/docs` or `@w1c/storybook`. They are ignored in
+Changesets config because they are project apps, not release packages. If docs or
+stories changed alongside a component change, write the changeset for the package
+that users consume.
+
+### Adding a changeset
+
+Run:
+
+```sh
+pnpm changeset
+```
+
+Pick every package whose public behavior changed, then choose the bump:
+
+- `patch`: bug fixes, visual corrections, accessibility fixes, documentation for
+  exported APIs, or small compatible behavior changes.
+- `minor`: new components, new exports, new attributes/properties/events, new CSS
+  parts, new theme tokens, or compatible feature work.
+- `major`: removed exports, renamed elements, changed default behavior that can
+  break callers, changed CSS custom property names, changed event contracts, or
+  changed CLI commands in a breaking way.
+
+Write the note for users, not for maintainers. Mention the behavior they get, not
+the internal file names you touched.
+
+Good:
+
+```md
+Add `w1c-dialog` support for modal close events and focus return.
+```
+
+Weak:
+
+```md
+Update dialog files and fix tests.
+```
+
+### Versioning and release
+
+When it is time to prepare a release, run:
+
+```sh
+pnpm version-packages
+```
+
+That command consumes pending files in `.changeset/`, updates package versions,
+and writes changelogs. Review the result before publishing.
+
+Before publishing, run:
+
+```sh
+pnpm check
+pnpm build
+```
