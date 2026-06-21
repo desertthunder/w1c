@@ -1,0 +1,6 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "w1c",
+	"compatibility_date": "2026-06-21",
+	"pages_build_output_dir": "packages/docs/build"
+}

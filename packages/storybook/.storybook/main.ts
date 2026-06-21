@@ -2,6 +2,7 @@ import type { StorybookConfig } from '@storybook/web-components-vite';
 import { fileURLToPath } from 'node:url';
 
 const workspaceRoot = fileURLToPath(new URL('../../..', import.meta.url));
+const storybookBase = process.env.W1C_STORYBOOK_BASE ?? '/';
 
 const config: StorybookConfig = {
 	stories: ['../src/**/*.stories.@(js|mjs|ts)'],
@@ -11,6 +12,7 @@ const config: StorybookConfig = {
 	viteFinal: (config) => {
 		return {
 			...config,
+			base: storybookBase,
 			build: {
 				...config.build,
 				// Storybook's manager/iframe bundles exceed Vite's app-oriented default.

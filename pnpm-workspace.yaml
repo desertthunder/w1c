@@ -2,6 +2,8 @@ packages:
   - packages/*
 allowBuilds:
   esbuild: true
+  sharp: true
+  workerd: true
 minimumReleaseAgeExclude:
   - '@storybook/addon-docs@10.4.5'
   - '@storybook/builder-vite@10.4.5'
