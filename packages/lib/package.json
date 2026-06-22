@@ -1,6 +1,5 @@
 {
 	"name": "@w1c/components",
-	"private": true,
 	"version": "0.0.0",
 	"description": "Retro OS and early-web web components, themes, styles, icons, and runtime assets.",
 	"license": "MIT",

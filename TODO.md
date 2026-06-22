@@ -4,7 +4,7 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
 
 ## NPM Publishing
 
-- [ ] Remove `private: true` from publishable package manifests only when the release gate
+- [x] Remove `private: true` from publishable package manifests only when the release gate
       is ready.
 - [x] Confirm final package names and scopes: `@w1c/components`, `@w1c/dnd`, `@w1c/fonts`,
       and `@w1c/cli`. (confirmed)
@@ -27,18 +27,18 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
 
 ## Quality Gates
 
-- [ ] Add unit tests for custom element registration, rendering, attributes/properties,
+- [x] Add unit tests for custom element registration, rendering, attributes/properties,
       events, and accessibility helpers.
-- [ ] Add browser tests for focus behavior, keyboard menus, dialog behavior, and slot
+- [x] Add browser tests for focus behavior, keyboard menus, dialog behavior, and slot
       rendering.
-- [ ] Add visual smoke tests across all themes.
-- [ ] Add package export checks for every documented import path.
-- [ ] Add `npm pack --dry-run` checks for every publishable package.
-- [ ] Add docs build and Storybook build checks.
+- [x] Add visual smoke tests across all themes.
+- [x] Add package export checks for every documented import path.
+- [x] Add `npm pack --dry-run` checks for every publishable package.
+- [x] Add docs build and Storybook build checks.
 
 ## Parking Lot
 
-- [ ] Verify icon licensing and redistribution assumptions before copying reference assets.
+- [x] Verify icon licensing and redistribution assumptions before copying reference assets.
 - [ ] Prefer slots, attributes/properties, CSS custom properties, and CSS parts over
       app-specific render APIs.
 - [ ] Add visual regression once the component surface stabilizes.

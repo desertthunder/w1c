@@ -130,13 +130,17 @@ Keep `@w1c/docs` and `@w1c/storybook` private.
 Before publishing, run the full release gate:
 
 ```sh
-pnpm check
-pnpm test
-pnpm build
+pnpm qa
 ```
 
-Also run `npm pack --dry-run` inside each publishable package and inspect the file list.
-The package should include runtime JavaScript, type declarations, CSS, fonts, static
-assets, README, package manifest, and license. It should not include docs app output,
-Storybook output, tests, local status notes, or source files unless the package has a
-deliberate source export.
+That command runs workspace checks, tests, builds, documented package export checks, and
+`npm pack --dry-run` for every publishable package. The pack gate verifies runtime
+JavaScript, type declarations, CSS, fonts, static assets, README, and package manifests,
+while excluding docs output, Storybook output, tests, stories, and source files.
+
+You can run the expensive app build checks directly when needed:
+
+```sh
+pnpm qa:docs
+pnpm qa:storybook
+```
