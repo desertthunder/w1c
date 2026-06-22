@@ -313,6 +313,45 @@ Initial templates:
 - Static site.
 - Server-rendered asset pipeline.
 
+## Publishing Contract
+
+W1C should publish only the packages that users install directly:
+
+- `@w1c/components`
+- `@w1c/dnd`
+- `@w1c/fonts`
+- `@w1c/cli`
+
+Keep `@w1c/docs` and `@w1c/storybook` private. They are not runtime packages.
+
+Publishable packages must not expose `src/` paths as the npm API. Each package should ship
+built ESM, type declarations, and the runtime assets needed by its documented exports.
+CSS, fonts, icon metadata, and copied static assets should be covered by explicit package
+exports and verified from the packed tarball.
+
+Release metadata requirements:
+
+- `private: true` is removed only from publishable packages.
+- Package manifests include description, license, repository, homepage, bugs, keywords,
+  `files`, and stable exports.
+- Workspace dependency specifiers are replaced with semver ranges during release
+  versioning.
+- README files explain the public package API for the package they ship with.
+- The root README and docs installation page match the packages that are actually
+  published.
+
+Release workflow requirements:
+
+- Use Changesets for versioning and changelog generation.
+- Run `pnpm check`, `pnpm test`, `pnpm build`, docs build, Storybook build, and package
+  export checks before release.
+- Run `npm pack --dry-run` for each publishable package and inspect the file list.
+- Publish scoped packages with public access.
+- Prefer npm trusted publishing with provenance from CI. Avoid long-lived npm publish
+  tokens.
+- Keep the first public release conservative. A prerelease tag is acceptable while the
+  component surface, theme tokens, and icon redistribution assumptions settle.
+
 ## Phase 0: Workspace Foundation
 
 Status: mostly done.

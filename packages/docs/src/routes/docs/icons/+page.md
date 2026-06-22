@@ -89,6 +89,12 @@ Inline W1C icons do not need asset paths. Copied assets do: external icon files,
 sprite sheets, tiled backgrounds, and images need predictable URLs in static HTML, CDN,
 Vite, SvelteKit, and server-rendered pages.
 
+Use the CLI when you want the default copied sprite and config module:
+
+```sh
+w1c add icons --public-dir public --base-path /w1c/icons
+```
+
 Configure those paths once:
 
 ```ts

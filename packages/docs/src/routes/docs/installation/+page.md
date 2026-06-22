@@ -10,6 +10,44 @@ description: Check W1C release status and preview the intended package imports.
 W1C is not released yet. Do not treat the package names below as installable npm
 packages until a release is published.
 
+## CLI setup
+
+Scaffold a small Vite app:
+
+```sh
+w1c create my-w1c-app --template bundler --theme windows-95
+```
+
+Create other starter layouts with the same command:
+
+```sh
+w1c create my-static-page --template static-html --theme geocities
+w1c create my-site --template static-site --theme classic-mac
+w1c create my-server-views --template server-rendered --theme ubuntu-810
+```
+
+Update an existing browser entry file:
+
+```sh
+w1c init --entry src/main.ts --theme classic-mac
+w1c init -e src/main.ts -t classic-mac
+```
+
+Add another theme import when a project needs a theme switcher or preview page:
+
+```sh
+w1c add theme gnome2 geocities --entry src/main.ts
+w1c add theme gnome2 geocities -e src/main.ts
+```
+
+Copy a small icon sprite and configure asset base paths:
+
+```sh
+w1c add icons --public-dir public --base-path /w1c/icons --config src/w1c-assets.ts
+w1c add icons -p public -b /w1c/icons -c src/w1c-assets.ts
+w1c add icons --pub public --base-path /w1c/icons --conf src/w1c-assets.ts
+```
+
 ## Intended package API
 
 Register every stable component from the package root:

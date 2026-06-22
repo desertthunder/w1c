@@ -123,15 +123,42 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
       for `@w1c/cli`.
 - [x] Keep docs source-of-truth in `packages/docs`; strip Svelte-only page code from the CLI
       docs bundle instead of maintaining separate terminal docs.
-- [ ] Replace starter `my-element` output with real W1C component and theme setup.
-- [ ] Add `w1c init` to add W1C imports and theme setup to an existing project.
-- [ ] Add `w1c add theme` for one or more theme CSS imports.
-- [ ] Add `w1c add icons` for copied or configured icon assets.
-- [ ] Expand `w1c create` templates for static HTML, bundler projects, static sites, and
+- [x] Replace starter `my-element` output with real W1C component and theme setup.
+- [x] Add `w1c init` to add W1C imports and theme setup to an existing project.
+- [x] Add `w1c add theme` for one or more theme CSS imports.
+- [x] Add `w1c add icons` for copied or configured icon assets.
+- [x] Expand `w1c create` templates for static HTML, bundler projects, static sites, and
       server-rendered asset pipelines.
-- [ ] Keep dependency installation opt-in unless user research shows default installation is
+- [x] Keep dependency installation opt-in unless user research shows default installation is
       expected.
-- [ ] Add CLI tests around generated files and prompts.
+- [x] Add CLI tests around generated files and prompts.
+
+## NPM Publishing
+
+- [ ] Remove `private: true` from publishable package manifests only when the release gate
+      is ready.
+- [ ] Confirm final package names and scopes: `@w1c/components`, `@w1c/dnd`, `@w1c/fonts`,
+      and `@w1c/cli`.
+- [ ] Add package metadata for npm: description, README, repository, homepage, bugs,
+      keywords, license, and package manager support notes.
+- [ ] Replace source-only exports with publishable build outputs for JavaScript, type
+      declarations, CSS, fonts, and static assets.
+- [ ] Replace all `workspace:*` dependencies in publishable manifests with semver ranges
+      during release versioning.
+- [ ] Add or verify `files` arrays so each package ships only runtime files, declarations,
+      CSS, assets, README, package manifest, and license.
+- [ ] Run `npm pack --dry-run` for every publishable package and inspect the file list.
+- [ ] Verify CSS theme, style, font, icon, and asset export paths against the packed
+      tarballs.
+- [ ] Verify icon licensing and redistribution assumptions before publishing copied or
+      bundled icon assets.
+- [ ] Decide whether the first npm release should be prerelease-only, for example
+      `0.1.0-next.0`.
+- [ ] Add CI release workflow using npm trusted publishing with provenance instead of a
+      long-lived publish token.
+- [ ] Document the release command sequence in `CONTRIBUTING.md`.
+- [ ] Update public docs from "not released yet" to installable npm and CDN examples only
+      after the first package publish succeeds.
 
 ## Quality Gates
 
@@ -141,6 +168,7 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
       rendering.
 - [ ] Add visual smoke tests across all themes.
 - [ ] Add package export checks for every documented import path.
+- [ ] Add `npm pack --dry-run` checks for every publishable package.
 - [ ] Add docs build and Storybook build checks.
 - [ ] Add CI once repository workflow is ready.
 

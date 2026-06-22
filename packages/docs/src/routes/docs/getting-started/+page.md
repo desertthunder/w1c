@@ -17,10 +17,25 @@ W1C components use the <code>w1c-</code> prefix and work anywhere custom element
 
 W1C is not released yet. The examples below show the intended package API.
 
+## Start with the CLI
+
+Create a Vite project with W1C components and a theme import:
+
+```sh
+w1c create my-w1c-app --theme windows-95
+```
+
+Add W1C to an existing project by updating its browser entry file:
+
+```sh
+w1c init --entry src/main.ts --theme ubuntu-810
+```
+
 ## First window
 
 ```ts
 import '@w1c/components';
+import '@w1c/components/themes/windows-95.css';
 ```
 
 ```html

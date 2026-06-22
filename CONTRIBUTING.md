@@ -118,9 +118,25 @@ pnpm version-packages
 That command consumes pending files in `.changeset/`, updates package versions,
 and writes changelogs. Review the result before publishing.
 
-Before publishing, run:
+Publishable packages are:
+
+- `@w1c/components`
+- `@w1c/dnd`
+- `@w1c/fonts`
+- `@w1c/cli`
+
+Keep `@w1c/docs` and `@w1c/storybook` private.
+
+Before publishing, run the full release gate:
 
 ```sh
 pnpm check
+pnpm test
 pnpm build
 ```
+
+Also run `npm pack --dry-run` inside each publishable package and inspect the file list.
+The package should include runtime JavaScript, type declarations, CSS, fonts, static
+assets, README, package manifest, and license. It should not include docs app output,
+Storybook output, tests, local status notes, or source files unless the package has a
+deliberate source export.
