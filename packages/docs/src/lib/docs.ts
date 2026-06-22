@@ -35,6 +35,21 @@ export const DOC_MANIFEST: DocLink[] = [
 		description: 'Register components, cherry-pick imports, and apply theme CSS.'
 	},
 	{
+		title: 'Recipes',
+		href: '/docs/recipes/',
+		description: 'Use W1C from static HTML, bundlers, server templates, SvelteKit, and Vite.'
+	},
+	{
+		title: 'Accessibility',
+		href: '/docs/accessibility/',
+		description: 'Slots, labels, keyboard behavior, focus, dialogs, menus, and reduced motion.'
+	},
+	{
+		title: 'Web 1.0 Guardrails',
+		href: '/docs/web-1-guardrails/',
+		description: 'Build early-web pages with valid HTML, motion fallbacks, and no-build examples.'
+	},
+	{
 		title: 'Drag & Drop',
 		href: '/docs/dnd/',
 		description: 'Add DnD with framework-neutral drag, resize, pointer session, and geometry helpers.'
@@ -244,7 +259,17 @@ function docs(...hrefs: string[]) {
 export const FEATURED_DOCS: DocLink[] = docs('/docs/getting-started/', '/docs/components/', '/docs/icons/');
 
 export const DOC_GROUPS: DocGroup[] = [
-	{ title: 'Overview', links: docs('/docs/getting-started/', '/docs/installation/', '/docs/usage/') },
+	{
+		title: 'Overview',
+		links: docs(
+			'/docs/getting-started/',
+			'/docs/installation/',
+			'/docs/usage/',
+			'/docs/recipes/',
+			'/docs/accessibility/',
+			'/docs/web-1-guardrails/'
+		)
+	},
 	{
 		title: 'Manual',
 		links: docs('/docs/dnd/', '/docs/typography/', '/docs/themes/', '/docs/icons/', '/docs/components/')

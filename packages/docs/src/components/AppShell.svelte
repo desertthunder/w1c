@@ -6,11 +6,8 @@
 	import DocsSidebar from '$components/DocsSidebar.svelte';
 	import SiteHeader from '$components/SiteHeader.svelte';
 
-	let {
-		children,
-		primaryDocGroups,
-		topNavLinks
-	}: { children: Snippet; primaryDocGroups: DocGroup[]; topNavLinks: DocLink[] } = $props();
+	type Props = { children: Snippet; primaryDocGroups: DocGroup[]; topNavLinks: DocLink[] };
+	let { children, primaryDocGroups, topNavLinks }: Props = $props();
 
 	let sidebarOpen = $state(false);
 

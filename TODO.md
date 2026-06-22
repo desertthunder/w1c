@@ -84,20 +84,19 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
 ## Docs
 
 - [x] Replace the starter docs page with real getting-started, installation, and usage pages.
-- [ ] Document CDN/no-build usage, npm package usage, bundlers, static HTML, and
+- [x] Document CDN/no-build usage, npm package usage, bundlers, static HTML, and
       server-rendered HTML.
 - [x] Add component catalog pages with status, category, description, examples, API,
       accessibility notes, and theming notes.
-- [ ] Add an icon catalog page for the W1C icon set, with source and license attribution per
+- [x] Add an icon catalog page for the W1C icon set, with source and license attribution per
       icon.
-- [ ] Add theme catalog pages for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, Web 1.0,
+- [x] Add theme catalog pages for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, Web 1.0,
       and Geocities.
-- [ ] Add recipes for static HTML, npm/bundler usage, server-rendered HTML, SvelteKit, and
+- [x] Add recipes for static HTML, npm/bundler usage, server-rendered HTML, SvelteKit, and
       Vite.
-- [ ] Add migration notes for app-local CSS variables/components to W1C tokens/components.
-- [ ] Add accessibility guidance for slots, labels, keyboard behavior, dialogs, menus, focus,
+- [x] Add accessibility guidance for slots, labels, keyboard behavior, dialogs, menus, focus,
       and reduced motion.
-- [ ] Document Web 1.0 / Geocities guardrails from: semantic
+- [x] Document Web 1.0 / Geocities guardrails from: semantic
       HTML, reduced motion, accessible marquee/blink alternatives, and no-build examples.
 
 ## Storybook

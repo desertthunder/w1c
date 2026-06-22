@@ -112,3 +112,14 @@ math lives in `@w1c/dnd`; your app still owns persistence, z-index, focus state,
 state. See [DnD](/docs/dnd/) for the standalone helpers.
 
 `w1c-dialog` sets dialog roles but does not trap focus or make the page modal. Applications own focus movement, inert background state, close behavior, and any persistence.
+
+## Guidance
+
+Use [Recipes](/docs/recipes/) for static HTML, npm/bundler, server-rendered HTML, SvelteKit,
+and Vite examples.
+
+Use [Accessibility](/docs/accessibility/) for slots, labels, keyboard behavior, dialogs,
+menus, focus, and reduced motion.
+
+Use [Web 1.0 Guardrails](/docs/web-1-guardrails/) when building Geocities-style pages with
+semantic HTML and no build steps.

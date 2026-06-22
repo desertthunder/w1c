@@ -3,19 +3,15 @@
 	import type { DocLink } from '../lib/docs';
 	import { DOCS_THEMES } from '$lib/theme.svelte';
 
-	let {
-		links,
-		selectedTheme,
-		sidebarOpen,
-		onToggleSidebar,
-		onThemeChange
-	}: {
+	type Props = {
 		links: DocLink[];
 		selectedTheme: string;
 		sidebarOpen: boolean;
 		onToggleSidebar: () => void;
 		onThemeChange: (theme: string) => void;
-	} = $props();
+	};
+
+	let { links, selectedTheme, sidebarOpen, onToggleSidebar, onThemeChange }: Props = $props();
 </script>
 
 <header class="site-header">
@@ -164,7 +160,7 @@
 
 		nav {
 			display: grid;
-			grid-template-columns: repeat(3, minmax(0, 1fr));
+			grid-template-columns: repeat(4, minmax(0, 1fr));
 		}
 
 		.theme-picker {

@@ -65,6 +65,9 @@ import '@w1c/components/button';
 
 ## Static HTML
 
+Copy the built W1C files into your static assets directory, then load one theme and one
+component module.
+
 ```html
 <link rel="stylesheet" href="/assets/w1c/themes/windows-95.css" />
 <script type="module" src="/assets/w1c/components/index.js"></script>
@@ -74,6 +77,19 @@ import '@w1c/components/button';
 
 The static asset path is a placeholder until W1C has a published asset layout.
 Keep the imports explicit so the page shows which theme and component bundle it needs.
+
+## CDN/no-build
+
+The intended CDN shape is the same as static HTML: one CSS file, one ESM module, and normal
+custom element markup.
+
+```html
+<link rel="stylesheet" href="https://cdn.example.com/@w1c/components/themes/geocities.css" />
+<script type="module" src="https://cdn.example.com/@w1c/components/index.js"></script>
+```
+
+Pin exact versions once a CDN package exists. For archival or personal sites, copying the
+files into the site is safer than relying on a remote CDN.
 
 ## Server-rendered HTML
 
@@ -112,3 +128,6 @@ Optional native element styles and utilities are separate imports:
 import '@w1c/components/styles/native.css';
 import '@w1c/components/styles/utilities.css';
 ```
+
+See [Recipes](/docs/recipes/) for complete static HTML, npm, bundler, server-rendered HTML,
+SvelteKit, and Vite examples.
