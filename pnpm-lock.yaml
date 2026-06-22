@@ -186,10 +186,10 @@ importers:
   packages/lib:
     dependencies:
       '@w1c/dnd':
-        specifier: workspace:*
+        specifier: workspace:^0.1.0-next.0
         version: link:../dnd
       '@w1c/fonts':
-        specifier: workspace:*
+        specifier: workspace:^0.1.0-next.0
         version: link:../fonts
       lit:
         specifier: ^3.3.2

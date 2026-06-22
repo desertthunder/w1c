@@ -12,7 +12,7 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
       keywords, license, and package manager support notes.
 - [x] Replace source-only exports with publishable build outputs for JavaScript, type
       declarations, CSS, fonts, and static assets.
-- [ ] Replace all `workspace:*` dependencies in publishable manifests with semver ranges
+- [x] Replace all `workspace:*` dependencies in publishable manifests with semver ranges
       during release versioning.
 - [x] Add or verify `files` arrays so each package ships only runtime files, declarations,
       CSS, assets, README, package manifest, and license.
@@ -21,7 +21,7 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
       tarballs.
 - [x] Decide whether the first npm release should be prerelease-only, for example
       `0.1.0-next.0`. (yes)
-- [ ] Document the release command sequence in `CONTRIBUTING.md`.
+- [x] Document the release command sequence in `CONTRIBUTING.md`.
 - [ ] Update public docs from "not released yet" to installable npm and CDN examples only
       after the first package publish succeeds.
 

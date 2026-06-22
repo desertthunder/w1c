@@ -1,6 +1,6 @@
 {
 	"name": "@w1c/cli",
-	"version": "0.0.0",
+	"version": "0.1.0-next.0",
 	"description": "Command-line scaffolding and terminal docs for W1C web components.",
 	"license": "MIT",
 	"type": "module",

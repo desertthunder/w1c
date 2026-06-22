@@ -23,7 +23,7 @@
 		"format": "pnpm -r format",
 		"changeset": "changeset",
 		"version-packages": "changeset version",
-		"release": "pnpm build && changeset publish"
+		"release": "pnpm qa && changeset publish"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.31.0",

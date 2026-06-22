@@ -1,6 +1,6 @@
 {
 	"name": "@w1c/fonts",
-	"version": "0.0.0",
+	"version": "0.1.0-next.0",
 	"description": "Theme font CSS and bundled classic Mac webfonts for W1C.",
 	"license": "MIT",
 	"type": "module",

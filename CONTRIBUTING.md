@@ -118,6 +118,13 @@ pnpm version-packages
 That command consumes pending files in `.changeset/`, updates package versions,
 and writes changelogs. Review the result before publishing.
 
+For the first prerelease, enter prerelease mode before versioning:
+
+```sh
+pnpm changeset pre enter next
+pnpm version-packages
+```
+
 Publishable packages are:
 
 - `@w1c/components`
@@ -133,10 +140,11 @@ Before publishing, run the full release gate:
 pnpm qa
 ```
 
-That command runs workspace checks, tests, builds, documented package export checks, and
-`npm pack --dry-run` for every publishable package. The pack gate verifies runtime
-JavaScript, type declarations, CSS, fonts, static assets, README, and package manifests,
-while excluding docs output, Storybook output, tests, stories, and source files.
+Publish after the gate passes:
+
+```sh
+pnpm release
+```
 
 You can run the expensive app build checks directly when needed:
 

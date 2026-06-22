@@ -1,0 +1,24 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@w1c/cli": "0.0.0",
+    "@w1c/dnd": "0.0.0",
+    "@w1c/docs": "0.0.1",
+    "@w1c/fonts": "0.0.0",
+    "@w1c/components": "0.0.0",
+    "@w1c/storybook": "0.0.0"
+  },
+  "changesets": [
+    "clever-peas-judge",
+    "cool-moles-tell",
+    "forty-comics-wonder",
+    "gentle-squids-teach",
+    "legal-chairs-guess",
+    "plenty-ants-design",
+    "shy-berries-matter",
+    "solid-groups-lead",
+    "tired-dancers-smash",
+    "violet-colts-shine"
+  ]
+}

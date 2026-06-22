@@ -1,10 +1,11 @@
-import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync } from 'node:fs';
 import { dirname, extname, join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const npmCache = resolve('/tmp', 'w1c-qa-npm-cache');
+const packDestination = resolve('/tmp', 'w1c-qa-packs');
 
 /**
  * Packages that are intended to be published directly to npm.
@@ -81,13 +82,17 @@ async function checkExports() {
 }
 
 /**
- * Runs `npm pack --dry-run --json` for each publishable package and checks for the
- * expected runtime artifacts without shipping source, tests, or stories.
+ * Runs `pnpm pack --json` for each publishable package and checks for the expected
+ * runtime artifacts without shipping source, tests, stories, or workspace protocol
+ * dependencies.
  */
 function checkPackDryRuns() {
+	rmSync(packDestination, { recursive: true, force: true });
+	mkdirSync(packDestination, { recursive: true });
+
 	for (const pkg of publishablePackages) {
 		const packageRoot = resolve(root, pkg.dir);
-		const result = spawnSync('npm', ['pack', '--dry-run', '--json'], {
+		const result = spawnSync('pnpm', ['pack', '--pack-destination', packDestination, '--json'], {
 			cwd: packageRoot,
 			env: { ...process.env, npm_config_cache: npmCache },
 			encoding: 'utf8',
@@ -98,8 +103,9 @@ function checkPackDryRuns() {
 			fail(`${pkg.name} npm pack --dry-run failed:\n${result.stderr || result.stdout}`);
 		}
 
-		const packResult = JSON.parse(result.stdout)[0];
+		const packResult = JSON.parse(result.stdout);
 		const files = packResult.files.map((file) => file.path);
+		const packedManifest = readPackedManifest(resolve(packDestination, packResult.filename));
 
 		if (!files.includes('package.json') || !files.includes('README.md')) {
 			fail(`${pkg.name} pack output must include package.json and README.md.`);
@@ -120,9 +126,15 @@ function checkPackDryRuns() {
 		if (pkg.name === '@w1c/fonts' && !files.some((file) => file.startsWith('dist/') && file.endsWith('.css'))) {
 			fail(`${pkg.name} pack output does not include font CSS.`);
 		}
+
+		for (const [dependencyName, range] of Object.entries(packedManifest.dependencies ?? {})) {
+			if (typeof range === 'string' && range.startsWith('workspace:')) {
+				fail(`${pkg.name} packed manifest still contains workspace protocol for ${dependencyName}.`);
+			}
+		}
 	}
 
-	log('Dry-run npm packs include runtime files only.');
+	log('Package tarballs include runtime files and publishable dependency ranges.');
 }
 
 /**
@@ -264,6 +276,24 @@ function listFiles(path) {
 
 function readJson(path) {
 	return JSON.parse(readFileSync(path, 'utf8'));
+}
+
+/**
+ * Reads package.json from a generated package tarball.
+ *
+ * @param {string} tarballPath
+ */
+function readPackedManifest(tarballPath) {
+	const result = spawnSync('tar', ['-xOf', tarballPath, 'package/package.json'], {
+		encoding: 'utf8',
+		stdio: ['ignore', 'pipe', 'pipe']
+	});
+
+	if (result.status !== 0) {
+		fail(`Could not inspect packed package manifest:\n${result.stderr || result.stdout}`);
+	}
+
+	return JSON.parse(result.stdout);
 }
 
 /**

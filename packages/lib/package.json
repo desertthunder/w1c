@@ -1,6 +1,6 @@
 {
 	"name": "@w1c/components",
-	"version": "0.0.0",
+	"version": "0.1.0-next.0",
 	"description": "Retro OS and early-web web components, themes, styles, icons, and runtime assets.",
 	"license": "MIT",
 	"type": "module",
@@ -242,8 +242,8 @@
 		"format": "prettier --write . --ignore-path ../../.prettierignore"
 	},
 	"dependencies": {
-		"@w1c/dnd": "workspace:*",
-		"@w1c/fonts": "workspace:*",
+		"@w1c/dnd": "workspace:^0.1.0-next.0",
+		"@w1c/fonts": "workspace:^0.1.0-next.0",
 		"lit": "^3.3.2"
 	},
 	"devDependencies": {
