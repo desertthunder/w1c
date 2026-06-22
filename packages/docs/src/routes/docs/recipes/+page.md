@@ -10,8 +10,6 @@ description: Static HTML, npm, bundler, server-rendered HTML, SvelteKit, and Vit
 W1C is plain custom elements plus CSS. Pick the loading pattern that matches the page you
 already have.
 
-W1C is not published yet. Package names and CDN URLs below show the intended release API.
-
 ## Static HTML
 
 Use this shape for hand-authored pages, small static sites, and no-build Geocities-style
@@ -46,12 +44,16 @@ mirror on static hosting and easy to inspect without a framework.
 
 ## CDN or no-build
 
-After W1C is published, the no-build path should load one theme CSS file and one ESM module
-from a CDN:
+The no-build path should load one pinned theme CSS file and one pinned ESM module from a
+CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.example.com/@w1c/components/themes/windows-95.css" />
-<script type="module" src="https://cdn.example.com/@w1c/components/index.js"></script>
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/@w1c/components@0.1.0-next.0/dist/themes/windows-95.css" />
+<script type="module">
+	import 'https://esm.sh/@w1c/components@0.1.0-next.0';
+</script>
 ```
 
 Use CDN imports only for prototypes or static pages that can accept third-party availability
@@ -60,10 +62,10 @@ need long-term control.
 
 ## npm and bundlers
 
-Install the package once it is released:
+Install the package from npm:
 
 ```sh
-pnpm add @w1c/components
+pnpm add @w1c/components @w1c/fonts
 ```
 
 Register all components when bundle size is not the main concern:

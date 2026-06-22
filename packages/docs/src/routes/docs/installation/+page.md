@@ -1,14 +1,18 @@
 ---
 title: Installation | W1C Docs
-description: Check W1C release status and preview the intended package imports.
+description: Install W1C packages from npm or use a CDN.
 ---
 
 <p class="doc-kicker">Installation</p>
 
 # Installation
 
-W1C is not released yet. Do not treat the package names below as installable npm
-packages until a release is published.
+W1C packages are published on npm under the `@w1c` scope. Install the packages you need:
+
+```sh
+pnpm add @w1c/components @w1c/fonts
+pnpm add -D @w1c/cli
+```
 
 ## CLI setup
 
@@ -48,7 +52,7 @@ w1c add icons -p public -b /w1c/icons -c src/w1c-assets.ts
 w1c add icons --pub public --base-path /w1c/icons --conf src/w1c-assets.ts
 ```
 
-## Intended package API
+## Package API
 
 Register every stable component from the package root:
 
@@ -80,16 +84,18 @@ Keep the imports explicit so the page shows which theme and component bundle it 
 
 ## CDN/no-build
 
-The intended CDN shape is the same as static HTML: one CSS file, one ESM module, and normal
-custom element markup.
+For prototypes and no-build pages, load pinned CSS from jsDelivr and component modules
+through an ESM CDN:
 
 ```html
-<link rel="stylesheet" href="https://cdn.example.com/@w1c/components/themes/geocities.css" />
-<script type="module" src="https://cdn.example.com/@w1c/components/index.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@w1c/components@0.1.0-next.0/dist/themes/geocities.css" />
+<script type="module">
+	import 'https://esm.sh/@w1c/components@0.1.0-next.0';
+</script>
 ```
 
-Pin exact versions once a CDN package exists. For archival or personal sites, copying the
-files into the site is safer than relying on a remote CDN.
+For archival or personal sites, copying built files into the site is safer than relying on
+a remote CDN.
 
 ## Server-rendered HTML
 

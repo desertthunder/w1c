@@ -13,9 +13,14 @@ W1C is a Lit web component package for retro operating-system and early-web UI. 
 W1C components use the <code>w1c-</code> prefix and work anywhere custom elements, ESM, CSS, and static assets are available.
 </div>
 
-## Release status
+## Install
 
-W1C is not released yet. The examples below show the intended package API.
+Install W1C from npm:
+
+```sh
+pnpm add @w1c/components @w1c/fonts
+pnpm add -D @w1c/cli
+```
 
 ## Start with the CLI
 
@@ -55,7 +60,7 @@ import '@w1c/components/themes/windows-95.css';
 ## What to read next
 
 <ol class="steps">
-	<li><a href="/docs/installation/">Check release status</a> before using W1C in another project.</li>
+	<li><a href="/docs/installation/">Install W1C</a> in another project.</li>
 	<li><a href="/docs/usage/">Use W1C components</a> with slots, attributes, and direct imports.</li>
 	<li><a href="/docs/components/">Browse the component catalog</a> for slots, parts, and theme notes.</li>
 </ol>

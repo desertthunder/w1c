@@ -4,7 +4,11 @@ W1C is a retro OS and early-web interface inspired web component library.
 
 ## Usage
 
-W1C is not released yet. The imports below show the intended package API.
+Install the component and font packages:
+
+```sh
+pnpm add @w1c/components @w1c/fonts
+```
 
 Register every stable component:
 
