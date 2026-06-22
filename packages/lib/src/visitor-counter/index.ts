@@ -1,1 +1,1 @@
-export { W1cVisitorCounter } from '../components/visitor-counter';
+export { W1cVisitorCounter } from '../components/visitor-counter.js';

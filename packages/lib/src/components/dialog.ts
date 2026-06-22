@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import './button';
-import './titlebar';
+import './button.js';
+import './titlebar.js';
 
 /**
  * Retro dialog shell for alerts, confirmations, and small forms.

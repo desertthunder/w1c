@@ -1,1 +1,1 @@
-export { W1cIcon } from '../components/icon';
+export { W1cIcon } from '../components/icon.js';

@@ -1,1 +1,1 @@
-export { W1cLabel } from '../components/label';
+export { W1cLabel } from '../components/label.js';

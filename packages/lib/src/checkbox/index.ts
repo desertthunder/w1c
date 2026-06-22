@@ -1,1 +1,1 @@
-export { W1cCheckbox } from '../components/checkbox';
+export { W1cCheckbox } from '../components/checkbox.js';

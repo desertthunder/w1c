@@ -1,1 +1,1 @@
-export { W1cToast } from '../components/toast';
+export { W1cToast } from '../components/toast.js';

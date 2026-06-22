@@ -2,71 +2,244 @@
 	"name": "@w1c/components",
 	"private": true,
 	"version": "0.0.0",
+	"description": "Retro OS and early-web web components, themes, styles, icons, and runtime assets.",
 	"license": "MIT",
 	"type": "module",
-	"exports": {
-		".": "./src/index.ts",
-		"./address-field": "./src/address-field/index.ts",
-		"./alert": "./src/alert/index.ts",
-		"./assets": "./src/assets/index.ts",
-		"./badge-88x31": "./src/badge-88x31/index.ts",
-		"./blink": "./src/blink/index.ts",
-		"./button": "./src/button/index.ts",
-		"./checkbox": "./src/checkbox/index.ts",
-		"./data-list": "./src/data-list/index.ts",
-		"./data-table": "./src/data-table/index.ts",
-		"./desktop-icon": "./src/desktop-icon/index.ts",
-		"./dialog": "./src/dialog/index.ts",
-		"./divider": "./src/divider/index.ts",
-		"./document-browser": "./src/document-browser/index.ts",
-		"./endpoint-row": "./src/endpoint-row/index.ts",
-		"./guestbook-panel": "./src/guestbook-panel/index.ts",
-		"./icon": "./src/icon/index.ts",
-		"./icons": "./src/icons/index.ts",
-		"./image-map": "./src/image-map/index.ts",
-		"./input": "./src/input/index.ts",
-		"./json-viewer": "./src/json-viewer/index.ts",
-		"./label": "./src/label/index.ts",
-		"./last-updated": "./src/last-updated/index.ts",
-		"./link-cluster": "./src/link-cluster/index.ts",
-		"./marquee": "./src/marquee/index.ts",
-		"./menu": "./src/menu/index.ts",
-		"./menu-bar": "./src/menu-bar/index.ts",
-		"./menu-item": "./src/menu-item/index.ts",
-		"./panel": "./src/panel/index.ts",
-		"./select": "./src/select/index.ts",
-		"./source-viewer": "./src/source-viewer/index.ts",
-		"./status-card": "./src/status-card/index.ts",
-		"./statusbar": "./src/statusbar/index.ts",
-		"./tabs": "./src/tabs/index.ts",
-		"./taskbar": "./src/taskbar/index.ts",
-		"./textarea": "./src/textarea/index.ts",
-		"./titlebar": "./src/titlebar/index.ts",
-		"./toast": "./src/toast/index.ts",
-		"./toolbar": "./src/toolbar/index.ts",
-		"./tiled-background": "./src/tiled-background/index.ts",
-		"./under-construction": "./src/under-construction/index.ts",
-		"./validation-message": "./src/validation-message/index.ts",
-		"./visitor-counter": "./src/visitor-counter/index.ts",
-		"./webring": "./src/webring/index.ts",
-		"./window": "./src/window/index.ts",
-		"./word-processor": "./src/word-processor/index.ts",
-		"./themes/classic-mac.css": "./src/themes/classic-mac.css",
-		"./themes/geocities.css": "./src/themes/geocities.css",
-		"./themes/gnome2.css": "./src/themes/gnome2.css",
-		"./themes/ubuntu-810.css": "./src/themes/ubuntu-810.css",
-		"./themes/web-1.css": "./src/themes/web-1.css",
-		"./themes/windows-95.css": "./src/themes/windows-95.css",
-		"./styles/native.css": "./src/styles/native.css",
-		"./styles/tokens.css": "./src/styles/tokens.css",
-		"./styles/utilities.css": "./src/styles/utilities.css"
+	"homepage": "https://github.com/desertthunder/w1c#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/desertthunder/w1c.git",
+		"directory": "packages/lib"
 	},
+	"bugs": {
+		"url": "https://github.com/desertthunder/w1c/issues"
+	},
+	"keywords": [
+		"web-components",
+		"lit",
+		"retro",
+		"css",
+		"themes",
+		"geocities",
+		"windows-95",
+		"classic-mac",
+		"gnome"
+	],
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./address-field": {
+			"types": "./dist/address-field/index.d.ts",
+			"import": "./dist/address-field/index.js"
+		},
+		"./alert": {
+			"types": "./dist/alert/index.d.ts",
+			"import": "./dist/alert/index.js"
+		},
+		"./assets": {
+			"types": "./dist/assets/index.d.ts",
+			"import": "./dist/assets/index.js"
+		},
+		"./badge-88x31": {
+			"types": "./dist/badge-88x31/index.d.ts",
+			"import": "./dist/badge-88x31/index.js"
+		},
+		"./blink": {
+			"types": "./dist/blink/index.d.ts",
+			"import": "./dist/blink/index.js"
+		},
+		"./button": {
+			"types": "./dist/button/index.d.ts",
+			"import": "./dist/button/index.js"
+		},
+		"./checkbox": {
+			"types": "./dist/checkbox/index.d.ts",
+			"import": "./dist/checkbox/index.js"
+		},
+		"./data-list": {
+			"types": "./dist/data-list/index.d.ts",
+			"import": "./dist/data-list/index.js"
+		},
+		"./data-table": {
+			"types": "./dist/data-table/index.d.ts",
+			"import": "./dist/data-table/index.js"
+		},
+		"./desktop-icon": {
+			"types": "./dist/desktop-icon/index.d.ts",
+			"import": "./dist/desktop-icon/index.js"
+		},
+		"./dialog": {
+			"types": "./dist/dialog/index.d.ts",
+			"import": "./dist/dialog/index.js"
+		},
+		"./divider": {
+			"types": "./dist/divider/index.d.ts",
+			"import": "./dist/divider/index.js"
+		},
+		"./document-browser": {
+			"types": "./dist/document-browser/index.d.ts",
+			"import": "./dist/document-browser/index.js"
+		},
+		"./endpoint-row": {
+			"types": "./dist/endpoint-row/index.d.ts",
+			"import": "./dist/endpoint-row/index.js"
+		},
+		"./guestbook-panel": {
+			"types": "./dist/guestbook-panel/index.d.ts",
+			"import": "./dist/guestbook-panel/index.js"
+		},
+		"./icon": {
+			"types": "./dist/icon/index.d.ts",
+			"import": "./dist/icon/index.js"
+		},
+		"./icons": {
+			"types": "./dist/icons/index.d.ts",
+			"import": "./dist/icons/index.js"
+		},
+		"./image-map": {
+			"types": "./dist/image-map/index.d.ts",
+			"import": "./dist/image-map/index.js"
+		},
+		"./input": {
+			"types": "./dist/input/index.d.ts",
+			"import": "./dist/input/index.js"
+		},
+		"./json-viewer": {
+			"types": "./dist/json-viewer/index.d.ts",
+			"import": "./dist/json-viewer/index.js"
+		},
+		"./label": {
+			"types": "./dist/label/index.d.ts",
+			"import": "./dist/label/index.js"
+		},
+		"./last-updated": {
+			"types": "./dist/last-updated/index.d.ts",
+			"import": "./dist/last-updated/index.js"
+		},
+		"./link-cluster": {
+			"types": "./dist/link-cluster/index.d.ts",
+			"import": "./dist/link-cluster/index.js"
+		},
+		"./marquee": {
+			"types": "./dist/marquee/index.d.ts",
+			"import": "./dist/marquee/index.js"
+		},
+		"./menu": {
+			"types": "./dist/menu/index.d.ts",
+			"import": "./dist/menu/index.js"
+		},
+		"./menu-bar": {
+			"types": "./dist/menu-bar/index.d.ts",
+			"import": "./dist/menu-bar/index.js"
+		},
+		"./menu-item": {
+			"types": "./dist/menu-item/index.d.ts",
+			"import": "./dist/menu-item/index.js"
+		},
+		"./panel": {
+			"types": "./dist/panel/index.d.ts",
+			"import": "./dist/panel/index.js"
+		},
+		"./select": {
+			"types": "./dist/select/index.d.ts",
+			"import": "./dist/select/index.js"
+		},
+		"./source-viewer": {
+			"types": "./dist/source-viewer/index.d.ts",
+			"import": "./dist/source-viewer/index.js"
+		},
+		"./status-card": {
+			"types": "./dist/status-card/index.d.ts",
+			"import": "./dist/status-card/index.js"
+		},
+		"./statusbar": {
+			"types": "./dist/statusbar/index.d.ts",
+			"import": "./dist/statusbar/index.js"
+		},
+		"./tabs": {
+			"types": "./dist/tabs/index.d.ts",
+			"import": "./dist/tabs/index.js"
+		},
+		"./taskbar": {
+			"types": "./dist/taskbar/index.d.ts",
+			"import": "./dist/taskbar/index.js"
+		},
+		"./textarea": {
+			"types": "./dist/textarea/index.d.ts",
+			"import": "./dist/textarea/index.js"
+		},
+		"./titlebar": {
+			"types": "./dist/titlebar/index.d.ts",
+			"import": "./dist/titlebar/index.js"
+		},
+		"./toast": {
+			"types": "./dist/toast/index.d.ts",
+			"import": "./dist/toast/index.js"
+		},
+		"./toolbar": {
+			"types": "./dist/toolbar/index.d.ts",
+			"import": "./dist/toolbar/index.js"
+		},
+		"./tiled-background": {
+			"types": "./dist/tiled-background/index.d.ts",
+			"import": "./dist/tiled-background/index.js"
+		},
+		"./under-construction": {
+			"types": "./dist/under-construction/index.d.ts",
+			"import": "./dist/under-construction/index.js"
+		},
+		"./validation-message": {
+			"types": "./dist/validation-message/index.d.ts",
+			"import": "./dist/validation-message/index.js"
+		},
+		"./visitor-counter": {
+			"types": "./dist/visitor-counter/index.d.ts",
+			"import": "./dist/visitor-counter/index.js"
+		},
+		"./webring": {
+			"types": "./dist/webring/index.d.ts",
+			"import": "./dist/webring/index.js"
+		},
+		"./window": {
+			"types": "./dist/window/index.d.ts",
+			"import": "./dist/window/index.js"
+		},
+		"./word-processor": {
+			"types": "./dist/word-processor/index.d.ts",
+			"import": "./dist/word-processor/index.js"
+		},
+		"./themes/classic-mac.css": "./dist/themes/classic-mac.css",
+		"./themes/geocities.css": "./dist/themes/geocities.css",
+		"./themes/gnome2.css": "./dist/themes/gnome2.css",
+		"./themes/ubuntu-810.css": "./dist/themes/ubuntu-810.css",
+		"./themes/web-1.css": "./dist/themes/web-1.css",
+		"./themes/windows-95.css": "./dist/themes/windows-95.css",
+		"./styles/native.css": "./dist/styles/native.css",
+		"./styles/tokens.css": "./dist/styles/tokens.css",
+		"./styles/utilities.css": "./dist/styles/utilities.css",
+		"./static/favicon.svg": "./dist/static/favicon.svg",
+		"./static/icons.svg": "./dist/static/icons.svg",
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist/**/*.js",
+		"dist/**/*.js.map",
+		"dist/**/*.d.ts",
+		"dist/themes",
+		"dist/styles",
+		"dist/static",
+		"README.md"
+	],
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
+		"build": "pnpm --filter @w1c/dnd build && rm -rf dist && tsc -p tsconfig.build.json && mkdir -p dist/themes dist/styles dist/static && cp src/themes/*.css dist/themes/ && cp src/styles/*.css dist/styles/ && cp public/favicon.svg public/icons.svg dist/static/",
 		"preview": "vite preview",
-		"check": "tsc --noEmit",
-		"test": "vitest --run",
+		"check": "pnpm --filter @w1c/dnd build && tsc --noEmit",
+		"test": "pnpm --filter @w1c/dnd build && vitest --run",
 		"format": "prettier --write . --ignore-path ../../.prettierignore"
 	},
 	"dependencies": {

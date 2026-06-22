@@ -2,13 +2,39 @@
 	"name": "@w1c/cli",
 	"private": true,
 	"version": "0.0.0",
+	"description": "Command-line scaffolding and terminal docs for W1C web components.",
 	"license": "MIT",
 	"type": "module",
+	"homepage": "https://github.com/desertthunder/w1c#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/desertthunder/w1c.git",
+		"directory": "packages/cli"
+	},
+	"bugs": {
+		"url": "https://github.com/desertthunder/w1c/issues"
+	},
+	"keywords": [
+		"cli",
+		"scaffold",
+		"web-components",
+		"lit",
+		"retro",
+		"themes"
+	],
 	"bin": {
 		"w1c": "./dist/main.mjs"
 	},
+	"exports": {
+		".": {
+			"types": "./dist/main.d.mts",
+			"import": "./dist/main.mjs"
+		},
+		"./package.json": "./package.json"
+	},
 	"files": [
-		"dist"
+		"dist",
+		"README.md"
 	],
 	"scripts": {
 		"docs:manifest": "tsx src/manifest.ts",

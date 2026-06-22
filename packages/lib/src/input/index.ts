@@ -1,1 +1,1 @@
-export { W1cInput } from '../components/input';
+export { W1cInput } from '../components/input.js';

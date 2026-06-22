@@ -1,1 +1,1 @@
-export { W1cBlink } from '../components/blink';
+export { W1cBlink } from '../components/blink.js';

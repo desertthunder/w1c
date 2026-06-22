@@ -2,16 +2,44 @@
 	"name": "@w1c/fonts",
 	"private": true,
 	"version": "0.0.0",
+	"description": "Theme font CSS and bundled classic Mac webfonts for W1C.",
 	"license": "MIT",
 	"type": "module",
-	"exports": {
-		"./all.css": "./src/all.css",
-		"./classic-mac.css": "./src/classic-mac.css",
-		"./geocities.css": "./src/geocities.css",
-		"./ubuntu.css": "./src/ubuntu.css",
-		"./windows.css": "./src/windows.css"
+	"homepage": "https://github.com/desertthunder/w1c#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/desertthunder/w1c.git",
+		"directory": "packages/fonts"
 	},
+	"bugs": {
+		"url": "https://github.com/desertthunder/w1c/issues"
+	},
+	"keywords": [
+		"fonts",
+		"css",
+		"fontsource",
+		"retro",
+		"classic-mac",
+		"windows-95",
+		"geocities",
+		"ubuntu"
+	],
+	"exports": {
+		"./all.css": "./dist/all.css",
+		"./classic-mac.css": "./dist/classic-mac.css",
+		"./geocities.css": "./dist/geocities.css",
+		"./ubuntu.css": "./dist/ubuntu.css",
+		"./windows.css": "./dist/windows.css",
+		"./classic-mac/ChicagoFLF.woff2": "./dist/classic-mac/ChicagoFLF.woff2",
+		"./classic-mac/ChiKareGo2.woff2": "./dist/classic-mac/ChiKareGo2.woff2",
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
 	"scripts": {
+		"build": "rm -rf dist && mkdir -p dist && cp -R src/. dist/",
 		"format": "prettier --write . --ignore-path ../../.prettierignore"
 	},
 	"dependencies": {

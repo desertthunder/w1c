@@ -1,1 +1,1 @@
-export { W1cDivider } from '../components/divider';
+export { W1cDivider } from '../components/divider.js';

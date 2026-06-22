@@ -1,1 +1,1 @@
-export { W1cTaskbar } from '../components/taskbar';
+export { W1cTaskbar } from '../components/taskbar.js';

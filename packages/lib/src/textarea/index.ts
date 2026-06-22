@@ -1,1 +1,1 @@
-export { W1cTextarea } from '../components/textarea';
+export { W1cTextarea } from '../components/textarea.js';

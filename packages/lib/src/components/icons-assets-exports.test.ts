@@ -16,11 +16,31 @@ import {
 
 const packageRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 
-type PackageManifest = { exports: Record<string, string> };
+type PackageExportTarget = string | { import?: string; types?: string };
+type PackageManifest = { exports: Record<string, PackageExportTarget> };
 
 const packageJson = JSON.parse(readFileSync(resolve(packageRoot, 'package.json'), 'utf8')) as PackageManifest;
-const importableExports = Object.entries(packageJson.exports).filter(([, target]) => target.endsWith('.ts'));
-const fileExports = Object.entries(packageJson.exports).filter(([, target]) => !target.endsWith('.ts'));
+const importableExports = Object.entries(packageJson.exports).filter(
+	([, target]) => typeof target !== 'string' && target.import
+);
+const fileExports = Object.entries(packageJson.exports).filter((entry): entry is [string, string] => {
+	const [, target] = entry;
+	return typeof target === 'string';
+});
+
+function sourceImportFor(target: PackageExportTarget) {
+	const importTarget = typeof target === 'string' ? target : target.import;
+	if (!importTarget) throw new Error('Package export does not define an import target.');
+
+	return importTarget.replace('./dist/', '../').replace(/\.js$/, '.ts');
+}
+
+function sourceFileFor(target: string) {
+	return target
+		.replace('./dist/themes/', './src/themes/')
+		.replace('./dist/styles/', './src/styles/')
+		.replace('./dist/static/', './public/');
+}
 
 describe('icon lookup', () => {
 	it('returns icon data for every bundled icon name', () => {
@@ -71,12 +91,12 @@ describe('asset base-path resolution', () => {
 
 describe('documented package export paths', () => {
 	it.each(importableExports)('imports %s', async (_exportPath, target) => {
-		const module = await import(target.replace('./src/', '../'));
+		const module = await import(sourceImportFor(target));
 
 		expect(Object.keys(module).length).toBeGreaterThan(0);
 	});
 
 	it.each(fileExports)('points %s to an existing file', (_exportPath, target) => {
-		expect(existsSync(resolve(packageRoot, target))).toBe(true);
+		expect(existsSync(resolve(packageRoot, sourceFileFor(target)))).toBe(true);
 	});
 });

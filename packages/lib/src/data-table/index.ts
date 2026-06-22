@@ -1,1 +1,1 @@
-export { W1cDataTable } from '../components/data-table';
+export { W1cDataTable } from '../components/data-table.js';

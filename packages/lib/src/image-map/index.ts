@@ -1,1 +1,1 @@
-export { W1cImageMap } from '../components/image-map';
+export { W1cImageMap } from '../components/image-map.js';

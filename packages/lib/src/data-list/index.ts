@@ -1,1 +1,1 @@
-export { W1cDataList } from '../components/data-list';
+export { W1cDataList } from '../components/data-list.js';

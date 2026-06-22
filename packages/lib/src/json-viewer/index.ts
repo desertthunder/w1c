@@ -1,1 +1,1 @@
-export { W1cJsonViewer } from '../components/json-viewer';
+export { W1cJsonViewer } from '../components/json-viewer.js';

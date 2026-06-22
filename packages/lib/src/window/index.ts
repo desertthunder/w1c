@@ -1,1 +1,1 @@
-export { W1cWindow } from '../components/window';
+export { W1cWindow } from '../components/window.js';

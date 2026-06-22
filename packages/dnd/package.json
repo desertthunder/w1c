@@ -2,13 +2,41 @@
 	"name": "@w1c/dnd",
 	"private": true,
 	"version": "0.0.0",
+	"description": "Dependency-free drag, resize, pointer session, and geometry primitives for W1C components.",
 	"license": "MIT",
 	"type": "module",
-	"exports": {
-		".": "./src/index.ts"
+	"homepage": "https://github.com/desertthunder/w1c#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/desertthunder/w1c.git",
+		"directory": "packages/dnd"
 	},
+	"bugs": {
+		"url": "https://github.com/desertthunder/w1c/issues"
+	},
+	"keywords": [
+		"drag",
+		"resize",
+		"pointer-events",
+		"geometry",
+		"web-components",
+		"framework-neutral"
+	],
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
 	"scripts": {
-		"build": "tsc --noEmit",
+		"build": "rm -rf dist && tsc -p tsconfig.build.json",
 		"check": "tsc --noEmit",
 		"test": "vitest --run",
 		"format": "prettier --write . --ignore-path ../../.prettierignore"

@@ -1,1 +1,1 @@
-export { W1cButton } from '../components/button';
+export { W1cButton } from '../components/button.js';

@@ -1,1 +1,1 @@
-export { W1cUnderConstruction } from '../components/under-construction';
+export { W1cUnderConstruction } from '../components/under-construction.js';

@@ -1,1 +1,1 @@
-export { W1cDocumentBrowser } from '../components/document-browser';
+export { W1cDocumentBrowser } from '../components/document-browser.js';

@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import './statusbar';
-import './toolbar';
+import './statusbar.js';
+import './toolbar.js';
 
 /**
  * Full source/code viewer shell with toolbar, pathbar, source pane, and statusbar.

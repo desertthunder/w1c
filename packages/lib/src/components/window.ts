@@ -12,9 +12,9 @@ import {
 	startPointerSession
 } from '@w1c/dnd';
 import type { DragSession, PointerSession, ResizeSession } from '@w1c/dnd';
-import './statusbar';
-import './titlebar';
-import './toolbar';
+import './statusbar.js';
+import './titlebar.js';
+import './toolbar.js';
 
 /**
  * Retro window shell with titlebar, toolbar, content, and statusbar slots.

@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
-import { getW1cIcon, type IconData, type W1cIconName } from '../icons';
+import { getW1cIcon, type IconData, type W1cIconName } from '../icons/index.js';
 
 /**
  * Inline SVG icon renderer for the bundled W1C icon set or trusted IconData.

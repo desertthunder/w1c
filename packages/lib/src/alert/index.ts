@@ -1,1 +1,1 @@
-export { W1cAlert } from '../components/alert';
+export { W1cAlert } from '../components/alert.js';

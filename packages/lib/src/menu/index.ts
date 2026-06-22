@@ -1,1 +1,1 @@
-export { W1cMenu } from '../components/menu';
+export { W1cMenu } from '../components/menu.js';

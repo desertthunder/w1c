@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import './statusbar';
-import './toolbar';
+import './statusbar.js';
+import './toolbar.js';
 
 /**
  * Word processor shell with toolbar, ruler, page, details, and statusbar regions.

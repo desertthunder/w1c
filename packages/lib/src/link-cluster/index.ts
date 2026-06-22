@@ -1,1 +1,1 @@
-export { W1cLinkCluster } from '../components/link-cluster';
+export { W1cLinkCluster } from '../components/link-cluster.js';

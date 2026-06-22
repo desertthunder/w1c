@@ -1,1 +1,1 @@
-export { W1cTabs } from '../components/tabs';
+export { W1cTabs } from '../components/tabs.js';

@@ -1,1 +1,1 @@
-export { W1cMarquee } from '../components/marquee';
+export { W1cMarquee } from '../components/marquee.js';

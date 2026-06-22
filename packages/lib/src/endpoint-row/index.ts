@@ -1,1 +1,1 @@
-export { W1cEndpointRow } from '../components/endpoint-row';
+export { W1cEndpointRow } from '../components/endpoint-row.js';

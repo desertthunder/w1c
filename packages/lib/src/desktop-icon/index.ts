@@ -1,1 +1,1 @@
-export { W1cDesktopIcon } from '../components/desktop-icon';
+export { W1cDesktopIcon } from '../components/desktop-icon.js';

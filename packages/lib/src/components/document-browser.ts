@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import './address-field';
-import './statusbar';
-import './toolbar';
+import './address-field.js';
+import './statusbar.js';
+import './toolbar.js';
 
 /**
  * Document/browser shell with toolbar, location field, sidebar, content pane, and statusbar.

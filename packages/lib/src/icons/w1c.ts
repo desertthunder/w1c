@@ -1,4 +1,4 @@
-import type { IconData, IconMetadata } from './types';
+import type { IconData, IconMetadata } from './types.js';
 
 enum SourceURL {
 	wikimedia = 'https://commons.wikimedia.org/wiki/Category:Microsoft_icons',

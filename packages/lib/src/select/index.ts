@@ -1,1 +1,1 @@
-export { W1cSelect } from '../components/select';
+export { W1cSelect } from '../components/select.js';

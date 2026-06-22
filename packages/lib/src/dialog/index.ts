@@ -1,1 +1,1 @@
-export { W1cDialog } from '../components/dialog';
+export { W1cDialog } from '../components/dialog.js';
