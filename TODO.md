@@ -51,13 +51,13 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
       components expose it.
 - [x] Add `packages/lib` tests for icon lookup, asset base-path resolution, and every
       documented package export path.
-- [ ] Add Storybook state stories for default, disabled, focused, long-label,
+- [x] Add Storybook state stories for default, disabled, focused, long-label,
       narrow-viewport, high-density, reduced-motion, slotted content, and theme variants.
-- [ ] Add Storybook interaction stories for menus, tabs, dialogs, window controls, drag
+- [x] Add Storybook interaction stories for menus, tabs, dialogs, window controls, drag
       handles, and future resize behavior.
-- [ ] Add visual smoke coverage across GNOME 2/Ubuntu, Windows 95, classic Mac, Web 1.0,
+- [x] Add visual smoke coverage across GNOME 2/Ubuntu, Windows 95, classic Mac, Web 1.0,
       and Geocities themes.
-- [ ] Add a new-component story coverage checklist in `packages/storybook/README.md`
+- [x] Add a new-component story coverage checklist in `packages/storybook/README.md`
   - docs page
   - default story, state stories
   - theme coverage
