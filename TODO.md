@@ -105,14 +105,13 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
 - [x] Replace the starter `my-element` story with one page per public component.
 - [x] Add global theme switching for GNOME 2, Ubuntu 8.10, Windows 95, classic Mac, Web 1.0,
       and Geocities.
-- [ ] Add icon gallery stories for the W1C icon set, including `IconData` rendering examples.
-- [ ] Add reference examples for GNOME 2/Ubuntu and Windows 95 screens without depending on
+- [x] Add icon gallery stories for the W1C icon set, including `IconData` rendering examples.
+- [x] Add reference examples for GNOME 2/Ubuntu and Windows 95 screens without depending on
       the local reference apps.
 - [x] Add Geocities examples for badges, counters, guestbooks, webrings, tiled backgrounds,
       and under-construction patterns.
-- [ ] Add keyboard/focus, disabled, long-label, narrow-viewport, high-density, and
+- [x] Add keyboard/focus, disabled, long-label, narrow-viewport, high-density, and
       reduced-motion stories.
-- [ ] Add visual regression once the component surface stabilizes.
 
 ## CLI
 
@@ -170,10 +169,11 @@ Keep this list aligned with [ROADMAP.md](./ROADMAP.md)
 - [ ] Add package export checks for every documented import path.
 - [ ] Add `npm pack --dry-run` checks for every publishable package.
 - [ ] Add docs build and Storybook build checks.
-- [ ] Add CI once repository workflow is ready.
 
 ## Parking Lot
 
+- [ ] Add CI once repository workflow is ready.
 - [ ] Verify icon licensing and redistribution assumptions before copying reference assets.
 - [ ] Prefer slots, attributes/properties, CSS custom properties, and CSS parts over
       app-specific render APIs.
+- [ ] Add visual regression once the component surface stabilizes.
