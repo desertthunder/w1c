@@ -230,17 +230,37 @@ async function createServerRenderedProject(targetDir: string, theme: string) {
 	);
 }
 
-/** Creates one of the supported W1C starter projects. */
+/**
+ * @summary Creates one of the supported W1C starter projects.
+ *
+ * @todo (desertthunder) 2026-07-06: add a "server-rendered" template that copies the starter HTML
+ * into a template file and adds a README with instructions for Rails, Phoenix, Django, etc.
+ * */
 export async function createProject(dir: string, options: CreateOptions = {}) {
 	const targetDir = resolve(dir);
 	const name = dir.split(/[\\/]/).filter(Boolean).at(-1) ?? 'my-w1c-app';
 	const template = normalizeTemplate(options.template);
 	const theme = options.theme ?? DEFAULT_THEME;
+	switch (template) {
+		case 'bundler': {
+			await createBundlerProject(targetDir, name, theme, options);
+			break;
+		}
+		case 'static-html': {
+			await createStaticHtmlProject(targetDir, theme);
+			break;
+		}
+		case 'static-site': {
+			await createStaticSiteProject(targetDir, name, theme, options);
+			break;
+		}
+		case 'server-rendered': {
+			await createServerRenderedProject(targetDir, theme);
+			break;
+		}
+		default:
+			throw new Error(`Unknown W1C template "${template}". Use one of: ${W1C_TEMPLATES.join(', ')}`);
+	}
 
-	// TODO: make this a switch case
-	if (template === 'bundler') await createBundlerProject(targetDir, name, theme, options);
-	if (template === 'static-html') await createStaticHtmlProject(targetDir, theme);
-	if (template === 'static-site') await createStaticSiteProject(targetDir, name, theme, options);
-	if (template === 'server-rendered') await createServerRenderedProject(targetDir, theme);
 	return { targetDir, template, theme };
 }

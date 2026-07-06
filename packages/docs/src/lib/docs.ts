@@ -17,7 +17,12 @@ export const NAV_LINKS: DocLink[] = [
 		description: 'Preview the W1C API and render the first retro window.'
 	},
 	{ title: 'About', href: '/about/', description: 'Why W1C exists.' },
-	{ title: 'Components', href: '/docs/components/', description: 'Browse every W1C custom element.' },
+	{
+		title: 'Storybook',
+		href: 'https://w1c.desertthunder.dev/storybook',
+		description: 'View the component storybook.',
+		external: true
+	},
 	{
 		title: 'Repo',
 		href: 'https://github.com/desertthunder/w1c',
@@ -26,6 +31,9 @@ export const NAV_LINKS: DocLink[] = [
 	}
 ];
 
+/**
+ * @todo (desertthunder) 2026-07-06: move icon catalog under components
+ */
 export const DOC_MANIFEST: DocLink[] = [
 	{ title: 'Getting started', href: '/docs/getting-started/', description: 'Build your first retro UI.' },
 	{ title: 'Installation', href: '/docs/installation/', description: 'Add W1C to your project.' },
@@ -72,7 +80,6 @@ export const DOC_MANIFEST: DocLink[] = [
 	{ title: 'Web 1.0', href: '/docs/themes/web-1/', description: 'Early browser and plain HTML theme.' },
 	{ title: 'Geocities', href: '/docs/themes/geocities/', description: 'High-color personal homepage theme.' },
 	{ title: 'Icons', href: '/docs/icons/', description: 'Using W1C icon data.' },
-	// TODO: move Icon Catalog to components
 	{
 		title: 'Icon Catalog',
 		href: '/docs/icons/catalog/',
@@ -174,6 +181,9 @@ function componentDocs(...hrefs: string[]) {
 	});
 }
 
+/**
+ * @todo (desertthunder) 2026-07-06: move icon catalog under components
+ */
 export const COMPONENT_DOC_GROUPS: DocGroup[] = [
 	{
 		title: 'Shell',
@@ -235,7 +245,6 @@ export const COMPONENT_DOC_GROUPS: DocGroup[] = [
 		)
 	},
 	{
-		// TODO: Icon catalog should be here
 		title: 'Feedback and icons',
 		links: componentDocs(
 			'/docs/components/dialog/',
@@ -258,6 +267,9 @@ function docs(...hrefs: string[]) {
 
 export const FEATURED_DOCS: DocLink[] = docs('/docs/getting-started/', '/docs/components/', '/docs/icons/');
 
+/**
+ * @todo (desertthunder) 2026-07-06: move icon catalog under components
+ */
 export const DOC_GROUPS: DocGroup[] = [
 	{
 		title: 'Overview',
@@ -285,7 +297,6 @@ export const DOC_GROUPS: DocGroup[] = [
 			'/docs/themes/geocities/'
 		)
 	},
-	// TODO: this group is unnecessary
 	{ title: 'Icons', links: docs('/docs/icons/', '/docs/icons/catalog/') },
 	{ title: 'Components', groups: COMPONENT_DOC_GROUPS },
 	{ title: 'Meta', links: docs('/docs/inspiration/', '/docs/references/') }
